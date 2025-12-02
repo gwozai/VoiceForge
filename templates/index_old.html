@@ -1,0 +1,194 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI-Edge-TTS API 测试界面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { padding: 20px; }
+        .container { max-width: 800px; }
+        #audioPlayer { margin-top: 20px; }
+        #response { margin-top: 20px; color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">OpenAI-Edge-TTS API 测试界面</h1>
+        <form id="ttsForm" method="POST">
+            <div class="mb-3">
+                <label for="api_key" class="form-label">API Key:</label>
+                <input type="text" class="form-control" id="api_key" name="api_key" value="{{ default_api_key }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="model" class="form-label">Model:</label>
+                <select class="form-select" id="model" name="model"></select>
+                <button type="button" class="btn btn-secondary mt-2" onclick="loadModels()">加载可用模型</button>
+            </div>
+            <div class="mb-3">
+                <label for="input" class="form-label">Input Text (要转换的文本):</label>
+                <textarea class="form-control" id="input" name="input" rows="4" required>恭喜！从日志看，Docker 容器已成功启动。服务在你的服务器 IP 117.72.56.34 的 5050 端口运行。默认配置下，API 密钥是 your_api_key_here。</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="voice" class="form-label">Voice (语音选项):</label>
+                <select class="form-select" id="voice" name="voice">
+                    {% for voice in voices %}
+                        <option value="{{ voice }}" {% if voice == default_voice %}selected{% endif %}>{{ voice }}</option>
+                    {% endfor %}
+                </select>
+                <p class="form-text">提示: 可以输入任意 edge-tts 支持的语音。</p>
+                <button type="button" class="btn btn-secondary mt-2" onclick="loadVoices()">加载所有可用语音</button>
+            </div>
+            <div class="mb-3">
+                <label for="response_format" class="form-label">Response Format (音频格式):</label>
+                <select class="form-select" id="response_format" name="response_format">
+                    {% for fmt in formats %}
+                        <option value="{{ fmt }}" {% if fmt == default_format %}selected{% endif %}>{{ fmt }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="speed" class="form-label">Speed (播放速度, 0.25-4.0):</label>
+                <input type="number" class="form-control" id="speed" name="speed" value="{{ default_speed }}" step="0.25" min="0.25" max="4.0">
+            </div>
+            <div class="mb-3">
+                <label for="stream_format" class="form-label">Stream Format (流式选项, 为空表示非流式):</label>
+                <input type="text" class="form-control" id="stream_format" name="stream_format" placeholder="e.g., sse for streaming">
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="download" name="download" value="on">
+                <label class="form-check-label" for="download">下载音频文件</label>
+            </div>
+            <button type="submit" class="btn btn-primary">生成并播放/下载音频</button>
+            <input type="hidden" name="action" value="generate">
+        </form>
+        <div id="audioPlayer"></div>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        function loadVoices() {
+            $.get("/get_voices", function(data) {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                    return;
+                }
+                $('#voice').empty();
+                data.forEach(function(voice) {
+                    $('#voice').append($('<option>', { value: voice.ShortName, text: voice.FriendlyName || voice.ShortName }));
+                });
+            });
+        }
+
+        function loadModels() {
+            $.get("/get_models", function(data) {
+                if (data.error) {
+                    alert("Error: " + data.error);
+                    return;
+                }
+                $('#model').empty();
+                data.forEach(function(model) {
+                    $('#model').append($('<option>', { value: model, text: model }));
+                });
+                $('#model').val('{{ default_model }}');  // 设置默认
+            });
+        }
+
+        $('#ttsForm').submit(function(e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+            var stream = $('#stream_format').val() === 'sse';
+            var format = $('#response_format').val();
+            var download = $('#download').is(':checked');
+
+            $('#response').text('');
+            $('#audioPlayer').empty();
+
+            if (stream) {
+                // 处理 SSE 流式
+                var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                var mediaSource = new MediaSource();
+                var sourceBuffer;
+                var queue = [];
+                var url = URL.createObjectURL(mediaSource);
+
+                var audio = $('<audio controls src="' + url + '"></audio>');
+                $('#audioPlayer').append(audio);
+
+                mediaSource.addEventListener('sourceopen', function() {
+                    sourceBuffer = mediaSource.addSourceBuffer('audio/' + format + '; codecs="opus"');  // 调整 codecs 根据格式
+                    sourceBuffer.mode = 'sequence';
+                });
+
+                var es = new EventSource(API_BASE_URL + API_ENDPOINT + '?' + formData);  // 注意: EventSource 不支持 POST，需调整
+                // 实际中 SSE 对于 POST 复杂；这里简化，假设服务器支持 GET 或使用 fetch stream
+
+                // 替代: 使用 fetch stream
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: formData
+                }).then(response => {
+                    const reader = response.body.getReader();
+                    const processChunk = ({done, value}) => {
+                        if (done) {
+                            mediaSource.endOfStream();
+                            return;
+                        }
+                        queue.push(value);
+                        if (!sourceBuffer.updating && queue.length > 0) {
+                            sourceBuffer.appendBuffer(queue.shift());
+                        }
+                        reader.read().then(processChunk);
+                    };
+                    reader.read().then(processChunk);
+                }).catch(err => $('#response').text('Error: ' + err));
+            } else {
+                // 非流式 - 使用 XMLHttpRequest 处理二进制数据
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/', true);
+                xhr.responseType = 'blob';
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        var blob = xhr.response;
+                        var url = URL.createObjectURL(blob);
+                        var audio = $('<audio controls autoplay></audio>');
+                        audio.attr('src', url);
+                        $('#audioPlayer').append(audio);
+                        
+                        if (download) {
+                            var a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'speech.' + format;
+                            a.click();
+                        }
+                    } else {
+                        // 尝试读取错误信息
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            try {
+                                var err = JSON.parse(reader.result);
+                                $('#response').text('Error: ' + (err.error || 'Unknown error'));
+                            } catch(e) {
+                                $('#response').text('Error: ' + xhr.statusText);
+                            }
+                        };
+                        reader.readAsText(xhr.response);
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    $('#response').text('Error: Network error');
+                };
+                
+                xhr.send(formData);
+            }
+        });
+    </script>
+</body>
+</html>

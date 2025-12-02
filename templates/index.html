@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI-Edge-TTS API 测试界面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 24px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-header i {
+            color: var(--primary-color);
+        }
+        
+        .card-body {
+            padding: 24px;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .form-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #f1f5f9;
+            border: none;
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+            color: var(--text-color);
+        }
+        
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .speed-slider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .speed-slider input[type="range"] {
+            flex: 1;
+            height: 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .speed-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .speed-slider input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .speed-value {
+            min-width: 50px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .audio-player-container {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .audio-player-container audio {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .status-message {
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .status-message.success {
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            display: block;
+        }
+        
+        .status-message.error {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+            display: block;
+        }
+        
+        .status-message.loading {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .voice-group-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            padding: 8px 12px;
+            background: #f1f5f9;
+        }
+        
+        .tabs-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            background: #eff6ff;
+            color: #3b82f6;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .info-item label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .info-item span {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #bfdbfe;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .stream-progress {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #bfdbfe;
+        }
+        
+        .stream-progress .progress {
+            background: #e0e7ff;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .stream-progress .progress-bar {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        }
+        
+        .upload-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #fafbfc;
+        }
+        
+        .upload-zone:hover {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.05);
+        }
+        
+        .upload-zone.drag-over {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.1);
+            transform: scale(1.01);
+        }
+        
+        .upload-zone-content i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+        
+        .upload-zone-content p {
+            margin: 10px 0 5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .upload-zone-content small {
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+        
+        .input-mode-tabs {
+            display: flex;
+            gap: 10px;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 10px;
+        }
+        
+        .input-mode-tab {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .input-mode-tab:hover {
+            color: var(--text-color);
+        }
+        
+        .input-mode-tab.active {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .uploaded-file-info {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #a7f3d0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .file-preview {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .file-preview-content {
+            max-height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .file-preview-content.expanded {
+            max-height: 400px;
+        }
+        
+        .text-stats .badge {
+            font-weight: 500;
+            padding: 6px 10px;
+        }
+        
+        .voice-preview-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+        
+        .row-cols-custom > * {
+            flex: 0 0 auto;
+        }
+        
+        .format-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .format-option {
+            flex: 1;
+            min-width: 80px;
+        }
+        
+        .format-option input[type="radio"] {
+            display: none;
+        }
+        
+        .format-option label {
+            display: block;
+            padding: 10px 15px;
+            text-align: center;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .format-option input[type="radio"]:checked + label {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .format-option label:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .history-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .history-item audio {
+            flex: 1;
+        }
+        
+        .history-item .history-text {
+            flex: 2;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .history-item .history-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-body {
+                padding: 16px;
+            }
+            
+            .format-option {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="bi bi-soundwave"></i> OpenAI-Edge-TTS</h1>
+            <p>免费、高质量的文本转语音 API 测试界面</p>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <span class="feature-badge"><i class="bi bi-check-circle"></i> OpenAI 兼容</span>
+                <span class="feature-badge"><i class="bi bi-lightning"></i> SSE 流式</span>
+                <span class="feature-badge"><i class="bi bi-globe"></i> 多语言支持</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Left Column: Settings -->
+            <div class="col-lg-5 mb-4">
+                <!-- API Settings -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-gear"></i> API 设置
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="api_key" class="form-label">API Key</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="api_key" value="{{ default_api_key }}" placeholder="输入 API Key">
+                                <button class="btn btn-outline-secondary" type="button" onclick="toggleApiKeyVisibility()">
+                                    <i class="bi bi-eye" id="apiKeyToggleIcon"></i>
+                                </button>
+                            </div>
+                            <div class="form-text">使用任意字符串作为密钥（无需真实 OpenAI 密钥）</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="model" class="form-label">模型</label>
+                            <select class="form-select" id="model">
+                                {% for m in models %}
+                                <option value="{{ m }}" {% if m == default_model %}selected{% endif %}>{{ m }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="form-text">tts-1: 标准质量 | tts-1-hd: 高清质量</div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-secondary flex-grow-1" onclick="loadModels()">
+                                <i class="bi bi-arrow-clockwise"></i> 加载模型
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" onclick="testConnection()">
+                                <i class="bi bi-plug"></i> 测试连接
+                            </button>
+                        </div>
+                        <div id="connectionStatus" class="status-message"></div>
+                    </div>
+                </div>
+                
+                <!-- Voice Settings -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-mic"></i> 语音设置
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="voice" class="form-label">选择语音</label>
+                            <select class="form-select" id="voice">
+                                {% for group, voices in voices_by_language.items() %}
+                                <optgroup label="{{ group }}">
+                                    {% for v in voices %}
+                                    <option value="{{ v }}" {% if v == default_voice %}selected{% endif %}>{{ v }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">或输入自定义语音</label>
+                            <input type="text" class="form-control" id="custom_voice" placeholder="例如: en-US-AvaNeural">
+                            <div class="form-text">支持任意 edge-tts 语音名称</div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-secondary flex-grow-1" onclick="loadVoices()">
+                                <i class="bi bi-arrow-clockwise"></i> 加载所有语音
+                            </button>
+                            <button type="button" class="btn btn-outline-primary voice-preview-btn" onclick="previewVoice()">
+                                <i class="bi bi-play-circle"></i> 试听
+                            </button>
+                        </div>
+                        <div id="voicePreviewPlayer" class="audio-player-container" style="display: none;"></div>
+                    </div>
+                </div>
+                
+                <!-- Audio Settings -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-sliders"></i> 音频设置
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label class="form-label">音频格式</label>
+                            <div class="format-options">
+                                {% for fmt in formats %}
+                                <div class="format-option">
+                                    <input type="radio" name="response_format" id="format_{{ fmt }}" value="{{ fmt }}" {% if fmt == default_format %}checked{% endif %}>
+                                    <label for="format_{{ fmt }}">{{ fmt }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">播放速度: <span id="speedValue">{{ default_speed }}x</span></label>
+                            <div class="speed-slider">
+                                <span>0.25x</span>
+                                <input type="range" id="speed" min="0.25" max="4.0" step="0.25" value="{{ default_speed }}">
+                                <span>4.0x</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="stream_mode">
+                                <label class="form-check-label" for="stream_mode">
+                                    <i class="bi bi-broadcast"></i> 流式传输模式
+                                </label>
+                            </div>
+                            <div class="form-text">
+                                <i class="bi bi-info-circle"></i> 开启后边下载边播放，无需等待完成。长文本建议开启，可提前听到语音。
+                            </div>
+                        </div>
+                        
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="auto_download">
+                            <label class="form-check-label" for="auto_download">
+                                <i class="bi bi-download"></i> 生成后自动下载
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Text Input & Output -->
+            <div class="col-lg-7">
+                <!-- Text Input -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-textarea-t"></i> 文本输入
+                    </div>
+                    <div class="card-body">
+                        <!-- 输入方式切换 -->
+                        <div class="input-mode-tabs mb-3">
+                            <button type="button" class="input-mode-tab active" onclick="switchInputMode('text')" id="tabText">
+                                <i class="bi bi-cursor-text"></i> 直接输入
+                            </button>
+                            <button type="button" class="input-mode-tab" onclick="switchInputMode('file')" id="tabFile">
+                                <i class="bi bi-file-earmark-text"></i> 上传文件
+                            </button>
+                            <button type="button" class="input-mode-tab" onclick="switchInputMode('url')" id="tabUrl">
+                                <i class="bi bi-link-45deg"></i> 网络URL
+                            </button>
+                        </div>
+                        
+                        <!-- 直接输入模式 -->
+                        <div id="textInputMode">
+                            <div class="mb-3">
+                                <textarea class="form-control" id="input_text" rows="10" placeholder="在此输入要转换的文本...">你好！欢迎使用 OpenAI-Edge-TTS 文本转语音服务。这是一个免费、高质量的 TTS API，支持多种语言和语音选项。</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- 文件上传模式 -->
+                        <div id="fileInputMode" style="display: none;">
+                            <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileUpload').click()">
+                                <input type="file" id="fileUpload" accept=".txt,.md,.text,.srt,.vtt,.json" style="display: none;">
+                                <div class="upload-zone-content" id="uploadZoneContent">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                    <p>点击选择文件或拖拽文件到此处</p>
+                                    <small>支持 .txt, .md, .srt, .vtt 格式</small>
+                                </div>
+                            </div>
+                            
+                            <!-- 已上传文件信息 -->
+                            <div id="uploadedFileInfo" class="uploaded-file-info" style="display: none;">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-file-earmark-text text-primary" style="font-size: 1.5rem;"></i>
+                                        <div>
+                                            <div class="fw-medium" id="uploadedFileName">文件名</div>
+                                            <small class="text-muted" id="uploadedFileSize">0 KB</small>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeUploadedFile()">
+                                        <i class="bi bi-x-lg"></i> 移除
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 文件内容预览 -->
+                            <div id="filePreview" class="file-preview mt-3" style="display: none;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label class="form-label mb-0"><i class="bi bi-eye"></i> 内容预览</label>
+                                    <button type="button" class="btn btn-sm btn-link" onclick="toggleFullPreview()">
+                                        <span id="previewToggleText">展开全部</span>
+                                    </button>
+                                </div>
+                                <div class="file-preview-content" id="filePreviewContent"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 网络URL模式 -->
+                        <div id="urlInputMode" style="display: none;">
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-link-45deg"></i> 输入文本文件URL</label>
+                                <div class="input-group">
+                                    <input type="url" class="form-control" id="textUrl" 
+                                           placeholder="https://example.com/text.txt">
+                                    <button class="btn btn-primary" type="button" onclick="loadFromUrl()" id="loadUrlBtn">
+                                        <i class="bi bi-download"></i> 加载
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    <i class="bi bi-info-circle"></i> 支持 .txt, .md, .srt 等纯文本文件
+                                </div>
+                            </div>
+                            
+                            <!-- URL加载状态 -->
+                            <div id="urlLoadStatus" style="display: none;"></div>
+                            
+                            <!-- URL内容预览 -->
+                            <div id="urlPreview" class="file-preview mt-3" style="display: none;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label class="form-label mb-0">
+                                        <i class="bi bi-eye"></i> 已加载内容 
+                                        <span class="badge bg-success" id="urlCharCount">0 字符</span>
+                                    </label>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="clearUrlContent()">
+                                        <i class="bi bi-x-lg"></i> 清除
+                                    </button>
+                                </div>
+                                <div class="file-preview-content" id="urlPreviewContent" style="max-height: 300px; overflow-y: auto;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 字符统计和操作 -->
+                        <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+                            <div class="text-stats">
+                                <span class="badge bg-light text-dark">
+                                    <i class="bi bi-text-paragraph"></i> 字符: <span id="charCount">0</span>
+                                </span>
+                                <span class="badge bg-light text-dark ms-2" id="wordCountBadge" style="display: none;">
+                                    <i class="bi bi-card-text"></i> 行数: <span id="lineCount">0</span>
+                                </span>
+                            </div>
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn-outline-secondary" onclick="pasteFromClipboard()" title="从剪贴板粘贴">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger" onclick="clearText()" title="清空内容">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg" onclick="generateSpeech()" id="generateBtn">
+                                <i class="bi bi-play-fill"></i> 生成语音
+                            </button>
+                        </div>
+                        
+                        <div id="generateStatus" class="status-message"></div>
+                    </div>
+                </div>
+                
+                <!-- Audio Output -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-volume-up"></i> 音频输出
+                    </div>
+                    <div class="card-body">
+                        <div id="audioOutput" class="audio-player-container">
+                            <p class="text-muted text-center mb-0">
+                                <i class="bi bi-music-note-beamed"></i> 生成的音频将在此处播放
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex gap-2 mt-3" id="audioActions" style="display: none !important;">
+                            <button type="button" class="btn btn-secondary flex-grow-1" onclick="downloadAudio()">
+                                <i class="bi bi-download"></i> 下载音频
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="copyAudioUrl()">
+                                <i class="bi bi-link-45deg"></i> 复制链接
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- History -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-clock-history"></i> 历史记录</span>
+                        <button type="button" class="btn btn-sm btn-link" onclick="clearHistory()">清空</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="historyList">
+                            <p class="text-muted text-center mb-0">暂无历史记录</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- API Info -->
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-info-circle"></i> API 信息
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label"><i class="bi bi-link-45deg"></i> API 基础地址</label>
+                    <input type="text" class="form-control" id="apiBaseUrl" value="{{ api_base_url }}" 
+                           placeholder="http://117.72.56.34:5050" oninput="updateCurlExample()">
+                    <div class="form-text">可自定义API服务器地址</div>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>API 端点</label>
+                        <span><span id="apiEndpointDisplay">{{ api_base_url }}</span>/v1/audio/speech</span>
+                    </div>
+                    <div class="info-item">
+                        <label>支持格式</label>
+                        <span>{{ formats | join(', ') }}</span>
+                    </div>
+                    <div class="info-item">
+                        <label>速度范围</label>
+                        <span>0.25x - 4.0x</span>
+                    </div>
+                    <div class="info-item">
+                        <label>OpenAI 语音</label>
+                        <span>{{ openai_voices | join(', ') }}</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h6><i class="bi bi-terminal"></i> 使用示例 (curl) <small class="text-muted">- 随选项变化</small></h6>
+                    <pre class="bg-dark text-light p-3 rounded" style="font-size: 0.85rem; overflow-x: auto;"><code id="curlExample">curl -X POST "<span id="curlBaseUrl">{{ api_base_url }}</span>/v1/audio/speech" \
+  -H "Authorization: Bearer your_api_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "<span id="curlModel">tts-1</span>",
+    "input": "Hello, world!",
+    "voice": "<span id="curlVoice">{{ default_voice }}</span>",
+    "response_format": "<span id="curlFormat">{{ default_format }}</span>",
+    "speed": <span id="curlSpeed">{{ default_speed }}</span>
+  }' \
+  --output speech.<span id="curlExt">{{ default_format }}</span></code></pre>
+                    <button class="btn btn-sm btn-outline-light mt-2" onclick="copyCurlExample()">
+                        <i class="bi bi-clipboard"></i> 复制命令
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center text-white mt-4 mb-3">
+            <p class="mb-1">基于 Edge-TTS 的 OpenAI 兼容 TTS API</p>
+            <small class="opacity-75">适用于个人使用 | GPL-3.0 许可证</small>
+        </div>
+    </div>
+    
+    <script>
+        /**
+         * 最佳流式音频播放器
+         * 方案：累积所有数据，定期更新，播放完自动续播
+         * 优点：简单稳定，完整控件，兼容所有浏览器
+         */
+        class SmartStreamingPlayer {
+            constructor(container, options = {}) {
+                this.container = container;
+                this.options = {
+                    format: 'mp3',
+                    ...options
+                };
+                
+                this.chunks = [];
+                this.totalSize = 0;
+                this.audioElement = null;
+                this.currentUrl = null;
+                this.isFinished = false;
+                this.lastPlayedTime = 0;
+                
+                this.init();
+            }
+            
+            init() {
+                this.container.innerHTML = `
+                    <div class="streaming-player">
+                        <div class="player-status mb-2">
+                            <small class="text-info">
+                                <i class="bi bi-broadcast"></i> 
+                                <span class="status-text">准备中...</span>
+                            </small>
+                        </div>
+                        <audio controls style="width: 100%;"></audio>
+                    </div>
+                `;
+                
+                this.audioElement = this.container.querySelector('audio');
+                this.statusText = this.container.querySelector('.status-text');
+                
+                // 核心：播放结束时检查是否有新内容
+                this.audioElement.addEventListener('ended', () => {
+                    if (!this.isFinished) {
+                        // 还没生成完，更新并继续播放
+                        this.refreshAudio();
+                    }
+                });
+                
+                // 播放快结束时预更新
+                this.audioElement.addEventListener('timeupdate', () => {
+                    if (this.isFinished) return;
+                    
+                    const remaining = (this.audioElement.duration || 0) - (this.audioElement.currentTime || 0);
+                    if (remaining < 0.5 && remaining > 0) {
+                        this.refreshAudio();
+                    }
+                });
+            }
+            
+            addAudioData(audioData) {
+                const uint8Array = new Uint8Array(audioData);
+                this.chunks.push(uint8Array);
+                this.totalSize += uint8Array.length;
+                
+                // 首次有数据时立即创建音频
+                if (this.chunks.length === 1) {
+                    this.refreshAudio();
+                }
+            }
+            
+            refreshAudio() {
+                if (this.chunks.length === 0) return;
+                
+                const currentTime = this.audioElement.currentTime || 0;
+                const wasPlaying = !this.audioElement.paused;
+                const rate = this.audioElement.playbackRate || 1;
+                
+                // 清理旧 URL
+                if (this.currentUrl) {
+                    URL.revokeObjectURL(this.currentUrl);
+                }
+                
+                // 创建新音频
+                const format = this.options.format || 'mp3';
+                const mimeType = format === 'mp3' ? 'audio/mpeg' : `audio/${format}`;
+                const blob = new Blob(this.chunks, { type: mimeType });
+                this.currentUrl = URL.createObjectURL(blob);
+                
+                this.audioElement.src = this.currentUrl;
+                this.audioElement.playbackRate = rate;
+                
+                // 恢复播放位置
+                this.audioElement.addEventListener('loadedmetadata', () => {
+                    if (currentTime > 0 && currentTime < this.audioElement.duration) {
+                        this.audioElement.currentTime = currentTime;
+                    }
+                    if (wasPlaying) {
+                        this.audioElement.play().catch(() => {});
+                    }
+                }, { once: true });
+                
+                console.log(`[Player] Refreshed: ${(blob.size/1024).toFixed(1)}KB`);
+            }
+            
+            play() {
+                return this.audioElement ? this.audioElement.play() : Promise.reject();
+            }
+            
+            pause() {
+                if (this.audioElement) this.audioElement.pause();
+            }
+            
+            updateStatus(message) {
+                if (this.statusText) this.statusText.textContent = message;
+            }
+            
+            finalize() {
+                this.isFinished = true;
+                this.refreshAudio(); // 最终刷新确保完整
+                this.updateStatus('生成完成');
+            }
+            
+            getAudioElement() {
+                return this.audioElement;
+            }
+            
+            destroy() {
+                if (this.currentUrl) URL.revokeObjectURL(this.currentUrl);
+                this.chunks = [];
+            }
+        }
+        
+        // 全局变量
+        let currentAudioUrl = null;
+        let currentAudioBlob = null;
+        let history = [];
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCharCount();
+            document.getElementById('input_text').addEventListener('input', updateCharCount);
+            document.getElementById('speed').addEventListener('input', updateSpeedValue);
+            
+            // 设置文件上传
+            setupFileUpload();
+            
+            // 加载历史记录
+            loadHistory();
+            
+            // 监听选项变化，更新curl示例
+            document.getElementById('model').addEventListener('change', updateCurlExample);
+            document.getElementById('voice').addEventListener('change', updateCurlExample);
+            document.getElementById('custom_voice').addEventListener('input', updateCurlExample);
+            document.getElementById('speed').addEventListener('input', updateCurlExample);
+            
+            // 监听格式变化
+            document.querySelectorAll('input[name="response_format"]').forEach(radio => {
+                radio.addEventListener('change', updateCurlExample);
+            });
+            
+            // 初始更新
+            updateCurlExample();
+        });
+        
+        // 更新curl示例
+        function updateCurlExample() {
+            const apiBaseUrl = document.getElementById('apiBaseUrl').value.trim();
+            const model = document.getElementById('model').value;
+            const customVoice = document.getElementById('custom_voice').value.trim();
+            const voice = customVoice || document.getElementById('voice').value;
+            const format = document.querySelector('input[name="response_format"]:checked').value;
+            const speed = document.getElementById('speed').value;
+            
+            // 更新API URL
+            document.getElementById('curlBaseUrl').textContent = apiBaseUrl;
+            document.getElementById('apiEndpointDisplay').textContent = apiBaseUrl;
+            
+            // 更新其他参数
+            document.getElementById('curlModel').textContent = model;
+            document.getElementById('curlVoice').textContent = voice;
+            document.getElementById('curlFormat').textContent = format;
+            document.getElementById('curlSpeed').textContent = speed;
+            document.getElementById('curlExt').textContent = format;
+        }
+        
+        // 记录到服务器数据库
+        function logToServer(data) {
+            fetch('/api/log_generation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(e => console.log('Log to server failed:', e));
+        }
+        
+        // 复制curl命令
+        function copyCurlExample() {
+            const code = document.getElementById('curlExample');
+            const text = code.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // 显示复制成功提示
+                const btn = event.target.closest('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check"></i> 已复制';
+                btn.classList.remove('btn-outline-light');
+                btn.classList.add('btn-success');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('btn-success');
+                    btn.classList.add('btn-outline-light');
+                }, 2000);
+            }).catch(err => {
+                alert('复制失败: ' + err);
+            });
+        }
+        
+        // 当前输入模式和上传的文件内容
+        let currentInputMode = 'text';
+        let uploadedFileContent = '';
+        let uploadedFileName = '';
+        let urlLoadedText = ''; // URL加载的文本
+        
+        // 更新字符计数
+        function updateCharCount() {
+            const text = getCurrentText();
+            document.getElementById('charCount').textContent = text.length;
+            
+            // 更新行数
+            const lines = text.split('\n').length;
+            document.getElementById('lineCount').textContent = lines;
+            document.getElementById('wordCountBadge').style.display = text.length > 0 ? 'inline' : 'none';
+        }
+        
+        // 获取当前文本（根据输入模式）
+        function getCurrentText() {
+            if (currentInputMode === 'file' && uploadedFileContent) {
+                return uploadedFileContent;
+            }
+            if (currentInputMode === 'url' && urlLoadedText) {
+                return urlLoadedText;
+            }
+            return document.getElementById('input_text').value;
+        }
+        
+        // 切换输入模式
+        function switchInputMode(mode) {
+            currentInputMode = mode;
+            
+            // 更新标签样式
+            document.getElementById('tabText').classList.toggle('active', mode === 'text');
+            document.getElementById('tabFile').classList.toggle('active', mode === 'file');
+            document.getElementById('tabUrl').classList.toggle('active', mode === 'url');
+            
+            // 切换显示区域
+            document.getElementById('textInputMode').style.display = mode === 'text' ? 'block' : 'none';
+            document.getElementById('fileInputMode').style.display = mode === 'file' ? 'block' : 'none';
+            document.getElementById('urlInputMode').style.display = mode === 'url' ? 'block' : 'none';
+            
+            // 更新字符计数
+            updateCharCount();
+        }
+        
+        // 从URL加载文本
+        async function loadFromUrl() {
+            const urlInput = document.getElementById('textUrl');
+            const url = urlInput.value.trim();
+            const statusEl = document.getElementById('urlLoadStatus');
+            const loadBtn = document.getElementById('loadUrlBtn');
+            
+            if (!url) {
+                showUrlStatus('请输入URL', 'warning');
+                return;
+            }
+            
+            // 显示加载中
+            loadBtn.disabled = true;
+            loadBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> 加载中...';
+            showUrlStatus('<i class="bi bi-hourglass-split"></i> 正在加载...', 'info');
+            
+            try {
+                const response = await fetch('/api/fetch_url', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: url })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    urlLoadedText = data.text;
+                    
+                    // 显示预览
+                    const previewEl = document.getElementById('urlPreview');
+                    const contentEl = document.getElementById('urlPreviewContent');
+                    const charCountEl = document.getElementById('urlCharCount');
+                    
+                    previewEl.style.display = 'block';
+                    contentEl.textContent = data.text;
+                    charCountEl.textContent = `${data.length} 字符`;
+                    
+                    showUrlStatus(`<i class="bi bi-check-circle"></i> 加载成功！${data.length} 字符`, 'success');
+                    updateCharCount();
+                } else {
+                    showUrlStatus(`<i class="bi bi-exclamation-circle"></i> ${data.error}`, 'danger');
+                }
+            } catch (e) {
+                showUrlStatus(`<i class="bi bi-exclamation-circle"></i> 加载失败: ${e.message}`, 'danger');
+            } finally {
+                loadBtn.disabled = false;
+                loadBtn.innerHTML = '<i class="bi bi-download"></i> 加载';
+            }
+        }
+        
+        function showUrlStatus(message, type) {
+            const statusEl = document.getElementById('urlLoadStatus');
+            statusEl.style.display = 'block';
+            statusEl.className = `alert alert-${type} py-2`;
+            statusEl.innerHTML = message;
+        }
+        
+        function clearUrlContent() {
+            urlLoadedText = '';
+            document.getElementById('urlPreview').style.display = 'none';
+            document.getElementById('urlPreviewContent').textContent = '';
+            document.getElementById('urlLoadStatus').style.display = 'none';
+            document.getElementById('textUrl').value = '';
+            updateCharCount();
+        }
+        
+        // 处理文件上传
+        function setupFileUpload() {
+            const fileInput = document.getElementById('fileUpload');
+            const uploadZone = document.getElementById('uploadZone');
+            
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+            
+            // 拖拽事件
+            uploadZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadZone.classList.add('drag-over');
+            });
+            
+            uploadZone.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadZone.classList.remove('drag-over');
+            });
+            
+            uploadZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                uploadZone.classList.remove('drag-over');
+                
+                if (e.dataTransfer.files.length > 0) {
+                    handleFile(e.dataTransfer.files[0]);
+                }
+            });
+        }
+        
+        // 处理文件
+        function handleFile(file) {
+            const allowedTypes = ['.txt', '.md', '.text', '.srt', '.vtt', '.json'];
+            const fileName = file.name.toLowerCase();
+            const isAllowed = allowedTypes.some(ext => fileName.endsWith(ext));
+            
+            if (!isAllowed) {
+                alert('不支持的文件格式！请上传 .txt, .md, .srt, .vtt 格式的文件。');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                let content = e.target.result;
+                
+                // 处理 SRT/VTT 字幕文件，提取纯文本
+                if (fileName.endsWith('.srt') || fileName.endsWith('.vtt')) {
+                    content = parseSubtitle(content);
+                }
+                
+                uploadedFileContent = content;
+                uploadedFileName = file.name;
+                
+                // 显示文件信息
+                document.getElementById('uploadZone').style.display = 'none';
+                document.getElementById('uploadedFileInfo').style.display = 'block';
+                document.getElementById('uploadedFileName').textContent = file.name;
+                document.getElementById('uploadedFileSize').textContent = formatFileSize(file.size) + ' · ' + content.length + ' 字符';
+                
+                // 显示预览
+                document.getElementById('filePreview').style.display = 'block';
+                document.getElementById('filePreviewContent').textContent = content.substring(0, 1000) + (content.length > 1000 ? '\n...(更多内容已省略)' : '');
+                
+                // 更新字符计数
+                updateCharCount();
+            };
+            reader.readAsText(file);
+        }
+        
+        // 解析字幕文件
+        function parseSubtitle(content) {
+            // 移除时间戳和序号，只保留文本
+            const lines = content.split('\n');
+            const textLines = [];
+            
+            for (let line of lines) {
+                line = line.trim();
+                // 跳过空行、序号、时间戳、WEBVTT 头
+                if (!line) continue;
+                if (/^\d+$/.test(line)) continue;
+                if (/^\d{2}:\d{2}/.test(line)) continue;
+                if (line.startsWith('WEBVTT')) continue;
+                if (line.includes('-->')) continue;
+                
+                textLines.push(line);
+            }
+            
+            return textLines.join('\n');
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+        
+        // 移除上传的文件
+        function removeUploadedFile() {
+            uploadedFileContent = '';
+            uploadedFileName = '';
+            
+            document.getElementById('fileUpload').value = '';
+            document.getElementById('uploadZone').style.display = 'block';
+            document.getElementById('uploadedFileInfo').style.display = 'none';
+            document.getElementById('filePreview').style.display = 'none';
+            
+            updateCharCount();
+        }
+        
+        // 切换预览展开/收起
+        function toggleFullPreview() {
+            const content = document.getElementById('filePreviewContent');
+            const toggleText = document.getElementById('previewToggleText');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                toggleText.textContent = '展开全部';
+                content.textContent = uploadedFileContent.substring(0, 1000) + (uploadedFileContent.length > 1000 ? '\n...(更多内容已省略)' : '');
+            } else {
+                content.classList.add('expanded');
+                toggleText.textContent = '收起';
+                content.textContent = uploadedFileContent;
+            }
+        }
+        
+        // 从剪贴板粘贴
+        async function pasteFromClipboard() {
+            try {
+                const text = await navigator.clipboard.readText();
+                if (currentInputMode === 'text') {
+                    document.getElementById('input_text').value = text;
+                } else {
+                    // 在文件模式下，切换到文本模式并粘贴
+                    switchInputMode('text');
+                    document.getElementById('input_text').value = text;
+                }
+                updateCharCount();
+            } catch (err) {
+                alert('无法访问剪贴板，请手动粘贴。');
+            }
+        }
+        
+        // 更新速度显示
+        function updateSpeedValue() {
+            const speed = document.getElementById('speed').value;
+            document.getElementById('speedValue').textContent = speed + 'x';
+        }
+        
+        // 切换 API Key 可见性
+        function toggleApiKeyVisibility() {
+            const input = document.getElementById('api_key');
+            const icon = document.getElementById('apiKeyToggleIcon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'bi bi-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'bi bi-eye';
+            }
+        }
+        
+        // 清空文本
+        function clearText() {
+            if (currentInputMode === 'text') {
+                document.getElementById('input_text').value = '';
+            } else {
+                removeUploadedFile();
+            }
+            updateCharCount();
+        }
+        
+        // 测试连接
+        async function testConnection() {
+            const statusEl = document.getElementById('connectionStatus');
+            statusEl.className = 'status-message loading';
+            statusEl.innerHTML = '<div class="loading-spinner"></div> 正在测试连接...';
+            statusEl.style.display = 'flex';
+            
+            try {
+                const response = await fetch('/api/test_connection', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ api_key: document.getElementById('api_key').value })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    statusEl.className = 'status-message success';
+                    statusEl.innerHTML = '<i class="bi bi-check-circle"></i> 连接成功！';
+                } else {
+                    statusEl.className = 'status-message error';
+                    statusEl.innerHTML = '<i class="bi bi-x-circle"></i> ' + data.message;
+                }
+            } catch (error) {
+                statusEl.className = 'status-message error';
+                statusEl.innerHTML = '<i class="bi bi-x-circle"></i> 连接失败: ' + error.message;
+            }
+        }
+        
+        // 加载模型
+        async function loadModels() {
+            try {
+                const apiKey = document.getElementById('api_key').value;
+                const response = await fetch('/api/models', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ api_key: apiKey })
+                });
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert('加载模型失败: ' + data.error);
+                    return;
+                }
+                
+                // API 返回 {"models": [{"id": "tts-1"}, ...]}
+                const models = data.models || data;
+                
+                const select = document.getElementById('model');
+                const currentValue = select.value;
+                select.innerHTML = '';
+                
+                models.forEach(model => {
+                    const option = document.createElement('option');
+                    const modelId = model.id || model;
+                    option.value = modelId;
+                    option.textContent = modelId;
+                    select.appendChild(option);
+                });
+                
+                if (models.some(m => (m.id || m) === currentValue)) {
+                    select.value = currentValue;
+                }
+                
+                alert('已加载 ' + models.length + ' 个模型');
+            } catch (error) {
+                alert('加载模型失败: ' + error.message);
+            }
+        }
+        
+        // 完整的 Edge-TTS 语音列表
+        const ALL_EDGE_TTS_VOICES = {
+            "OpenAI Compatible": [
+                {name: "alloy", gender: "Neutral"},
+                {name: "echo", gender: "Male"},
+                {name: "fable", gender: "Female"},
+                {name: "onyx", gender: "Male"},
+                {name: "nova", gender: "Female"},
+                {name: "shimmer", gender: "Female"}
+            ],
+            "zh-CN (中文-普通话)": [
+                {name: "zh-CN-XiaoxiaoNeural", gender: "Female"},
+                {name: "zh-CN-YunxiNeural", gender: "Male"},
+                {name: "zh-CN-YunjianNeural", gender: "Male"},
+                {name: "zh-CN-XiaoyiNeural", gender: "Female"},
+                {name: "zh-CN-YunyangNeural", gender: "Male"},
+                {name: "zh-CN-XiaohanNeural", gender: "Female"},
+                {name: "zh-CN-XiaomoNeural", gender: "Female"},
+                {name: "zh-CN-XiaochenNeural", gender: "Female"},
+                {name: "zh-CN-XiaoruiNeural", gender: "Female"},
+                {name: "zh-CN-XiaoshuangNeural", gender: "Female"},
+                {name: "zh-CN-XiaoxuanNeural", gender: "Female"},
+                {name: "zh-CN-XiaoyanNeural", gender: "Female"},
+                {name: "zh-CN-XiaoyouNeural", gender: "Female"},
+                {name: "zh-CN-XiaozhenNeural", gender: "Female"},
+                {name: "zh-CN-XiaomengNeural", gender: "Female"},
+                {name: "zh-CN-YunfengNeural", gender: "Male"},
+                {name: "zh-CN-YunhaoNeural", gender: "Male"},
+                {name: "zh-CN-YunxiaNeural", gender: "Male"},
+                {name: "zh-CN-YunyeNeural", gender: "Male"},
+                {name: "zh-CN-YunzeNeural", gender: "Male"},
+                {name: "zh-CN-liaoning-XiaobeiNeural", gender: "Female"},
+                {name: "zh-CN-shaanxi-XiaoniNeural", gender: "Female"}
+            ],
+            "zh-TW (中文-台湾)": [
+                {name: "zh-TW-HsiaoChenNeural", gender: "Female"},
+                {name: "zh-TW-HsiaoYuNeural", gender: "Female"},
+                {name: "zh-TW-YunJheNeural", gender: "Male"}
+            ],
+            "zh-HK (中文-粤语)": [
+                {name: "zh-HK-HiuGaaiNeural", gender: "Female"},
+                {name: "zh-HK-HiuMaanNeural", gender: "Female"},
+                {name: "zh-HK-WanLungNeural", gender: "Male"}
+            ],
+            "en-US (English-US)": [
+                {name: "en-US-AvaNeural", gender: "Female"},
+                {name: "en-US-AndrewNeural", gender: "Male"},
+                {name: "en-US-EmmaNeural", gender: "Female"},
+                {name: "en-US-BrianNeural", gender: "Male"},
+                {name: "en-US-JennyNeural", gender: "Female"},
+                {name: "en-US-GuyNeural", gender: "Male"},
+                {name: "en-US-AriaNeural", gender: "Female"},
+                {name: "en-US-DavisNeural", gender: "Male"},
+                {name: "en-US-JaneNeural", gender: "Female"},
+                {name: "en-US-JasonNeural", gender: "Male"},
+                {name: "en-US-SaraNeural", gender: "Female"},
+                {name: "en-US-TonyNeural", gender: "Male"},
+                {name: "en-US-NancyNeural", gender: "Female"},
+                {name: "en-US-AmberNeural", gender: "Female"},
+                {name: "en-US-AnaNeural", gender: "Female"},
+                {name: "en-US-AshleyNeural", gender: "Female"},
+                {name: "en-US-BrandonNeural", gender: "Male"},
+                {name: "en-US-ChristopherNeural", gender: "Male"},
+                {name: "en-US-CoraNeural", gender: "Female"},
+                {name: "en-US-ElizabethNeural", gender: "Female"},
+                {name: "en-US-EricNeural", gender: "Male"},
+                {name: "en-US-JacobNeural", gender: "Male"},
+                {name: "en-US-MichelleNeural", gender: "Female"},
+                {name: "en-US-MonicaNeural", gender: "Female"},
+                {name: "en-US-RogerNeural", gender: "Male"},
+                {name: "en-US-SteffanNeural", gender: "Male"}
+            ],
+            "en-GB (English-UK)": [
+                {name: "en-GB-SoniaNeural", gender: "Female"},
+                {name: "en-GB-RyanNeural", gender: "Male"},
+                {name: "en-GB-LibbyNeural", gender: "Female"},
+                {name: "en-GB-AbbiNeural", gender: "Female"},
+                {name: "en-GB-AlfieNeural", gender: "Male"},
+                {name: "en-GB-BellaNeural", gender: "Female"},
+                {name: "en-GB-ElliotNeural", gender: "Male"},
+                {name: "en-GB-EthanNeural", gender: "Male"},
+                {name: "en-GB-HollieNeural", gender: "Female"},
+                {name: "en-GB-MaisieNeural", gender: "Female"},
+                {name: "en-GB-NoahNeural", gender: "Male"},
+                {name: "en-GB-OliverNeural", gender: "Male"},
+                {name: "en-GB-OliviaNeural", gender: "Female"},
+                {name: "en-GB-ThomasNeural", gender: "Male"}
+            ],
+            "ja-JP (日本語)": [
+                {name: "ja-JP-NanamiNeural", gender: "Female"},
+                {name: "ja-JP-KeitaNeural", gender: "Male"},
+                {name: "ja-JP-AoiNeural", gender: "Female"},
+                {name: "ja-JP-DaichiNeural", gender: "Male"},
+                {name: "ja-JP-MayuNeural", gender: "Female"},
+                {name: "ja-JP-NaokiNeural", gender: "Male"},
+                {name: "ja-JP-ShioriNeural", gender: "Female"}
+            ],
+            "ko-KR (한국어)": [
+                {name: "ko-KR-SunHiNeural", gender: "Female"},
+                {name: "ko-KR-InJoonNeural", gender: "Male"},
+                {name: "ko-KR-BongJinNeural", gender: "Male"},
+                {name: "ko-KR-GookMinNeural", gender: "Male"},
+                {name: "ko-KR-JiMinNeural", gender: "Female"},
+                {name: "ko-KR-SeoHyeonNeural", gender: "Female"},
+                {name: "ko-KR-SoonBokNeural", gender: "Female"},
+                {name: "ko-KR-YuJinNeural", gender: "Female"}
+            ],
+            "de-DE (Deutsch)": [
+                {name: "de-DE-KatjaNeural", gender: "Female"},
+                {name: "de-DE-ConradNeural", gender: "Male"},
+                {name: "de-DE-AmalaNeural", gender: "Female"},
+                {name: "de-DE-BerndNeural", gender: "Male"},
+                {name: "de-DE-ChristophNeural", gender: "Male"},
+                {name: "de-DE-ElkeNeural", gender: "Female"},
+                {name: "de-DE-GiselaNeural", gender: "Female"},
+                {name: "de-DE-KasperNeural", gender: "Male"},
+                {name: "de-DE-KillianNeural", gender: "Male"},
+                {name: "de-DE-KlarissaNeural", gender: "Female"},
+                {name: "de-DE-KlausNeural", gender: "Male"},
+                {name: "de-DE-LouisaNeural", gender: "Female"},
+                {name: "de-DE-MajaNeural", gender: "Female"},
+                {name: "de-DE-RalfNeural", gender: "Male"},
+                {name: "de-DE-TanjaNeural", gender: "Female"}
+            ],
+            "fr-FR (Français)": [
+                {name: "fr-FR-DeniseNeural", gender: "Female"},
+                {name: "fr-FR-HenriNeural", gender: "Male"},
+                {name: "fr-FR-AlainNeural", gender: "Male"},
+                {name: "fr-FR-BrigitteNeural", gender: "Female"},
+                {name: "fr-FR-CelesteNeural", gender: "Female"},
+                {name: "fr-FR-ClaudeNeural", gender: "Male"},
+                {name: "fr-FR-CoralieNeural", gender: "Female"},
+                {name: "fr-FR-EloiseNeural", gender: "Female"},
+                {name: "fr-FR-JacquelineNeural", gender: "Female"},
+                {name: "fr-FR-JeromeNeural", gender: "Male"},
+                {name: "fr-FR-JosephineNeural", gender: "Female"},
+                {name: "fr-FR-MauriceNeural", gender: "Male"},
+                {name: "fr-FR-YvesNeural", gender: "Male"},
+                {name: "fr-FR-YvetteNeural", gender: "Female"}
+            ],
+            "es-ES (Español)": [
+                {name: "es-ES-ElviraNeural", gender: "Female"},
+                {name: "es-ES-AlvaroNeural", gender: "Male"},
+                {name: "es-ES-AbrilNeural", gender: "Female"},
+                {name: "es-ES-ArnauNeural", gender: "Male"},
+                {name: "es-ES-DarioNeural", gender: "Male"},
+                {name: "es-ES-EliasNeural", gender: "Male"},
+                {name: "es-ES-EstrellaNeural", gender: "Female"},
+                {name: "es-ES-IreneNeural", gender: "Female"},
+                {name: "es-ES-LaiaNeural", gender: "Female"},
+                {name: "es-ES-LiaNeural", gender: "Female"},
+                {name: "es-ES-NilNeural", gender: "Male"},
+                {name: "es-ES-SaulNeural", gender: "Male"},
+                {name: "es-ES-TeoNeural", gender: "Male"},
+                {name: "es-ES-TrianaNeural", gender: "Female"},
+                {name: "es-ES-VeraNeural", gender: "Female"}
+            ],
+            "es-MX (Español-México)": [
+                {name: "es-MX-DaliaNeural", gender: "Female"},
+                {name: "es-MX-JorgeNeural", gender: "Male"},
+                {name: "es-MX-BeatrizNeural", gender: "Female"},
+                {name: "es-MX-CandelaNeural", gender: "Female"},
+                {name: "es-MX-CarlotaNeural", gender: "Female"},
+                {name: "es-MX-CecilioNeural", gender: "Male"},
+                {name: "es-MX-GerardoNeural", gender: "Male"},
+                {name: "es-MX-LarissaNeural", gender: "Female"},
+                {name: "es-MX-LibertoNeural", gender: "Male"},
+                {name: "es-MX-LucianoNeural", gender: "Male"},
+                {name: "es-MX-MarinaNeural", gender: "Female"},
+                {name: "es-MX-NuriaNeural", gender: "Female"},
+                {name: "es-MX-PelayoNeural", gender: "Male"},
+                {name: "es-MX-RenataNeural", gender: "Female"},
+                {name: "es-MX-YagoNeural", gender: "Male"}
+            ],
+            "it-IT (Italiano)": [
+                {name: "it-IT-IsabellaNeural", gender: "Female"},
+                {name: "it-IT-DiegoNeural", gender: "Male"},
+                {name: "it-IT-ElsaNeural", gender: "Female"},
+                {name: "it-IT-BenignoNeural", gender: "Male"},
+                {name: "it-IT-CalimeroNeural", gender: "Male"},
+                {name: "it-IT-CataldoNeural", gender: "Male"},
+                {name: "it-IT-FabiolaNeural", gender: "Female"},
+                {name: "it-IT-FiammaNeural", gender: "Female"},
+                {name: "it-IT-GianniNeural", gender: "Male"},
+                {name: "it-IT-ImeldaNeural", gender: "Female"},
+                {name: "it-IT-IrmaNeural", gender: "Female"},
+                {name: "it-IT-LisandroNeural", gender: "Male"},
+                {name: "it-IT-PalmiraNeural", gender: "Female"},
+                {name: "it-IT-PierinaNeural", gender: "Female"},
+                {name: "it-IT-RinaldoNeural", gender: "Male"}
+            ],
+            "pt-BR (Português-Brasil)": [
+                {name: "pt-BR-FranciscaNeural", gender: "Female"},
+                {name: "pt-BR-AntonioNeural", gender: "Male"},
+                {name: "pt-BR-BrendaNeural", gender: "Female"},
+                {name: "pt-BR-DonatoNeural", gender: "Male"},
+                {name: "pt-BR-ElzaNeural", gender: "Female"},
+                {name: "pt-BR-FabioNeural", gender: "Male"},
+                {name: "pt-BR-GiovannaNeural", gender: "Female"},
+                {name: "pt-BR-HumbertoNeural", gender: "Male"},
+                {name: "pt-BR-JulioNeural", gender: "Male"},
+                {name: "pt-BR-LeilaNeural", gender: "Female"},
+                {name: "pt-BR-LeticiaNeural", gender: "Female"},
+                {name: "pt-BR-ManuelaNeural", gender: "Female"},
+                {name: "pt-BR-NicolauNeural", gender: "Male"},
+                {name: "pt-BR-ValerioNeural", gender: "Male"},
+                {name: "pt-BR-YaraNeural", gender: "Female"}
+            ],
+            "ru-RU (Русский)": [
+                {name: "ru-RU-SvetlanaNeural", gender: "Female"},
+                {name: "ru-RU-DmitryNeural", gender: "Male"},
+                {name: "ru-RU-DariyaNeural", gender: "Female"}
+            ],
+            "ar-SA (العربية)": [
+                {name: "ar-SA-ZariyahNeural", gender: "Female"},
+                {name: "ar-SA-HamedNeural", gender: "Male"}
+            ],
+            "ar-EG (العربية-مصر)": [
+                {name: "ar-EG-SalmaNeural", gender: "Female"},
+                {name: "ar-EG-ShakirNeural", gender: "Male"}
+            ],
+            "hi-IN (हिन्दी)": [
+                {name: "hi-IN-SwaraNeural", gender: "Female"},
+                {name: "hi-IN-MadhurNeural", gender: "Male"}
+            ],
+            "th-TH (ไทย)": [
+                {name: "th-TH-PremwadeeNeural", gender: "Female"},
+                {name: "th-TH-NiwatNeural", gender: "Male"}
+            ],
+            "vi-VN (Tiếng Việt)": [
+                {name: "vi-VN-HoaiMyNeural", gender: "Female"},
+                {name: "vi-VN-NamMinhNeural", gender: "Male"}
+            ],
+            "id-ID (Bahasa Indonesia)": [
+                {name: "id-ID-GadisNeural", gender: "Female"},
+                {name: "id-ID-ArdiNeural", gender: "Male"}
+            ],
+            "ms-MY (Bahasa Melayu)": [
+                {name: "ms-MY-YasminNeural", gender: "Female"},
+                {name: "ms-MY-OsmanNeural", gender: "Male"}
+            ],
+            "nl-NL (Nederlands)": [
+                {name: "nl-NL-FennaNeural", gender: "Female"},
+                {name: "nl-NL-MaartenNeural", gender: "Male"},
+                {name: "nl-NL-ColetteNeural", gender: "Female"}
+            ],
+            "pl-PL (Polski)": [
+                {name: "pl-PL-AgnieszkaNeural", gender: "Female"},
+                {name: "pl-PL-MarekNeural", gender: "Male"},
+                {name: "pl-PL-ZofiaNeural", gender: "Female"}
+            ],
+            "tr-TR (Türkçe)": [
+                {name: "tr-TR-EmelNeural", gender: "Female"},
+                {name: "tr-TR-AhmetNeural", gender: "Male"}
+            ],
+            "sv-SE (Svenska)": [
+                {name: "sv-SE-SofieNeural", gender: "Female"},
+                {name: "sv-SE-MattiasNeural", gender: "Male"},
+                {name: "sv-SE-HilleviNeural", gender: "Female"}
+            ],
+            "da-DK (Dansk)": [
+                {name: "da-DK-ChristelNeural", gender: "Female"},
+                {name: "da-DK-JeppeNeural", gender: "Male"}
+            ],
+            "fi-FI (Suomi)": [
+                {name: "fi-FI-SelmaNeural", gender: "Female"},
+                {name: "fi-FI-HarriNeural", gender: "Male"},
+                {name: "fi-FI-NooraNeural", gender: "Female"}
+            ],
+            "no-NO (Norsk)": [
+                {name: "no-NO-PernilleNeural", gender: "Female"},
+                {name: "no-NO-FinnNeural", gender: "Male"},
+                {name: "no-NO-IselinNeural", gender: "Female"}
+            ],
+            "cs-CZ (Čeština)": [
+                {name: "cs-CZ-VlastaNeural", gender: "Female"},
+                {name: "cs-CZ-AntoninNeural", gender: "Male"}
+            ],
+            "el-GR (Ελληνικά)": [
+                {name: "el-GR-AthinaNeural", gender: "Female"},
+                {name: "el-GR-NestorasNeural", gender: "Male"}
+            ],
+            "he-IL (עברית)": [
+                {name: "he-IL-HilaNeural", gender: "Female"},
+                {name: "he-IL-AvriNeural", gender: "Male"}
+            ],
+            "hu-HU (Magyar)": [
+                {name: "hu-HU-NoemiNeural", gender: "Female"},
+                {name: "hu-HU-TamasNeural", gender: "Male"}
+            ],
+            "ro-RO (Română)": [
+                {name: "ro-RO-AlinaNeural", gender: "Female"},
+                {name: "ro-RO-EmilNeural", gender: "Male"}
+            ],
+            "sk-SK (Slovenčina)": [
+                {name: "sk-SK-ViktoriaNeural", gender: "Female"},
+                {name: "sk-SK-LukasNeural", gender: "Male"}
+            ],
+            "uk-UA (Українська)": [
+                {name: "uk-UA-PolinaNeural", gender: "Female"},
+                {name: "uk-UA-OstapNeural", gender: "Male"}
+            ],
+            "bg-BG (Български)": [
+                {name: "bg-BG-KalinaNeural", gender: "Female"},
+                {name: "bg-BG-BorislavNeural", gender: "Male"}
+            ],
+            "hr-HR (Hrvatski)": [
+                {name: "hr-HR-GabrijelaNeural", gender: "Female"},
+                {name: "hr-HR-SreckoNeural", gender: "Male"}
+            ],
+            "sl-SI (Slovenščina)": [
+                {name: "sl-SI-PetraNeural", gender: "Female"},
+                {name: "sl-SI-RokNeural", gender: "Male"}
+            ],
+            "ca-ES (Català)": [
+                {name: "ca-ES-JoanaNeural", gender: "Female"},
+                {name: "ca-ES-EnricNeural", gender: "Male"},
+                {name: "ca-ES-AlbaNeural", gender: "Female"}
+            ],
+            "af-ZA (Afrikaans)": [
+                {name: "af-ZA-AdriNeural", gender: "Female"},
+                {name: "af-ZA-WillemNeural", gender: "Male"}
+            ],
+            "bn-IN (বাংলা)": [
+                {name: "bn-IN-TanishaaNeural", gender: "Female"},
+                {name: "bn-IN-BashkarNeural", gender: "Male"}
+            ],
+            "ta-IN (தமிழ்)": [
+                {name: "ta-IN-PallaviNeural", gender: "Female"},
+                {name: "ta-IN-ValluvarNeural", gender: "Male"}
+            ],
+            "te-IN (తెలుగు)": [
+                {name: "te-IN-ShrutiNeural", gender: "Female"},
+                {name: "te-IN-MohanNeural", gender: "Male"}
+            ],
+            "mr-IN (मराठी)": [
+                {name: "mr-IN-AarohiNeural", gender: "Female"},
+                {name: "mr-IN-ManoharNeural", gender: "Male"}
+            ],
+            "gu-IN (ગુજરાતી)": [
+                {name: "gu-IN-DhwaniNeural", gender: "Female"},
+                {name: "gu-IN-NiranjanNeural", gender: "Male"}
+            ],
+            "kn-IN (ಕನ್ನಡ)": [
+                {name: "kn-IN-SapnaNeural", gender: "Female"},
+                {name: "kn-IN-GaganNeural", gender: "Male"}
+            ],
+            "ml-IN (മലയാളം)": [
+                {name: "ml-IN-SobhanaNeural", gender: "Female"},
+                {name: "ml-IN-MidhunNeural", gender: "Male"}
+            ],
+            "fil-PH (Filipino)": [
+                {name: "fil-PH-BlessicaNeural", gender: "Female"},
+                {name: "fil-PH-AngeloNeural", gender: "Male"}
+            ],
+            "en-AU (English-Australia)": [
+                {name: "en-AU-NatashaNeural", gender: "Female"},
+                {name: "en-AU-WilliamNeural", gender: "Male"},
+                {name: "en-AU-AnnetteNeural", gender: "Female"},
+                {name: "en-AU-CarlyNeural", gender: "Female"},
+                {name: "en-AU-DarrenNeural", gender: "Male"},
+                {name: "en-AU-DuncanNeural", gender: "Male"},
+                {name: "en-AU-ElsieNeural", gender: "Female"},
+                {name: "en-AU-FreyaNeural", gender: "Female"},
+                {name: "en-AU-JoanneNeural", gender: "Female"},
+                {name: "en-AU-KenNeural", gender: "Male"},
+                {name: "en-AU-KimNeural", gender: "Female"},
+                {name: "en-AU-NeilNeural", gender: "Male"},
+                {name: "en-AU-TimNeural", gender: "Male"},
+                {name: "en-AU-TinaNeural", gender: "Female"}
+            ],
+            "en-CA (English-Canada)": [
+                {name: "en-CA-ClaraNeural", gender: "Female"},
+                {name: "en-CA-LiamNeural", gender: "Male"}
+            ],
+            "en-IN (English-India)": [
+                {name: "en-IN-NeerjaNeural", gender: "Female"},
+                {name: "en-IN-PrabhatNeural", gender: "Male"}
+            ],
+            "en-IE (English-Ireland)": [
+                {name: "en-IE-EmilyNeural", gender: "Female"},
+                {name: "en-IE-ConnorNeural", gender: "Male"}
+            ],
+            "en-NZ (English-New Zealand)": [
+                {name: "en-NZ-MollyNeural", gender: "Female"},
+                {name: "en-NZ-MitchellNeural", gender: "Male"}
+            ],
+            "en-SG (English-Singapore)": [
+                {name: "en-SG-LunaNeural", gender: "Female"},
+                {name: "en-SG-WayneNeural", gender: "Male"}
+            ],
+            "en-ZA (English-South Africa)": [
+                {name: "en-ZA-LeahNeural", gender: "Female"},
+                {name: "en-ZA-LukeNeural", gender: "Male"}
+            ],
+            "en-PH (English-Philippines)": [
+                {name: "en-PH-RosaNeural", gender: "Female"},
+                {name: "en-PH-JamesNeural", gender: "Male"}
+            ],
+            "en-HK (English-Hong Kong)": [
+                {name: "en-HK-YanNeural", gender: "Female"},
+                {name: "en-HK-SamNeural", gender: "Male"}
+            ],
+            "fr-CA (Français-Canada)": [
+                {name: "fr-CA-SylvieNeural", gender: "Female"},
+                {name: "fr-CA-JeanNeural", gender: "Male"},
+                {name: "fr-CA-AntoineNeural", gender: "Male"}
+            ],
+            "fr-BE (Français-Belgique)": [
+                {name: "fr-BE-CharlineNeural", gender: "Female"},
+                {name: "fr-BE-GerardNeural", gender: "Male"}
+            ],
+            "fr-CH (Français-Suisse)": [
+                {name: "fr-CH-ArianeNeural", gender: "Female"},
+                {name: "fr-CH-FabriceNeural", gender: "Male"}
+            ],
+            "de-AT (Deutsch-Österreich)": [
+                {name: "de-AT-IngridNeural", gender: "Female"},
+                {name: "de-AT-JonasNeural", gender: "Male"}
+            ],
+            "de-CH (Deutsch-Schweiz)": [
+                {name: "de-CH-LeniNeural", gender: "Female"},
+                {name: "de-CH-JanNeural", gender: "Male"}
+            ],
+            "pt-PT (Português-Portugal)": [
+                {name: "pt-PT-RaquelNeural", gender: "Female"},
+                {name: "pt-PT-DuarteNeural", gender: "Male"},
+                {name: "pt-PT-FernandaNeural", gender: "Female"}
+            ]
+        };
+        
+        // 加载语音 - 使用本地完整列表
+        async function loadVoices() {
+            const select = document.getElementById('voice');
+            const currentValue = select.value;
+            select.innerHTML = '';
+            
+            let totalCount = 0;
+            
+            // 遍历所有语言组
+            Object.keys(ALL_EDGE_TTS_VOICES).forEach(locale => {
+                const group = document.createElement('optgroup');
+                group.label = locale;
+                
+                ALL_EDGE_TTS_VOICES[locale].forEach(voice => {
+                    const option = document.createElement('option');
+                    option.value = voice.name;
+                    option.textContent = voice.name + ` (${voice.gender})`;
+                    group.appendChild(option);
+                    totalCount++;
+                });
+                
+                select.appendChild(group);
+            });
+            
+            // 恢复选择
+            const options = Array.from(select.options);
+            if (options.some(opt => opt.value === currentValue)) {
+                select.value = currentValue;
+            }
+            
+            alert('已加载 ' + totalCount + ' 个语音');
+        }
+        
+        // 预览语音
+        async function previewVoice() {
+            const voice = document.getElementById('custom_voice').value || document.getElementById('voice').value;
+            const previewPlayer = document.getElementById('voicePreviewPlayer');
+            
+            previewPlayer.style.display = 'block';
+            previewPlayer.innerHTML = '<div class="d-flex align-items-center gap-2"><div class="loading-spinner"></div> 正在生成预览...</div>';
+            
+            try {
+                const response = await fetch('/api/preview_voice', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        api_key: document.getElementById('api_key').value,
+                        voice: voice
+                    })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    const audioSrc = 'data:audio/mp3;base64,' + data.audio;
+                    previewPlayer.innerHTML = `
+                        <p class="mb-2 text-muted" style="font-size: 0.85rem;">"${data.text}"</p>
+                        <audio controls autoplay src="${audioSrc}" style="width: 100%;"></audio>
+                    `;
+                } else {
+                    previewPlayer.innerHTML = '<p class="text-danger mb-0"><i class="bi bi-x-circle"></i> ' + data.error + '</p>';
+                }
+            } catch (error) {
+                previewPlayer.innerHTML = '<p class="text-danger mb-0"><i class="bi bi-x-circle"></i> 预览失败: ' + error.message + '</p>';
+            }
+        }
+        
+        // 生成语音
+        async function generateSpeech() {
+            const inputText = getCurrentText().trim();
+            if (!inputText) {
+                alert('请输入要转换的文本或上传文件');
+                return;
+            }
+            
+            const btn = document.getElementById('generateBtn');
+            const statusEl = document.getElementById('generateStatus');
+            const audioOutput = document.getElementById('audioOutput');
+            const audioActions = document.getElementById('audioActions');
+            
+            // 禁用按钮
+            btn.disabled = true;
+            btn.innerHTML = '<div class="loading-spinner d-inline-block me-2"></div> 生成中...';
+            
+            const voice = document.getElementById('custom_voice').value || document.getElementById('voice').value;
+            const format = document.querySelector('input[name="response_format"]:checked').value;
+            const speed = document.getElementById('speed').value;
+            const streamMode = document.getElementById('stream_mode').checked;
+            const autoDownload = document.getElementById('auto_download').checked;
+            
+            // 根据文本长度和用户选择决定是否使用流式
+            const textLength = inputText.length;
+            const useStream = streamMode;
+            
+            if (useStream) {
+                // 流式模式 - 边下载边播放
+                statusEl.className = 'status-message loading';
+                statusEl.innerHTML = '<div class="loading-spinner"></div> 流式传输中...';
+                statusEl.style.display = 'flex';
+                
+                // 显示进度信息
+                const progressId = 'stream_' + Date.now();
+                audioOutput.innerHTML = `
+                    <div class="stream-progress">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <div class="loading-spinner"></div>
+                            <span id="${progressId}_status">正在连接...</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" id="${progressId}_progress" style="width: 0%"></div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">已接收: <span id="${progressId}_bytes">0</span> KB</small>
+                        </div>
+                    </div>
+                `;
+                
+                try {
+                    // 根据文本长度设置超时时间
+                    const textLength = inputText.length;
+                    let timeoutMs;
+                    if (textLength > 10000) {
+                        timeoutMs = 300000; // 5分钟
+                    } else if (textLength > 5000) {
+                        timeoutMs = 180000; // 3分钟
+                    } else if (textLength > 1000) {
+                        timeoutMs = 120000; // 2分钟
+                    } else {
+                        timeoutMs = 60000;  // 1分钟
+                    }
+                    
+                    // 创建带超时的 fetch
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+                    
+                    const connectStatusEl = document.getElementById(`${progressId}_status`);
+                    if (connectStatusEl) {
+                        connectStatusEl.innerHTML = `正在连接... (文本长度: ${textLength} 字符，预计需要 ${Math.ceil(timeoutMs/60000)} 分钟)`;
+                    }
+                    
+                    const response = await fetch('/api/generate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            api_key: document.getElementById('api_key').value,
+                            model: document.getElementById('model').value,
+                            input: inputText,
+                            voice: voice,
+                            response_format: format,
+                            speed: parseFloat(speed),
+                            stream_format: 'sse',  // 使用真正的流式传输
+                            download: 'false'
+                        }),
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        try {
+                            const errorData = JSON.parse(errorText);
+                            throw new Error(errorData.error || 'Unknown error');
+                        } catch {
+                            throw new Error(errorText || 'Unknown error');
+                        }
+                    }
+                    
+                    // 流式读取响应
+                    const reader = response.body.getReader();
+                    const chunks = [];
+                    let receivedBytes = 0;
+                    let startTime = Date.now();
+                    let audioStarted = false;
+                    const bufferThreshold = 20480; // 20KB 缓冲阈值
+                    
+                    // 使用智能流式播放器
+                    const playerContainer = document.createElement('div');
+                    audioOutput.innerHTML = '';
+                    audioOutput.appendChild(playerContainer);
+                    
+                    const streamingPlayer = new SmartStreamingPlayer(playerContainer, {
+                        bufferSize: bufferThreshold,
+                        updateInterval: 2000,
+                        format: format
+                    });
+                    
+                    streamingPlayer.updateStatus('正在分段生成音频...');
+                    
+                    const initialStatusEl = document.getElementById(`${progressId}_status`);
+                    if (initialStatusEl) {
+                        initialStatusEl.innerHTML = '<i class="bi bi-lightning-charge text-warning"></i> 正在分段生成音频...';
+                    }
+                    
+                    
+                    while (true) {
+                        const { done, value } = await reader.read();
+                        if (done) break;
+                        
+                        chunks.push(value);
+                        receivedBytes += value.length;
+                        
+                        // 计算速度
+                        const elapsed = (Date.now() - startTime) / 1000;
+                        const speed = receivedBytes / elapsed;
+                        
+                        // 更新进度（使用唯一 ID）
+                        const streamBytesEl = document.getElementById(`${progressId}_bytes`);
+                        const streamStatusEl = document.getElementById(`${progressId}_status`);
+                        const streamProgressEl = document.getElementById(`${progressId}_progress`);
+                        
+                        if (streamBytesEl) {
+                            streamBytesEl.textContent = (receivedBytes / 1024).toFixed(1);
+                        }
+                        if (streamStatusEl) {
+                            streamStatusEl.innerHTML = `<i class="bi bi-lightning-charge text-warning"></i> 正在分段生成... (${(speed / 1024).toFixed(1)} KB/s)`;
+                        }
+                        if (streamProgressEl) {
+                            const progress = Math.min(100, (receivedBytes / 1024) * 2);
+                            streamProgressEl.style.width = progress + '%';
+                        }
+                        
+                        // 添加音频数据到智能播放器
+                        if (value.length > 0) {
+                            streamingPlayer.addAudioData(value.buffer);
+                            
+                            // 首次播放
+                            if (!audioStarted && receivedBytes > bufferThreshold) {
+                                streamingPlayer.play().then(() => {
+                                    audioStarted = true;
+                                    streamingPlayer.updateStatus(`开始流式播放... (${(speed / 1024).toFixed(1)} KB/s)`);
+                                    
+                                    const statusEl = document.getElementById(`${progressId}_status`);
+                                    if (statusEl) {
+                                        statusEl.innerHTML = `<i class="bi bi-play-fill text-success"></i> 智能流式播放中... (${(speed / 1024).toFixed(1)} KB/s)`;
+                                    }
+                                }).catch(e => {
+                                    console.log('Auto-play blocked:', e);
+                                    audioStarted = true;
+                                    streamingPlayer.updateStatus('点击播放按钮开始...');
+                                    
+                                    const statusEl = document.getElementById(`${progressId}_status`);
+                                    if (statusEl) {
+                                        statusEl.innerHTML = `<i class="bi bi-play text-warning"></i> 点击播放按钮开始... (${(speed / 1024).toFixed(1)} KB/s)`;
+                                    }
+                                });
+                            }
+                            
+                            // 更新状态
+                            if (audioStarted) {
+                                streamingPlayer.updateStatus(`流式播放中... (${(speed / 1024).toFixed(1)} KB/s)`);
+                            }
+                        }
+                        
+                    }
+                    
+                    // 完成流式播放
+                    try {
+                        const finalBlob = new Blob(chunks, { type: `audio/${format}` });
+                        currentAudioBlob = finalBlob;
+                        currentAudioUrl = URL.createObjectURL(finalBlob);
+                        
+                        // 通知播放器完成
+                        streamingPlayer.finalize();
+                        streamingPlayer.updateStatus(`播放完成 - ${(receivedBytes / 1024).toFixed(1)} KB`);
+                        
+                        console.log(`[DEBUG] Streaming completed: ${(finalBlob.size / 1024).toFixed(1)}KB`);
+                        
+                    } catch (e) {
+                        console.log('Finalization failed:', e);
+                    }
+                    
+                    audioActions.style.cssText = 'display: flex !important;';
+                    
+                    statusEl.className = 'status-message success';
+                    const totalDuration = (Date.now() - startTime) / 1000;
+                    statusEl.innerHTML = `<i class="bi bi-check-circle"></i> 流式传输完成！耗时 ${totalDuration.toFixed(1)}s`;
+                    
+                    addToHistory(inputText, currentAudioUrl, voice, format, {
+                        duration: totalDuration,
+                        audioSize: receivedBytes,
+                        isStreaming: true
+                    });
+                    
+                    // 持久化到后端数据库
+                    logToServer({
+                        text_length: inputText.length,
+                        voice: voice,
+                        format: format,
+                        speed: parseFloat(speed),
+                        mode: '流式',
+                        duration: totalDuration,
+                        audio_size: receivedBytes,
+                        status: 'success'
+                    });
+                    
+                    if (autoDownload) {
+                        downloadAudio();
+                    }
+                    
+                } catch (error) {
+                    let errorMessage = error.message;
+                    let suggestion = '';
+                    
+                    if (error.name === 'AbortError') {
+                        errorMessage = '请求超时';
+                        suggestion = '文本太长，建议分段处理或关闭流式模式';
+                    } else if (error.message.includes('timeout')) {
+                        errorMessage = '服务器响应超时';
+                        suggestion = '请稍后重试，或尝试较短的文本';
+                    } else if (error.message.includes('network')) {
+                        errorMessage = '网络连接错误';
+                        suggestion = '请检查网络连接';
+                    }
+                    
+                    statusEl.className = 'status-message error';
+                    statusEl.innerHTML = `<i class="bi bi-x-circle"></i> 流式传输失败: ${errorMessage}`;
+                    
+                    audioOutput.innerHTML = `
+                        <div class="text-center p-4">
+                            <i class="bi bi-exclamation-triangle text-warning" style="font-size: 2rem;"></i>
+                            <h5 class="mt-2 text-danger">流式传输失败</h5>
+                            <p class="text-muted">${errorMessage}</p>
+                            ${suggestion ? `<p class="text-info"><i class="bi bi-lightbulb"></i> ${suggestion}</p>` : ''}
+                            <button class="btn btn-outline-primary mt-2" onclick="switchInputMode('text'); document.getElementById('stream_mode').checked = false;">
+                                <i class="bi bi-arrow-left"></i> 尝试普通模式
+                            </button>
+                        </div>
+                    `;
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="bi bi-play-fill"></i> 生成语音';
+                }
+                
+            } else {
+                // 普通模式 - 等待完成后播放
+                statusEl.className = 'status-message loading';
+                statusEl.innerHTML = '<div class="loading-spinner"></div> 正在生成语音...';
+                statusEl.style.display = 'flex';
+                
+                try {
+                    // 记录开始时间
+                    const normalStartTime = Date.now();
+                    
+                    // 根据文本长度设置超时时间
+                    const textLength = inputText.length;
+                    let timeoutMs;
+                    if (textLength > 10000) {
+                        timeoutMs = 300000; // 5分钟
+                    } else if (textLength > 5000) {
+                        timeoutMs = 180000; // 3分钟
+                    } else if (textLength > 1000) {
+                        timeoutMs = 120000; // 2分钟
+                    } else {
+                        timeoutMs = 60000;  // 1分钟
+                    }
+                    
+                    // 创建带超时的 fetch
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+                    
+                    statusEl.innerHTML = `<div class="loading-spinner"></div> 正在生成语音... (文本长度: ${textLength} 字符，预计需要 ${Math.ceil(timeoutMs/60000)} 分钟)`;
+                    
+                    const response = await fetch('/api/generate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            api_key: document.getElementById('api_key').value,
+                            model: document.getElementById('model').value,
+                            input: inputText,
+                            voice: voice,
+                            response_format: format,
+                            speed: parseFloat(speed),
+                            stream_format: '',
+                            download: autoDownload ? 'true' : 'false'
+                        }),
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        try {
+                            const errorData = JSON.parse(errorText);
+                            throw new Error(errorData.error || 'Unknown error');
+                        } catch {
+                            throw new Error(errorText || 'Unknown error');
+                        }
+                    }
+                    
+                    const blob = await response.blob();
+                    currentAudioBlob = blob;
+                    currentAudioUrl = URL.createObjectURL(blob);
+                    
+                    // 显示音频播放器
+                    audioOutput.innerHTML = `<audio controls autoplay src="${currentAudioUrl}" style="width: 100%;"></audio>`;
+                    audioActions.style.cssText = 'display: flex !important;';
+                    
+                    const normalDuration = (Date.now() - normalStartTime) / 1000;
+                    statusEl.className = 'status-message success';
+                    statusEl.innerHTML = `<i class="bi bi-check-circle"></i> 生成成功！耗时 ${normalDuration.toFixed(1)}s`;
+                    
+                    addToHistory(inputText, currentAudioUrl, voice, format, {
+                        duration: normalDuration,
+                        audioSize: blob.size,
+                        isStreaming: false
+                    });
+                    
+                    if (autoDownload) {
+                        downloadAudio();
+                    }
+                    
+                } catch (error) {
+                    statusEl.className = 'status-message error';
+                    statusEl.innerHTML = '<i class="bi bi-x-circle"></i> 生成失败: ' + error.message;
+                    audioOutput.innerHTML = '<p class="text-danger text-center mb-0"><i class="bi bi-x-circle"></i> 生成失败</p>';
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="bi bi-play-fill"></i> 生成语音';
+                }
+            }
+        }
+        
+        // 下载音频
+        function downloadAudio() {
+            if (!currentAudioUrl) {
+                alert('没有可下载的音频');
+                return;
+            }
+            
+            const format = document.querySelector('input[name="response_format"]:checked').value;
+            const a = document.createElement('a');
+            a.href = currentAudioUrl;
+            a.download = 'speech.' + format;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+        
+        // 复制音频链接
+        function copyAudioUrl() {
+            if (!currentAudioUrl) {
+                alert('没有可复制的链接');
+                return;
+            }
+            
+            navigator.clipboard.writeText(currentAudioUrl).then(() => {
+                alert('链接已复制到剪贴板');
+            }).catch(() => {
+                alert('复制失败');
+            });
+        }
+        
+        // 添加到历史记录
+        function addToHistory(text, audioUrl, voice, format, stats = {}) {
+            const now = new Date();
+            const historyItem = {
+                text: text.substring(0, 100) + (text.length > 100 ? '...' : ''),
+                fullTextLength: text.length,
+                audioUrl: audioUrl,
+                voice: voice,
+                format: format,
+                timestamp: now.toLocaleTimeString(),
+                date: now.toLocaleDateString(),
+                // 统计信息
+                duration: stats.duration || 0, // 生成耗时（秒）
+                audioSize: stats.audioSize || 0, // 音频大小（字节）
+                isStreaming: stats.isStreaming || false
+            };
+            
+            history.unshift(historyItem);
+            if (history.length > 20) { // 保留更多历史
+                history.pop();
+            }
+            
+            saveHistory();
+            renderHistory();
+            updateStats();
+        }
+        
+        // 更新统计信息
+        function updateStats() {
+            const totalGenerations = history.length;
+            const totalChars = history.reduce((sum, item) => sum + (item.fullTextLength || 0), 0);
+            const totalDuration = history.reduce((sum, item) => sum + (item.duration || 0), 0);
+            const totalSize = history.reduce((sum, item) => sum + (item.audioSize || 0), 0);
+            
+            const statsHtml = `
+                <div class="stats-summary mb-2 p-2 bg-light rounded" style="font-size: 0.85rem;">
+                    <div class="d-flex justify-content-between flex-wrap gap-2">
+                        <span><i class="bi bi-play-circle"></i> 生成: <strong>${totalGenerations}</strong> 次</span>
+                        <span><i class="bi bi-fonts"></i> 字符: <strong>${totalChars.toLocaleString()}</strong></span>
+                        <span><i class="bi bi-clock"></i> 耗时: <strong>${totalDuration.toFixed(1)}</strong>s</span>
+                        <span><i class="bi bi-hdd"></i> 大小: <strong>${(totalSize / 1024 / 1024).toFixed(2)}</strong>MB</span>
+                    </div>
+                </div>
+            `;
+            
+            let statsEl = document.getElementById('historyStats');
+            if (!statsEl) {
+                statsEl = document.createElement('div');
+                statsEl.id = 'historyStats';
+                const historyList = document.getElementById('historyList');
+                historyList.parentNode.insertBefore(statsEl, historyList);
+            }
+            statsEl.innerHTML = statsHtml;
+        }
+        
+        // 渲染历史记录
+        function renderHistory() {
+            const historyList = document.getElementById('historyList');
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<p class="text-muted text-center mb-0">暂无历史记录</p>';
+                const statsEl = document.getElementById('historyStats');
+                if (statsEl) statsEl.innerHTML = '';
+                return;
+            }
+            
+            historyList.innerHTML = history.map((item, index) => `
+                <div class="history-item">
+                    <div class="history-text" title="${item.text}">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">${item.date || ''} ${item.timestamp}</small>
+                            <span class="badge ${item.isStreaming ? 'bg-info' : 'bg-secondary'}" style="font-size: 0.7rem;">
+                                ${item.isStreaming ? '流式' : '普通'}
+                            </span>
+                        </div>
+                        <div class="mt-1">${item.text}</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">
+                            <i class="bi bi-fonts"></i> ${item.fullTextLength || '?'} 字符
+                            | <i class="bi bi-clock"></i> ${(item.duration || 0).toFixed(1)}s
+                            | <i class="bi bi-hdd"></i> ${((item.audioSize || 0) / 1024).toFixed(1)}KB
+                        </div>
+                    </div>
+                    <audio controls src="${item.audioUrl}" style="height: 40px;"></audio>
+                    <div class="history-actions">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="downloadHistoryItem(${index})" title="下载">
+                            <i class="bi bi-download"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // 下载历史记录项
+        function downloadHistoryItem(index) {
+            const item = history[index];
+            const a = document.createElement('a');
+            a.href = item.audioUrl;
+            a.download = 'speech.' + item.format;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+        
+        // 保存历史记录到 localStorage
+        function saveHistory() {
+            // 注意：Blob URL 无法持久化，这里只保存元数据
+            // 实际应用中可以考虑使用 IndexedDB 存储音频数据
+        }
+        
+        // 加载历史记录
+        function loadHistory() {
+            // 从 localStorage 加载（如果有的话）
+            renderHistory();
+        }
+        
+        // 清空历史记录
+        function clearHistory() {
+            if (confirm('确定要清空所有历史记录吗？')) {
+                history = [];
+                renderHistory();
+            }
+        }
+    </script>
+</body>
+</html>
