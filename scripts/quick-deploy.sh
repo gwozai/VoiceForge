@@ -6,7 +6,7 @@
 set -e
 
 # 配置
-DOCKER_REPO="gwozai/tts-website"
+DOCKER_REPO="gwozai/voiceforge"
 VERSION=${1:-"v$(date +%Y%m%d-%H%M%S)"}
 
 echo "🚀 开始快速部署..."

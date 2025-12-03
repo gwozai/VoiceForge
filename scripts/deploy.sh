@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 
 # 配置变量
 DOCKER_USERNAME="gwozai"
-IMAGE_NAME="tts-website"
+IMAGE_NAME="voiceforge"
 DOCKER_REPO="${DOCKER_USERNAME}/${IMAGE_NAME}"
 
 # 代理配置（如果需要）
