@@ -20,6 +20,7 @@
 ### 🔧 技术配置文档
 - [**DEPLOY_SCRIPTS.md**](DEPLOY_SCRIPTS.md) - 自动化部署脚本使用说明
 - [**ENV_CONFIG.md**](ENV_CONFIG.md) - 环境变量配置详解
+- [**GIT_OPERATIONS.md**](GIT_OPERATIONS.md) - Git操作和推送指南
 
 ### 📋 项目信息
 - [**CHANGELOG.md**](CHANGELOG.md) - 版本更新日志

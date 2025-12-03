@@ -91,6 +91,7 @@ make deploy VERSION=v2.1.0
 ### 🔧 配置文档
 - [部署脚本指南](docs/DEPLOY_SCRIPTS.md) - 自动化部署脚本使用说明
 - [环境变量配置](docs/ENV_CONFIG.md) - 详细的配置说明
+- [Git操作指南](docs/GIT_OPERATIONS.md) - Git推送和版本管理指南
 - [更新日志](docs/CHANGELOG.md) - 版本更新记录
 
 ### 📋 完整导航
