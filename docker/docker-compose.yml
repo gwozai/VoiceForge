@@ -1,0 +1,31 @@
+services:
+  tts-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: tts-website
+    ports:
+      - "${FLASK_PORT:-8080}:8080"
+    volumes:
+      # 持久化数据库和日志文件
+      - ../data:/app/data
+      - ../logs:/app/logs
+    env_file:
+      - ../config/.env
+    environment:
+      # 覆盖.env中的生产环境配置
+      - FLASK_ENV=production
+      - FLASK_DEBUG=false
+      - DB_PATH=/app/data/tts_stats.db
+      - LOG_FILE=/app/logs/tts_generation.log
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  tts-data:
+    driver: local

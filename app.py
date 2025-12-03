@@ -10,22 +10,29 @@ import time
 import os
 import sqlite3
 from threading import Lock
+from dotenv import load_dotenv
 
-app = Flask(__name__)
+# 加载环境变量
+load_dotenv('config/.env')
+
+app = Flask(__name__, template_folder='src/templates')
 
 # 配置日志记录
+log_level = getattr(logging, os.getenv('LOG_LEVEL', 'INFO').upper())
+log_file = os.getenv('LOG_FILE', 'tts_generation.log')
+
 logging.basicConfig(
-    level=logging.INFO,
+    level=log_level,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('tts_generation.log', encoding='utf-8'),
+        logging.FileHandler(log_file, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
 # 数据库配置
-DB_PATH = 'tts_stats.db'
+DB_PATH = os.getenv('DB_PATH', 'tts_stats.db')
 db_lock = Lock()
 
 def init_db():
@@ -83,18 +90,18 @@ def log_generation(text_length, voice, format, speed, mode, duration=None,
         logger.error(f"记录日志失败: {e}")
 
 # API 配置
-API_BASE_URL = "http://117.72.56.34:5050"
-API_ENDPOINT = "/v1/audio/speech"
-VOICES_ENDPOINT = "/voices"
-MODELS_ENDPOINT = "/models"
+API_BASE_URL = os.getenv('API_BASE_URL', "http://117.72.56.34:5050")
+API_ENDPOINT = os.getenv('API_ENDPOINT', "/v1/audio/speech")
+VOICES_ENDPOINT = os.getenv('VOICES_ENDPOINT', "/voices")
+MODELS_ENDPOINT = os.getenv('MODELS_ENDPOINT', "/models")
 
 # 默认值
-DEFAULT_API_KEY = "your_api_key_here"
-DEFAULT_MODEL = "tts-1"
-DEFAULT_VOICE = "zh-CN-XiaoxiaoNeural"
-DEFAULT_FORMAT = "mp3"
-DEFAULT_SPEED = 1.0
-DEFAULT_LANGUAGE = "zh-CN"
+DEFAULT_API_KEY = os.getenv('DEFAULT_API_KEY', "your_api_key_here")
+DEFAULT_MODEL = os.getenv('DEFAULT_MODEL', "tts-1")
+DEFAULT_VOICE = os.getenv('DEFAULT_VOICE', "zh-CN-XiaoxiaoNeural")
+DEFAULT_FORMAT = os.getenv('DEFAULT_FORMAT', "mp3")
+DEFAULT_SPEED = float(os.getenv('DEFAULT_SPEED', '1.0'))
+DEFAULT_LANGUAGE = os.getenv('DEFAULT_LANGUAGE', "zh-CN")
 
 # 支持的音频格式
 FORMATS = ["mp3", "opus", "aac", "flac", "wav", "pcm"]
@@ -842,4 +849,9 @@ def export_stats():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    # Flask应用配置
+    debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
+    host = os.getenv('FLASK_HOST', '0.0.0.0')
+    port = int(os.getenv('FLASK_PORT', '8080'))
+    
+    app.run(debug=debug_mode, host=host, port=port)
