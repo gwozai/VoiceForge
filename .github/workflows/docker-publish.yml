@@ -69,107 +69,63 @@ jobs:
       # 成功通知
       - name: Notify Feishu on Success
         if: success() && github.event_name != 'pull_request'
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          IMAGE_TAG: ${{ steps.meta.outputs.tags }}
         run: |
-          curl -X POST \
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "FEISHU_WEBHOOK not set, skipping notification"
+            exit 0
+          fi
+          curl -X POST "$FEISHU_WEBHOOK" \
             -H "Content-Type: application/json" \
-            -d '{
-              "msg_type": "interactive",
-              "card": {
-                "header": {
-                  "title": {
-                    "tag": "plain_text",
-                    "content": "🎉 VoiceForge Docker 镜像发布成功"
-                  },
-                  "template": "green"
-                },
-                "elements": [
-                  {
-                    "tag": "div",
-                    "text": {
-                      "tag": "lark_md",
-                      "content": "**镜像:** `${{ env.IMAGE_NAME }}`\n**标签:** `${{ steps.meta.outputs.tags }}`\n**分支:** `${{ github.ref_name }}`\n**提交:** `${{ github.sha }}`\n**平台:** `linux/amd64, linux/arm64`"
-                    }
-                  },
-                  {
-                    "tag": "hr"
-                  },
-                  {
-                    "tag": "div",
-                    "text": {
-                      "tag": "lark_md",
-                      "content": "**拉取命令:**\n```\ndocker pull gwozai/voiceforge:latest\n```"
-                    }
-                  },
-                  {
-                    "tag": "action",
-                    "actions": [
-                      {
-                        "tag": "button",
-                        "text": {
-                          "tag": "plain_text",
-                          "content": "查看 Docker Hub"
-                        },
-                        "url": "https://hub.docker.com/r/gwozai/voiceforge",
-                        "type": "primary"
-                      },
-                      {
-                        "tag": "button",
-                        "text": {
-                          "tag": "plain_text",
-                          "content": "查看 GitHub Actions"
-                        },
-                        "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                        "type": "default"
-                      }
+            -d "{
+              \"msg_type\": \"post\",
+              \"content\": {
+                \"post\": {
+                  \"zh_cn\": {
+                    \"title\": \"🎉 VoiceForge Docker 镜像发布成功\",
+                    \"content\": [
+                      [{\"tag\": \"text\", \"text\": \"镜像: gwozai/voiceforge\"}],
+                      [{\"tag\": \"text\", \"text\": \"平台: linux/amd64, linux/arm64\"}],
+                      [{\"tag\": \"text\", \"text\": \"分支: ${{ github.ref_name }}\"}],
+                      [{\"tag\": \"text\", \"text\": \"\"}],
+                      [{\"tag\": \"text\", \"text\": \"拉取命令:\"}],
+                      [{\"tag\": \"text\", \"text\": \"docker pull gwozai/voiceforge:latest\"}],
+                      [{\"tag\": \"text\", \"text\": \"\"}],
+                      [{\"tag\": \"a\", \"text\": \"查看 Docker Hub\", \"href\": \"https://hub.docker.com/r/gwozai/voiceforge\"}]
                     ]
                   }
-                ]
+                }
               }
-            }' \
-            "${{ secrets.FEISHU_WEBHOOK }}"
+            }"
 
       # 失败通知
       - name: Notify Feishu on Failure
         if: failure()
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         run: |
-          curl -X POST \
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "FEISHU_WEBHOOK not set, skipping notification"
+            exit 0
+          fi
+          curl -X POST "$FEISHU_WEBHOOK" \
             -H "Content-Type: application/json" \
-            -d '{
-              "msg_type": "interactive",
-              "card": {
-                "header": {
-                  "title": {
-                    "tag": "plain_text",
-                    "content": "❌ VoiceForge Docker 构建失败"
-                  },
-                  "template": "red"
-                },
-                "elements": [
-                  {
-                    "tag": "div",
-                    "text": {
-                      "tag": "lark_md",
-                      "content": "**仓库:** `${{ github.repository }}`\n**分支:** `${{ github.ref_name }}`\n**提交:** `${{ github.sha }}`\n**触发者:** `${{ github.actor }}`"
-                    }
-                  },
-                  {
-                    "tag": "hr"
-                  },
-                  {
-                    "tag": "action",
-                    "actions": [
-                      {
-                        "tag": "button",
-                        "text": {
-                          "tag": "plain_text",
-                          "content": "查看错误日志"
-                        },
-                        "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                        "type": "danger"
-                      }
+            -d "{
+              \"msg_type\": \"post\",
+              \"content\": {
+                \"post\": {
+                  \"zh_cn\": {
+                    \"title\": \"❌ VoiceForge Docker 构建失败\",
+                    \"content\": [
+                      [{\"tag\": \"text\", \"text\": \"仓库: ${{ github.repository }}\"}],
+                      [{\"tag\": \"text\", \"text\": \"分支: ${{ github.ref_name }}\"}],
+                      [{\"tag\": \"text\", \"text\": \"触发者: ${{ github.actor }}\"}],
+                      [{\"tag\": \"text\", \"text\": \"\"}],
+                      [{\"tag\": \"a\", \"text\": \"查看错误日志\", \"href\": \"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}]
                     ]
                   }
-                ]
+                }
               }
-            }' \
-            "${{ secrets.FEISHU_WEBHOOK }}"
+            }"
