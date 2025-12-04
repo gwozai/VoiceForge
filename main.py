@@ -11,17 +11,16 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from src.app import create_app
 from src.config.settings import get_config
 
+# 获取环境配置
+env = os.getenv('FLASK_ENV', 'development')
+config = get_config(env)
+
+# 创建应用实例 (供gunicorn使用)
+app = create_app(config)
+
 
 def main():
-    """主函数"""
-    # 获取环境配置
-    env = os.getenv('FLASK_ENV', 'development')
-    config = get_config(env)
-    
-    # 创建应用
-    app = create_app(config)
-    
-    # 运行应用
+    """主函数 - 开发模式运行"""
     app.run(
         debug=config.get('DEBUG'),
         host=config.get('HOST'),

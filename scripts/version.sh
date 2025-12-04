@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TTS Website 版本管理脚本
+# VoiceForge 版本管理脚本
 # 用于管理项目版本和自动更新CHANGELOG
 
 set -e
@@ -129,7 +129,7 @@ create_git_tag() {
 
 # 函数：显示帮助
 show_help() {
-    echo "TTS Website 版本管理脚本"
+    echo "VoiceForge 版本管理脚本"
     echo ""
     echo "用法: $0 [命令] [选项]"
     echo ""

@@ -1,11 +1,11 @@
-# TTS Website Makefile
+# VoiceForge Makefile
 # 简化常用命令
 
 .PHONY: help build deploy quick-deploy test clean version
 
 # 默认目标
 help:
-	@echo "TTS Website 部署命令"
+	@echo "VoiceForge 部署命令"
 	@echo ""
 	@echo "可用命令:"
 	@echo "  make build         - 仅构建Docker镜像"
@@ -50,7 +50,7 @@ test:
 clean:
 	@echo "🧹 清理Docker镜像..."
 	@docker image prune -f
-	@docker images gwozai/tts-website --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}"
+	@docker images gwozai/voiceforge --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}"
 
 # 版本管理
 version:

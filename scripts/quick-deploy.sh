@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TTS Website 快速部署脚本
+# VoiceForge 快速部署脚本
 # 简化版本，用于日常快速部署
 
 set -e
@@ -25,7 +25,7 @@ cd "$(dirname "$0")/.."
 
 # 构建镜像
 echo "🔨 构建镜像..."
-docker build -f docker/Dockerfile -t "${DOCKER_REPO}:latest" -t "${DOCKER_REPO}:${VERSION}" .
+docker build -f Dockerfile -t "${DOCKER_REPO}:latest" -t "${DOCKER_REPO}:${VERSION}" .
 
 # 推送镜像
 echo "📤 推送镜像..."
