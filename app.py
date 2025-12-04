@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 # 加载环境变量
 load_dotenv('config/.env')
 
-app = Flask(__name__, template_folder='src/templates')
+app = Flask(__name__, template_folder='src/templates', static_folder='static')
 
 # 配置日志记录
 log_level = getattr(logging, os.getenv('LOG_LEVEL', 'INFO').upper())

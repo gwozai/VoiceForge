@@ -1,0 +1,517 @@
+{% extends "base.html" %}
+
+{% block title %}VoiceForge 2.0 - 面向对象版本{% endblock %}
+
+{% block head %}
+<style>
+    :root {
+        --primary-color: #6366f1;
+        --primary-hover: #4f46e5;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-color: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
+        --success-color: #10b981;
+        --error-color: #ef4444;
+        --warning-color: #f59e0b;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .header {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        border: none;
+        margin-bottom: 20px;
+    }
+    
+    .card-header {
+        background: transparent;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 24px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .card-header i {
+        color: var(--primary-color);
+    }
+    
+    .card-body {
+        padding: 24px;
+    }
+    
+    .form-control, .form-select {
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+    }
+    
+    .form-control:focus, .form-select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+    }
+    
+    .btn-primary {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    
+    .btn-primary:hover {
+        background: var(--primary-hover);
+        border-color: var(--primary-hover);
+        transform: translateY(-1px);
+    }
+    
+    .loading-spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .version-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="version-badge">
+        VoiceForge 2.0 - 面向对象版本
+    </div>
+    
+    <div class="header">
+        <h1><i class="bi bi-mic-fill"></i> VoiceForge</h1>
+        <p>🎙️ 专业的语音合成工坊 - 高质量的文本转语音平台 (面向对象重构版)</p>
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <div class="badge bg-light text-dark"><i class="bi bi-check-circle"></i> OpenAI 兼容</div>
+            <div class="badge bg-light text-dark"><i class="bi bi-lightning"></i> SSE 流式</div>
+            <div class="badge bg-light text-dark"><i class="bi bi-globe"></i> 多语言支持</div>
+            <div class="badge bg-warning text-dark"><i class="bi bi-code-slash"></i> 面向对象</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left Column: Settings -->
+        <div class="col-lg-5 mb-4">
+            <!-- API Settings -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-gear"></i> API 设置
+                </div>
+                <div class="card-body">
+                    <form id="apiSettingsForm" onsubmit="return false;">
+                        <div class="mb-3">
+                            <label for="api_key" class="form-label">API Key</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="api_key" name="api_key" value="{{ default_api_key }}" placeholder="输入 API Key" autocomplete="current-password">
+                                <button class="btn btn-outline-secondary" type="button" onclick="toggleApiKeyVisibility()">
+                                    <i class="bi bi-eye" id="apiKeyToggleIcon"></i>
+                                </button>
+                            </div>
+                            <div class="form-text">使用任意字符串作为密钥（无需真实 OpenAI 密钥）</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="model" class="form-label">模型</label>
+                            <select class="form-select" id="model" name="model">
+                                {% for m in models %}
+                                <option value="{{ m }}" {% if m == default_model %}selected{% endif %}>{{ m }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="form-text">tts-1: 标准质量 | tts-1-hd: 高清质量</div>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-secondary flex-grow-1" id="loadModelsBtn">
+                                <i class="bi bi-arrow-clockwise"></i> 加载模型
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" id="testConnectionBtn">
+                                <i class="bi bi-plug"></i> 测试连接
+                            </button>
+                        </div>
+                    </form>
+                    <div id="connectionStatus" class="mt-2"></div>
+                </div>
+            </div>
+            
+            <!-- Voice Settings -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-mic"></i> 语音设置
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="voice" class="form-label">选择语音</label>
+                        <select class="form-select" id="voice">
+                            {% for category, voices in voices_by_language.items() %}
+                            <optgroup label="{{ category }}">
+                                {% for voice in voices %}
+                                <option value="{{ voice }}" {% if voice == default_voice %}selected{% endif %}>{{ voice }}</option>
+                                {% endfor %}
+                            </optgroup>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">或输入自定义语音</label>
+                        <input type="text" class="form-control" id="custom_voice" placeholder="例如: en-US-AvaNeural">
+                        <div class="form-text">支持任意 edge-tts 语音名称</div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-secondary flex-grow-1" id="loadVoicesBtn">
+                            <i class="bi bi-arrow-clockwise"></i> 加载所有语音
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" id="previewVoiceBtn">
+                            <i class="bi bi-play-circle"></i> 试听
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Audio Settings -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-sliders"></i> 音频设置
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">音频格式</label>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="response_format" id="format_mp3" value="mp3" checked>
+                                <label class="form-check-label" for="format_mp3">mp3</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="response_format" id="format_opus" value="opus">
+                                <label class="form-check-label" for="format_opus">opus</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="response_format" id="format_aac" value="aac">
+                                <label class="form-check-label" for="format_aac">aac</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="response_format" id="format_flac" value="flac">
+                                <label class="form-check-label" for="format_flac">flac</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">播放速度: <span id="speedValue">1.0x</span></label>
+                        <div class="d-flex align-items-center gap-2">
+                            <small class="text-muted">0.25x</small>
+                            <input type="range" class="form-range flex-grow-1" id="speed" min="0.25" max="4.0" step="0.25" value="1.0">
+                            <small class="text-muted">4.0x</small>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="stream_mode">
+                            <label class="form-check-label" for="stream_mode">
+                                <i class="bi bi-lightning-charge"></i> 流式传输模式
+                            </label>
+                        </div>
+                        <div class="form-text">
+                            <i class="bi bi-info-circle"></i> 开启后边下载边播放，无需等待完成。长文本建议开启，可提前听到语音。
+                        </div>
+                    </div>
+                    
+                    <div class="mb-0">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="auto_download">
+                            <label class="form-check-label" for="auto_download">
+                                <i class="bi bi-download"></i> 生成后自动下载
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Text Input and Output -->
+        <div class="col-lg-7">
+            <!-- Text Input -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-pencil"></i> 文本输入
+                </div>
+                <div class="card-body">
+                    <!-- 文本输入选项卡 -->
+                    <ul class="nav nav-tabs mb-3" id="inputTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-pane" type="button" role="tab">
+                                <i class="bi bi-pencil"></i> 直接输入
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#file-pane" type="button" role="tab">
+                                <i class="bi bi-file-text"></i> 上传文件
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-pane" type="button" role="tab">
+                                <i class="bi bi-link"></i> 网络文本
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="inputTabContent">
+                        <!-- 直接输入 -->
+                        <div class="tab-pane fade show active" id="text-pane" role="tabpanel">
+                            <div class="mb-3">
+                                <textarea class="form-control" id="input_text" rows="6" placeholder="在此输入要转换的文本...">你好！欢迎使用 VoiceForge 2.0 面向对象版本。这是一个重构后的专业语音合成工坊。</textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- 文件上传 -->
+                        <div class="tab-pane fade" id="file-pane" role="tabpanel">
+                            <div class="mb-3">
+                                <input class="form-control" type="file" id="fileInput" accept=".txt,.md,.srt">
+                                <div class="form-text">
+                                    <i class="bi bi-info-circle"></i> 支持 .txt、.md、.srt 格式文件
+                                </div>
+                            </div>
+                            <div id="filePreview" class="mb-3" style="display: none;">
+                                <label class="form-label">文件内容预览：</label>
+                                <textarea class="form-control" id="fileContent" rows="6" readonly></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- 网络文本 -->
+                        <div class="tab-pane fade" id="url-pane" role="tabpanel">
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <input type="url" class="form-control" id="urlInput" placeholder="输入文本文件的网络地址，如：http://example.com/text.txt">
+                                    <button class="btn btn-outline-secondary" type="button" id="fetchUrlBtn">
+                                        <i class="bi bi-download"></i> 获取
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    <i class="bi bi-info-circle"></i> 支持 HTTP/HTTPS 链接的文本文件
+                                </div>
+                            </div>
+                            <div id="urlPreview" class="mb-3" style="display: none;">
+                                <label class="form-label">获取的内容：</label>
+                                <textarea class="form-control" id="urlContent" rows="6" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="text-muted">
+                            <span id="charCount">字符: 47</span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary btn-lg" id="generateBtn">
+                            <i class="bi bi-play-fill"></i> 生成语音 (面向对象版)
+                        </button>
+                    </div>
+                    <div id="generateStatus" class="mt-2"></div>
+                </div>
+            </div>
+            
+            <!-- Audio Output -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-volume-up"></i> 音频输出
+                </div>
+                <div class="card-body">
+                    <div id="audioOutput" class="text-center p-4">
+                        <i class="bi bi-music-note-beamed text-muted" style="font-size: 2rem;"></i>
+                        <p class="text-muted mt-2 mb-0">生成的音频将在此处播放</p>
+                        <small class="text-muted">使用面向对象架构的音频管理器</small>
+                    </div>
+                    
+                    <div class="d-flex gap-2 mt-3" id="audioActions" style="display: none !important;">
+                        <button type="button" class="btn btn-secondary flex-grow-1" id="downloadBtn" onclick="downloadAudio()">
+                            <i class="bi bi-download"></i> 下载音频
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="copyLinkBtn" onclick="copyAudioUrl()">
+                            <i class="bi bi-link-45deg"></i> 复制链接
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="text-center text-white mt-4">
+        <p>VoiceForge 2.0 - 面向对象重构版本 | 基于 Edge-TTS 的 OpenAI 兼容 TTS API</p>
+        <small>适用于个人使用 | GPL-3.0 许可证 | 架构：分层设计 + 模块化 + 面向对象</small>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// 简单的API Key可见性切换功能
+function toggleApiKeyVisibility() {
+    const input = document.getElementById('api_key');
+    const icon = document.getElementById('apiKeyToggleIcon');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bi bi-eye-slash';
+    } else {
+        input.type = 'password';
+        icon.className = 'bi bi-eye';
+    }
+}
+
+// 字符计数更新
+function updateCharCount() {
+    const textInput = document.getElementById('input_text');
+    const charCountEl = document.getElementById('charCount');
+    
+    if (textInput && charCountEl) {
+        const count = textInput.value.length;
+        charCountEl.textContent = `字符: ${count}`;
+    }
+}
+
+// 下载音频功能
+function downloadAudio() {
+    if (!window.currentAudioUrl) {
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('没有可下载的音频', 'warning');
+        } else {
+            alert('没有可下载的音频');
+        }
+        return;
+    }
+    
+    try {
+        const timestamp = new Date().toISOString().slice(0, 19).replace(/[:-]/g, '');
+        const filename = `speech_${timestamp}.mp3`;
+        
+        const a = document.createElement('a');
+        a.href = window.currentAudioUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('音频下载已开始', 'success');
+        }
+    } catch (error) {
+        console.error('下载失败:', error);
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('下载失败，请重试', 'error');
+        } else {
+            alert('下载失败，请重试');
+        }
+    }
+}
+
+// 复制音频链接功能
+function copyAudioUrl() {
+    if (!window.currentAudioUrl) {
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('没有可复制的链接', 'warning');
+        } else {
+            alert('没有可复制的链接');
+        }
+        return;
+    }
+    
+    navigator.clipboard.writeText(window.currentAudioUrl).then(() => {
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('链接已复制到剪贴板', 'success');
+        } else {
+            alert('链接已复制到剪贴板');
+        }
+    }).catch(() => {
+        if (window.voiceForgeApp) {
+            window.voiceForgeApp.notificationManager.show('复制失败，请手动复制', 'error');
+        } else {
+            alert('复制失败');
+        }
+    });
+}
+
+// 更新速度显示
+function updateSpeedValue() {
+    const speed = document.getElementById('speed').value;
+    document.getElementById('speedValue').textContent = speed + 'x';
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', function() {
+    updateCharCount();
+    updateSpeedValue();
+    
+    const textInput = document.getElementById('input_text');
+    if (textInput) {
+        textInput.addEventListener('input', updateCharCount);
+    }
+    
+    const speedSlider = document.getElementById('speed');
+    if (speedSlider) {
+        speedSlider.addEventListener('input', updateSpeedValue);
+    }
+    
+    console.log('VoiceForge 2.0 面向对象版本页面加载完成');
+    console.log('完整的模块化功能已实现，包括流式传输支持');
+});
+</script>
+{% endblock %}

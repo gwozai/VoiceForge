@@ -1,0 +1,82 @@
+{
+  "voices": {
+    "中文(简体)": [
+      {"name": "zh-CN-XiaoxiaoNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-YunxiNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunjianNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaohanNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaomoNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoruiNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoyiNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-YunfengNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunhaoNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunxiaNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunyangNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunyeNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunzeNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaochenNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaomengNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoshuangNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoxuanNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoyanNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaoyouNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-XiaozhenNeural", "gender": "Female", "locale": "zh-CN"},
+      {"name": "zh-CN-YunxiaoNeural", "gender": "Male", "locale": "zh-CN"},
+      {"name": "zh-CN-YunyiNeural", "gender": "Male", "locale": "zh-CN"}
+    ],
+    "中文(繁体-台湾)": [
+      {"name": "zh-TW-HsiaoChenNeural", "gender": "Female", "locale": "zh-TW"},
+      {"name": "zh-TW-HsiaoYuNeural", "gender": "Female", "locale": "zh-TW"},
+      {"name": "zh-TW-YunJheNeural", "gender": "Male", "locale": "zh-TW"}
+    ],
+    "中文(繁体-香港)": [
+      {"name": "zh-HK-HiuGaaiNeural", "gender": "Female", "locale": "zh-HK"},
+      {"name": "zh-HK-HiuMaanNeural", "gender": "Female", "locale": "zh-HK"},
+      {"name": "zh-HK-WanLungNeural", "gender": "Male", "locale": "zh-HK"}
+    ],
+    "English (US)": [
+      {"name": "en-US-AvaNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-AndrewNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-EmmaNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-BrianNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-JennyNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-GuyNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-AriaNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-DavisNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-JaneNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-JasonNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-SaraNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-TonyNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-NancyNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-AmberNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-AnaNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-AshleyNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-BrandonNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-ChristopherNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-CoraNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-ElizabethNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-EricNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-JacobNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-MichelleNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-MonicaNeural", "gender": "Female", "locale": "en-US"},
+      {"name": "en-US-RogerNeural", "gender": "Male", "locale": "en-US"},
+      {"name": "en-US-SteffanNeural", "gender": "Male", "locale": "en-US"}
+    ],
+    "English (UK)": [
+      {"name": "en-GB-SoniaNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-RyanNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-LibbyNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-AbbiNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-AlfieNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-BellaNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-ElliotNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-EthanNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-HollieNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-MaisieNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-NoahNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-OliverNeural", "gender": "Male", "locale": "en-GB"},
+      {"name": "en-GB-OliviaNeural", "gender": "Female", "locale": "en-GB"},
+      {"name": "en-GB-ThomasNeural", "gender": "Male", "locale": "en-GB"}
+    ]
+  }
+}

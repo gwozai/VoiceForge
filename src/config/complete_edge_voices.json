@@ -1,0 +1,3876 @@
+{
+  "total_voices": 594,
+  "total_languages": 153,
+  "voices": {
+    "Afrikaans (South Africa) (af-ZA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (af-ZA, AdriNeural)",
+        "short_name": "af-ZA-AdriNeural",
+        "gender": "Female",
+        "locale": "af-ZA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (af-ZA, WillemNeural)",
+        "short_name": "af-ZA-WillemNeural",
+        "gender": "Male",
+        "locale": "af-ZA"
+      }
+    ],
+    "Amharic (Ethiopia) (am-ET)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (am-ET, AmehaNeural)",
+        "short_name": "am-ET-AmehaNeural",
+        "gender": "Male",
+        "locale": "am-ET"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (am-ET, MekdesNeural)",
+        "short_name": "am-ET-MekdesNeural",
+        "gender": "Female",
+        "locale": "am-ET"
+      }
+    ],
+    "Arabic (United Arab Emirates) (ar-AE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-AE, FatimaNeural)",
+        "short_name": "ar-AE-FatimaNeural",
+        "gender": "Female",
+        "locale": "ar-AE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-AE, HamdanNeural)",
+        "short_name": "ar-AE-HamdanNeural",
+        "gender": "Male",
+        "locale": "ar-AE"
+      }
+    ],
+    "Arabic (Bahrain) (ar-BH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-BH, AliNeural)",
+        "short_name": "ar-BH-AliNeural",
+        "gender": "Male",
+        "locale": "ar-BH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-BH, LailaNeural)",
+        "short_name": "ar-BH-LailaNeural",
+        "gender": "Female",
+        "locale": "ar-BH"
+      }
+    ],
+    "Arabic (Algeria) (ar-DZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-DZ, AminaNeural)",
+        "short_name": "ar-DZ-AminaNeural",
+        "gender": "Female",
+        "locale": "ar-DZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-DZ, IsmaelNeural)",
+        "short_name": "ar-DZ-IsmaelNeural",
+        "gender": "Male",
+        "locale": "ar-DZ"
+      }
+    ],
+    "Arabic (Egypt) (ar-EG)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-EG, SalmaNeural)",
+        "short_name": "ar-EG-SalmaNeural",
+        "gender": "Female",
+        "locale": "ar-EG"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-EG, ShakirNeural)",
+        "short_name": "ar-EG-ShakirNeural",
+        "gender": "Male",
+        "locale": "ar-EG"
+      }
+    ],
+    "Arabic (Iraq) (ar-IQ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-IQ, BasselNeural)",
+        "short_name": "ar-IQ-BasselNeural",
+        "gender": "Male",
+        "locale": "ar-IQ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-IQ, RanaNeural)",
+        "short_name": "ar-IQ-RanaNeural",
+        "gender": "Female",
+        "locale": "ar-IQ"
+      }
+    ],
+    "Arabic (Jordan) (ar-JO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-JO, SanaNeural)",
+        "short_name": "ar-JO-SanaNeural",
+        "gender": "Female",
+        "locale": "ar-JO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-JO, TaimNeural)",
+        "short_name": "ar-JO-TaimNeural",
+        "gender": "Male",
+        "locale": "ar-JO"
+      }
+    ],
+    "Arabic (Kuwait) (ar-KW)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-KW, FahedNeural)",
+        "short_name": "ar-KW-FahedNeural",
+        "gender": "Male",
+        "locale": "ar-KW"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-KW, NouraNeural)",
+        "short_name": "ar-KW-NouraNeural",
+        "gender": "Female",
+        "locale": "ar-KW"
+      }
+    ],
+    "Arabic (Lebanon) (ar-LB)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-LB, LaylaNeural)",
+        "short_name": "ar-LB-LaylaNeural",
+        "gender": "Female",
+        "locale": "ar-LB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-LB, RamiNeural)",
+        "short_name": "ar-LB-RamiNeural",
+        "gender": "Male",
+        "locale": "ar-LB"
+      }
+    ],
+    "Arabic (Libya) (ar-LY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-LY, ImanNeural)",
+        "short_name": "ar-LY-ImanNeural",
+        "gender": "Female",
+        "locale": "ar-LY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-LY, OmarNeural)",
+        "short_name": "ar-LY-OmarNeural",
+        "gender": "Male",
+        "locale": "ar-LY"
+      }
+    ],
+    "Arabic (Morocco) (ar-MA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-MA, JamalNeural)",
+        "short_name": "ar-MA-JamalNeural",
+        "gender": "Male",
+        "locale": "ar-MA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-MA, MounaNeural)",
+        "short_name": "ar-MA-MounaNeural",
+        "gender": "Female",
+        "locale": "ar-MA"
+      }
+    ],
+    "Arabic (Oman) (ar-OM)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-OM, AbdullahNeural)",
+        "short_name": "ar-OM-AbdullahNeural",
+        "gender": "Male",
+        "locale": "ar-OM"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-OM, AyshaNeural)",
+        "short_name": "ar-OM-AyshaNeural",
+        "gender": "Female",
+        "locale": "ar-OM"
+      }
+    ],
+    "Arabic (Qatar) (ar-QA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-QA, AmalNeural)",
+        "short_name": "ar-QA-AmalNeural",
+        "gender": "Female",
+        "locale": "ar-QA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-QA, MoazNeural)",
+        "short_name": "ar-QA-MoazNeural",
+        "gender": "Male",
+        "locale": "ar-QA"
+      }
+    ],
+    "العربية (Arabic)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-SA, HamedNeural)",
+        "short_name": "ar-SA-HamedNeural",
+        "gender": "Male",
+        "locale": "ar-SA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-SA, ZariyahNeural)",
+        "short_name": "ar-SA-ZariyahNeural",
+        "gender": "Female",
+        "locale": "ar-SA"
+      }
+    ],
+    "Arabic (Syria) (ar-SY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-SY, AmanyNeural)",
+        "short_name": "ar-SY-AmanyNeural",
+        "gender": "Female",
+        "locale": "ar-SY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-SY, LaithNeural)",
+        "short_name": "ar-SY-LaithNeural",
+        "gender": "Male",
+        "locale": "ar-SY"
+      }
+    ],
+    "Arabic (Tunisia) (ar-TN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-TN, HediNeural)",
+        "short_name": "ar-TN-HediNeural",
+        "gender": "Male",
+        "locale": "ar-TN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-TN, ReemNeural)",
+        "short_name": "ar-TN-ReemNeural",
+        "gender": "Female",
+        "locale": "ar-TN"
+      }
+    ],
+    "Arabic (Yemen) (ar-YE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-YE, MaryamNeural)",
+        "short_name": "ar-YE-MaryamNeural",
+        "gender": "Female",
+        "locale": "ar-YE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ar-YE, SalehNeural)",
+        "short_name": "ar-YE-SalehNeural",
+        "gender": "Male",
+        "locale": "ar-YE"
+      }
+    ],
+    "Assamese (India) (as-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (as-IN, PriyomNeural)",
+        "short_name": "as-IN-PriyomNeural",
+        "gender": "Male",
+        "locale": "as-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (as-IN, YashicaNeural)",
+        "short_name": "as-IN-YashicaNeural",
+        "gender": "Female",
+        "locale": "as-IN"
+      }
+    ],
+    "Azerbaijani (Latin, Azerbaijan) (az-AZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (az-AZ, BabekNeural)",
+        "short_name": "az-AZ-BabekNeural",
+        "gender": "Male",
+        "locale": "az-AZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (az-AZ, BanuNeural)",
+        "short_name": "az-AZ-BanuNeural",
+        "gender": "Female",
+        "locale": "az-AZ"
+      }
+    ],
+    "Bulgarian (Bulgaria) (bg-BG)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bg-BG, BorislavNeural)",
+        "short_name": "bg-BG-BorislavNeural",
+        "gender": "Male",
+        "locale": "bg-BG"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bg-BG, KalinaNeural)",
+        "short_name": "bg-BG-KalinaNeural",
+        "gender": "Female",
+        "locale": "bg-BG"
+      }
+    ],
+    "Bangla (Bangladesh) (bn-BD)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bn-BD, NabanitaNeural)",
+        "short_name": "bn-BD-NabanitaNeural",
+        "gender": "Female",
+        "locale": "bn-BD"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bn-BD, PradeepNeural)",
+        "short_name": "bn-BD-PradeepNeural",
+        "gender": "Male",
+        "locale": "bn-BD"
+      }
+    ],
+    "Bengali (India) (bn-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bn-IN, BashkarNeural)",
+        "short_name": "bn-IN-BashkarNeural",
+        "gender": "Male",
+        "locale": "bn-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bn-IN, TanishaaNeural)",
+        "short_name": "bn-IN-TanishaaNeural",
+        "gender": "Female",
+        "locale": "bn-IN"
+      }
+    ],
+    "Bosnian (Bosnia and Herzegovina) (bs-BA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bs-BA, GoranNeural)",
+        "short_name": "bs-BA-GoranNeural",
+        "gender": "Male",
+        "locale": "bs-BA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (bs-BA, VesnaNeural)",
+        "short_name": "bs-BA-VesnaNeural",
+        "gender": "Female",
+        "locale": "bs-BA"
+      }
+    ],
+    "Catalan (ca-ES)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ca-ES, AlbaNeural)",
+        "short_name": "ca-ES-AlbaNeural",
+        "gender": "Female",
+        "locale": "ca-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ca-ES, EnricNeural)",
+        "short_name": "ca-ES-EnricNeural",
+        "gender": "Male",
+        "locale": "ca-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ca-ES, JoanaNeural)",
+        "short_name": "ca-ES-JoanaNeural",
+        "gender": "Female",
+        "locale": "ca-ES"
+      }
+    ],
+    "Czech (Czechia) (cs-CZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (cs-CZ, AntoninNeural)",
+        "short_name": "cs-CZ-AntoninNeural",
+        "gender": "Male",
+        "locale": "cs-CZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (cs-CZ, VlastaNeural)",
+        "short_name": "cs-CZ-VlastaNeural",
+        "gender": "Female",
+        "locale": "cs-CZ"
+      }
+    ],
+    "Welsh (United Kingdom) (cy-GB)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (cy-GB, AledNeural)",
+        "short_name": "cy-GB-AledNeural",
+        "gender": "Male",
+        "locale": "cy-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (cy-GB, NiaNeural)",
+        "short_name": "cy-GB-NiaNeural",
+        "gender": "Female",
+        "locale": "cy-GB"
+      }
+    ],
+    "Dansk (Danish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (da-DK, ChristelNeural)",
+        "short_name": "da-DK-ChristelNeural",
+        "gender": "Female",
+        "locale": "da-DK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (da-DK, JeppeNeural)",
+        "short_name": "da-DK-JeppeNeural",
+        "gender": "Male",
+        "locale": "da-DK"
+      }
+    ],
+    "German (Austria) (de-AT)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-AT, IngridNeural)",
+        "short_name": "de-AT-IngridNeural",
+        "gender": "Female",
+        "locale": "de-AT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-AT, JonasNeural)",
+        "short_name": "de-AT-JonasNeural",
+        "gender": "Male",
+        "locale": "de-AT"
+      }
+    ],
+    "German (Switzerland) (de-CH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-CH, JanNeural)",
+        "short_name": "de-CH-JanNeural",
+        "gender": "Male",
+        "locale": "de-CH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-CH, LeniNeural)",
+        "short_name": "de-CH-LeniNeural",
+        "gender": "Female",
+        "locale": "de-CH"
+      }
+    ],
+    "Deutsch (German)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, AmalaNeural)",
+        "short_name": "de-DE-AmalaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, BerndNeural)",
+        "short_name": "de-DE-BerndNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, ChristophNeural)",
+        "short_name": "de-DE-ChristophNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, ConradNeural)",
+        "short_name": "de-DE-ConradNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, ElkeNeural)",
+        "short_name": "de-DE-ElkeNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, FlorianMultilingualNeural)",
+        "short_name": "de-DE-FlorianMultilingualNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, GiselaNeural)",
+        "short_name": "de-DE-GiselaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, KasperNeural)",
+        "short_name": "de-DE-KasperNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, KatjaNeural)",
+        "short_name": "de-DE-KatjaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, KillianNeural)",
+        "short_name": "de-DE-KillianNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, KlarissaNeural)",
+        "short_name": "de-DE-KlarissaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, KlausNeural)",
+        "short_name": "de-DE-KlausNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, LouisaNeural)",
+        "short_name": "de-DE-LouisaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, MajaNeural)",
+        "short_name": "de-DE-MajaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, RalfNeural)",
+        "short_name": "de-DE-RalfNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, SeraphinaMultilingualNeural)",
+        "short_name": "de-DE-SeraphinaMultilingualNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (de-DE, TanjaNeural)",
+        "short_name": "de-DE-TanjaNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      },
+      {
+        "name": "de-DE-Florian:DragonHDLatestNeural",
+        "short_name": "de-DE-Florian:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "de-DE"
+      },
+      {
+        "name": "de-DE-Seraphina:DragonHDLatestNeural",
+        "short_name": "de-DE-Seraphina:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "de-DE"
+      }
+    ],
+    "Greek (Greece) (el-GR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (el-GR, AthinaNeural)",
+        "short_name": "el-GR-AthinaNeural",
+        "gender": "Female",
+        "locale": "el-GR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (el-GR, NestorasNeural)",
+        "short_name": "el-GR-NestorasNeural",
+        "gender": "Male",
+        "locale": "el-GR"
+      }
+    ],
+    "English (Australia)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, AnnetteNeural)",
+        "short_name": "en-AU-AnnetteNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, CarlyNeural)",
+        "short_name": "en-AU-CarlyNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, DarrenNeural)",
+        "short_name": "en-AU-DarrenNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, DuncanNeural)",
+        "short_name": "en-AU-DuncanNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, ElsieNeural)",
+        "short_name": "en-AU-ElsieNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, FreyaNeural)",
+        "short_name": "en-AU-FreyaNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, JoanneNeural)",
+        "short_name": "en-AU-JoanneNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, KenNeural)",
+        "short_name": "en-AU-KenNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, KimNeural)",
+        "short_name": "en-AU-KimNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, NatashaNeural)",
+        "short_name": "en-AU-NatashaNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, NeilNeural)",
+        "short_name": "en-AU-NeilNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, TimNeural)",
+        "short_name": "en-AU-TimNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, TinaNeural)",
+        "short_name": "en-AU-TinaNeural",
+        "gender": "Female",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, WilliamMultilingualNeural)",
+        "short_name": "en-AU-WilliamMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-AU, WilliamNeural)",
+        "short_name": "en-AU-WilliamNeural",
+        "gender": "Male",
+        "locale": "en-AU"
+      }
+    ],
+    "English (Canada) (en-CA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-CA, ClaraNeural)",
+        "short_name": "en-CA-ClaraNeural",
+        "gender": "Female",
+        "locale": "en-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-CA, LiamNeural)",
+        "short_name": "en-CA-LiamNeural",
+        "gender": "Male",
+        "locale": "en-CA"
+      }
+    ],
+    "English (UK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, AbbiNeural)",
+        "short_name": "en-GB-AbbiNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, AdaMultilingualNeural)",
+        "short_name": "en-GB-AdaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, AlfieNeural)",
+        "short_name": "en-GB-AlfieNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, BellaNeural)",
+        "short_name": "en-GB-BellaNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, ElliotNeural)",
+        "short_name": "en-GB-ElliotNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, EthanNeural)",
+        "short_name": "en-GB-EthanNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, HollieNeural)",
+        "short_name": "en-GB-HollieNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, LibbyNeural)",
+        "short_name": "en-GB-LibbyNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, MaisieNeural)",
+        "short_name": "en-GB-MaisieNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, MiaNeural)",
+        "short_name": "en-GB-MiaNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, NoahNeural)",
+        "short_name": "en-GB-NoahNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, OliverNeural)",
+        "short_name": "en-GB-OliverNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, OliviaNeural)",
+        "short_name": "en-GB-OliviaNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, OllieMultilingualNeural)",
+        "short_name": "en-GB-OllieMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, RyanNeural)",
+        "short_name": "en-GB-RyanNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, SoniaNeural)",
+        "short_name": "en-GB-SoniaNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-GB, ThomasNeural)",
+        "short_name": "en-GB-ThomasNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      },
+      {
+        "name": "en-GB-Ada:DragonHDLatestNeural",
+        "short_name": "en-GB-Ada:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-GB"
+      },
+      {
+        "name": "en-GB-Ollie:DragonHDLatestNeural",
+        "short_name": "en-GB-Ollie:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-GB"
+      }
+    ],
+    "English (Hong Kong SAR) (en-HK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-HK, SamNeural)",
+        "short_name": "en-HK-SamNeural",
+        "gender": "Male",
+        "locale": "en-HK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-HK, YanNeural)",
+        "short_name": "en-HK-YanNeural",
+        "gender": "Female",
+        "locale": "en-HK"
+      }
+    ],
+    "English (Ireland) (en-IE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IE, ConnorNeural)",
+        "short_name": "en-IE-ConnorNeural",
+        "gender": "Male",
+        "locale": "en-IE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IE, EmilyNeural)",
+        "short_name": "en-IE-EmilyNeural",
+        "gender": "Female",
+        "locale": "en-IE"
+      }
+    ],
+    "English (India) (en-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, AaravNeural)",
+        "short_name": "en-IN-AaravNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, AartiIndicNeural)",
+        "short_name": "en-IN-AartiIndicNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, AartiNeural)",
+        "short_name": "en-IN-AartiNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, AashiNeural)",
+        "short_name": "en-IN-AashiNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, AnanyaNeural)",
+        "short_name": "en-IN-AnanyaNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, ArjunIndicNeural)",
+        "short_name": "en-IN-ArjunIndicNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, ArjunNeural)",
+        "short_name": "en-IN-ArjunNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, KavyaNeural)",
+        "short_name": "en-IN-KavyaNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, KunalNeural)",
+        "short_name": "en-IN-KunalNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, NeerjaIndicNeural)",
+        "short_name": "en-IN-NeerjaIndicNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, NeerjaNeural)",
+        "short_name": "en-IN-NeerjaNeural",
+        "gender": "Female",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, PrabhatIndicNeural)",
+        "short_name": "en-IN-PrabhatIndicNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, PrabhatNeural)",
+        "short_name": "en-IN-PrabhatNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-IN, RehaanNeural)",
+        "short_name": "en-IN-RehaanNeural",
+        "gender": "Male",
+        "locale": "en-IN"
+      }
+    ],
+    "English (Kenya) (en-KE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-KE, AsiliaNeural)",
+        "short_name": "en-KE-AsiliaNeural",
+        "gender": "Female",
+        "locale": "en-KE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-KE, ChilembaNeural)",
+        "short_name": "en-KE-ChilembaNeural",
+        "gender": "Male",
+        "locale": "en-KE"
+      }
+    ],
+    "English (Nigeria) (en-NG)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-NG, AbeoNeural)",
+        "short_name": "en-NG-AbeoNeural",
+        "gender": "Male",
+        "locale": "en-NG"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-NG, EzinneNeural)",
+        "short_name": "en-NG-EzinneNeural",
+        "gender": "Female",
+        "locale": "en-NG"
+      }
+    ],
+    "English (New Zealand) (en-NZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-NZ, MitchellNeural)",
+        "short_name": "en-NZ-MitchellNeural",
+        "gender": "Male",
+        "locale": "en-NZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-NZ, MollyNeural)",
+        "short_name": "en-NZ-MollyNeural",
+        "gender": "Female",
+        "locale": "en-NZ"
+      }
+    ],
+    "English (Philippines) (en-PH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-PH, JamesNeural)",
+        "short_name": "en-PH-JamesNeural",
+        "gender": "Male",
+        "locale": "en-PH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-PH, RosaNeural)",
+        "short_name": "en-PH-RosaNeural",
+        "gender": "Female",
+        "locale": "en-PH"
+      }
+    ],
+    "English (Singapore) (en-SG)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-SG, LunaNeural)",
+        "short_name": "en-SG-LunaNeural",
+        "gender": "Female",
+        "locale": "en-SG"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-SG, WayneNeural)",
+        "short_name": "en-SG-WayneNeural",
+        "gender": "Male",
+        "locale": "en-SG"
+      }
+    ],
+    "English (Tanzania) (en-TZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-TZ, ElimuNeural)",
+        "short_name": "en-TZ-ElimuNeural",
+        "gender": "Male",
+        "locale": "en-TZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-TZ, ImaniNeural)",
+        "short_name": "en-TZ-ImaniNeural",
+        "gender": "Female",
+        "locale": "en-TZ"
+      }
+    ],
+    "English (US)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AdamMultilingualNeural)",
+        "short_name": "en-US-AdamMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AlloyTurboMultilingualNeural)",
+        "short_name": "en-US-AlloyTurboMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AmandaMultilingualNeural)",
+        "short_name": "en-US-AmandaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AmberNeural)",
+        "short_name": "en-US-AmberNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AnaNeural)",
+        "short_name": "en-US-AnaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AndrewMultilingualNeural)",
+        "short_name": "en-US-AndrewMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AndrewNeural)",
+        "short_name": "en-US-AndrewNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AriaNeural)",
+        "short_name": "en-US-AriaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AshleyNeural)",
+        "short_name": "en-US-AshleyNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AvaMultilingualNeural)",
+        "short_name": "en-US-AvaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, AvaNeural)",
+        "short_name": "en-US-AvaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, BrandonMultilingualNeural)",
+        "short_name": "en-US-BrandonMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, BrandonNeural)",
+        "short_name": "en-US-BrandonNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, BrianMultilingualNeural)",
+        "short_name": "en-US-BrianMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, BrianNeural)",
+        "short_name": "en-US-BrianNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, ChristopherMultilingualNeural)",
+        "short_name": "en-US-ChristopherMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, ChristopherNeural)",
+        "short_name": "en-US-ChristopherNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, CoraMultilingualNeural)",
+        "short_name": "en-US-CoraMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, CoraNeural)",
+        "short_name": "en-US-CoraNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, DavisMultilingualNeural)",
+        "short_name": "en-US-DavisMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, DavisNeural)",
+        "short_name": "en-US-DavisNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, DerekMultilingualNeural)",
+        "short_name": "en-US-DerekMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, DustinMultilingualNeural)",
+        "short_name": "en-US-DustinMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, EchoTurboMultilingualNeural)",
+        "short_name": "en-US-EchoTurboMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, ElizabethNeural)",
+        "short_name": "en-US-ElizabethNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, EmmaMultilingualNeural)",
+        "short_name": "en-US-EmmaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, EmmaNeural)",
+        "short_name": "en-US-EmmaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, EricNeural)",
+        "short_name": "en-US-EricNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, FableTurboMultilingualNeural)",
+        "short_name": "en-US-FableTurboMultilingualNeural",
+        "gender": "Neutral",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, GuyNeural)",
+        "short_name": "en-US-GuyNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, JacobNeural)",
+        "short_name": "en-US-JacobNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, JaneNeural)",
+        "short_name": "en-US-JaneNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, JasonNeural)",
+        "short_name": "en-US-JasonNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, JennyMultilingualNeural)",
+        "short_name": "en-US-JennyMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)",
+        "short_name": "en-US-JennyNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, KaiNeural)",
+        "short_name": "en-US-KaiNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, LewisMultilingualNeural)",
+        "short_name": "en-US-LewisMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, LolaMultilingualNeural)",
+        "short_name": "en-US-LolaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, LunaNeural)",
+        "short_name": "en-US-LunaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, MichelleNeural)",
+        "short_name": "en-US-MichelleNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, MonicaNeural)",
+        "short_name": "en-US-MonicaNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, NancyMultilingualNeural)",
+        "short_name": "en-US-NancyMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, NancyNeural)",
+        "short_name": "en-US-NancyNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, NovaTurboMultilingualNeural)",
+        "short_name": "en-US-NovaTurboMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, OnyxTurboMultilingualNeural)",
+        "short_name": "en-US-OnyxTurboMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, PhoebeMultilingualNeural)",
+        "short_name": "en-US-PhoebeMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, RogerNeural)",
+        "short_name": "en-US-RogerNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, RyanMultilingualNeural)",
+        "short_name": "en-US-RyanMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, SamuelMultilingualNeural)",
+        "short_name": "en-US-SamuelMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, SaraNeural)",
+        "short_name": "en-US-SaraNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, SerenaMultilingualNeural)",
+        "short_name": "en-US-SerenaMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, ShimmerTurboMultilingualNeural)",
+        "short_name": "en-US-ShimmerTurboMultilingualNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, SteffanMultilingualNeural)",
+        "short_name": "en-US-SteffanMultilingualNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, SteffanNeural)",
+        "short_name": "en-US-SteffanNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-US, TonyNeural)",
+        "short_name": "en-US-TonyNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Adam:DragonHDLatestNeural",
+        "short_name": "en-US-Adam:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Alloy:DragonHDLatestNeural",
+        "short_name": "en-US-Alloy:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Andrew2:DragonHDLatestNeural",
+        "short_name": "en-US-Andrew2:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Andrew3:DragonHDLatestNeural",
+        "short_name": "en-US-Andrew3:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Andrew:DragonHDLatestNeural",
+        "short_name": "en-US-Andrew:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Aria:DragonHDLatestNeural",
+        "short_name": "en-US-Aria:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Ava3:DragonHDLatestNeural",
+        "short_name": "en-US-Ava3:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Ava:DragonHDLatestNeural",
+        "short_name": "en-US-Ava:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Bree:DragonHDLatestNeural",
+        "short_name": "en-US-Bree:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Brian:DragonHDLatestNeural",
+        "short_name": "en-US-Brian:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Davis:DragonHDLatestNeural",
+        "short_name": "en-US-Davis:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Emma2:DragonHDLatestNeural",
+        "short_name": "en-US-Emma2:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Emma:DragonHDLatestNeural",
+        "short_name": "en-US-Emma:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Jane:DragonHDLatestNeural",
+        "short_name": "en-US-Jane:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Jenny:DragonHDLatestNeural",
+        "short_name": "en-US-Jenny:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-MultiTalker-Ava-Andrew:DragonHDLatestNeural",
+        "short_name": "en-US-MultiTalker-Ava-Andrew:DragonHDLatestNeural",
+        "gender": "Neutral",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-MultiTalker-Ava-Steffan:DragonHDLatestNeural",
+        "short_name": "en-US-MultiTalker-Ava-Steffan:DragonHDLatestNeural",
+        "gender": "Neutral",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Nova:DragonHDLatestNeural",
+        "short_name": "en-US-Nova:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Phoebe:DragonHDLatestNeural",
+        "short_name": "en-US-Phoebe:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Serena:DragonHDLatestNeural",
+        "short_name": "en-US-Serena:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "en-US"
+      },
+      {
+        "name": "en-US-Steffan:DragonHDLatestNeural",
+        "short_name": "en-US-Steffan:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "en-US"
+      }
+    ],
+    "English (South Africa) (en-ZA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-ZA, LeahNeural)",
+        "short_name": "en-ZA-LeahNeural",
+        "gender": "Female",
+        "locale": "en-ZA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (en-ZA, LukeNeural)",
+        "short_name": "en-ZA-LukeNeural",
+        "gender": "Male",
+        "locale": "en-ZA"
+      }
+    ],
+    "Spanish (Argentina) (es-AR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-AR, ElenaNeural)",
+        "short_name": "es-AR-ElenaNeural",
+        "gender": "Female",
+        "locale": "es-AR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-AR, TomasNeural)",
+        "short_name": "es-AR-TomasNeural",
+        "gender": "Male",
+        "locale": "es-AR"
+      }
+    ],
+    "Spanish (Bolivia) (es-BO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-BO, MarceloNeural)",
+        "short_name": "es-BO-MarceloNeural",
+        "gender": "Male",
+        "locale": "es-BO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-BO, SofiaNeural)",
+        "short_name": "es-BO-SofiaNeural",
+        "gender": "Female",
+        "locale": "es-BO"
+      }
+    ],
+    "Spanish (Chile) (es-CL)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CL, CatalinaNeural)",
+        "short_name": "es-CL-CatalinaNeural",
+        "gender": "Female",
+        "locale": "es-CL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CL, LorenzoNeural)",
+        "short_name": "es-CL-LorenzoNeural",
+        "gender": "Male",
+        "locale": "es-CL"
+      }
+    ],
+    "Spanish (Colombia) (es-CO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CO, GonzaloNeural)",
+        "short_name": "es-CO-GonzaloNeural",
+        "gender": "Male",
+        "locale": "es-CO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CO, SalomeNeural)",
+        "short_name": "es-CO-SalomeNeural",
+        "gender": "Female",
+        "locale": "es-CO"
+      }
+    ],
+    "Spanish (Costa Rica) (es-CR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CR, JuanNeural)",
+        "short_name": "es-CR-JuanNeural",
+        "gender": "Male",
+        "locale": "es-CR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CR, MariaNeural)",
+        "short_name": "es-CR-MariaNeural",
+        "gender": "Female",
+        "locale": "es-CR"
+      }
+    ],
+    "Spanish (Cuba) (es-CU)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CU, BelkysNeural)",
+        "short_name": "es-CU-BelkysNeural",
+        "gender": "Female",
+        "locale": "es-CU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-CU, ManuelNeural)",
+        "short_name": "es-CU-ManuelNeural",
+        "gender": "Male",
+        "locale": "es-CU"
+      }
+    ],
+    "Spanish (Dominican Republic) (es-DO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-DO, EmilioNeural)",
+        "short_name": "es-DO-EmilioNeural",
+        "gender": "Male",
+        "locale": "es-DO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-DO, RamonaNeural)",
+        "short_name": "es-DO-RamonaNeural",
+        "gender": "Female",
+        "locale": "es-DO"
+      }
+    ],
+    "Spanish (Ecuador) (es-EC)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-EC, AndreaNeural)",
+        "short_name": "es-EC-AndreaNeural",
+        "gender": "Female",
+        "locale": "es-EC"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-EC, LuisNeural)",
+        "short_name": "es-EC-LuisNeural",
+        "gender": "Male",
+        "locale": "es-EC"
+      }
+    ],
+    "Español (Spanish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, AbrilNeural)",
+        "short_name": "es-ES-AbrilNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, AlvaroNeural)",
+        "short_name": "es-ES-AlvaroNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, ArabellaMultilingualNeural)",
+        "short_name": "es-ES-ArabellaMultilingualNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, ArnauNeural)",
+        "short_name": "es-ES-ArnauNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, DarioNeural)",
+        "short_name": "es-ES-DarioNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, EliasNeural)",
+        "short_name": "es-ES-EliasNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, ElviraNeural)",
+        "short_name": "es-ES-ElviraNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, EstrellaNeural)",
+        "short_name": "es-ES-EstrellaNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, IreneNeural)",
+        "short_name": "es-ES-IreneNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, IsidoraMultilingualNeural)",
+        "short_name": "es-ES-IsidoraMultilingualNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, LaiaNeural)",
+        "short_name": "es-ES-LaiaNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, LiaNeural)",
+        "short_name": "es-ES-LiaNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, NilNeural)",
+        "short_name": "es-ES-NilNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, SaulNeural)",
+        "short_name": "es-ES-SaulNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, TeoNeural)",
+        "short_name": "es-ES-TeoNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, TrianaNeural)",
+        "short_name": "es-ES-TrianaNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, TristanMultilingualNeural)",
+        "short_name": "es-ES-TristanMultilingualNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, VeraNeural)",
+        "short_name": "es-ES-VeraNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, XimenaMultilingualNeural)",
+        "short_name": "es-ES-XimenaMultilingualNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-ES, XimenaNeural)",
+        "short_name": "es-ES-XimenaNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      },
+      {
+        "name": "es-ES-Tristan:DragonHDLatestNeural",
+        "short_name": "es-ES-Tristan:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "es-ES"
+      },
+      {
+        "name": "es-ES-Ximena:DragonHDLatestNeural",
+        "short_name": "es-ES-Ximena:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "es-ES"
+      }
+    ],
+    "Spanish (Equatorial Guinea) (es-GQ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-GQ, JavierNeural)",
+        "short_name": "es-GQ-JavierNeural",
+        "gender": "Male",
+        "locale": "es-GQ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-GQ, TeresaNeural)",
+        "short_name": "es-GQ-TeresaNeural",
+        "gender": "Female",
+        "locale": "es-GQ"
+      }
+    ],
+    "Spanish (Guatemala) (es-GT)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-GT, AndresNeural)",
+        "short_name": "es-GT-AndresNeural",
+        "gender": "Male",
+        "locale": "es-GT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-GT, MartaNeural)",
+        "short_name": "es-GT-MartaNeural",
+        "gender": "Female",
+        "locale": "es-GT"
+      }
+    ],
+    "Spanish (Honduras) (es-HN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-HN, CarlosNeural)",
+        "short_name": "es-HN-CarlosNeural",
+        "gender": "Male",
+        "locale": "es-HN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-HN, KarlaNeural)",
+        "short_name": "es-HN-KarlaNeural",
+        "gender": "Female",
+        "locale": "es-HN"
+      }
+    ],
+    "Spanish (Mexico) (es-MX)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, BeatrizNeural)",
+        "short_name": "es-MX-BeatrizNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, CandelaNeural)",
+        "short_name": "es-MX-CandelaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, CarlotaNeural)",
+        "short_name": "es-MX-CarlotaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, CecilioNeural)",
+        "short_name": "es-MX-CecilioNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, DaliaMultilingualNeural)",
+        "short_name": "es-MX-DaliaMultilingualNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, DaliaNeural)",
+        "short_name": "es-MX-DaliaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, GerardoNeural)",
+        "short_name": "es-MX-GerardoNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, JorgeMultilingualNeural)",
+        "short_name": "es-MX-JorgeMultilingualNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, JorgeNeural)",
+        "short_name": "es-MX-JorgeNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, LarissaNeural)",
+        "short_name": "es-MX-LarissaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, LibertoNeural)",
+        "short_name": "es-MX-LibertoNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, LucianoNeural)",
+        "short_name": "es-MX-LucianoNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, MarinaNeural)",
+        "short_name": "es-MX-MarinaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, NuriaNeural)",
+        "short_name": "es-MX-NuriaNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, PelayoNeural)",
+        "short_name": "es-MX-PelayoNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, RenataNeural)",
+        "short_name": "es-MX-RenataNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-MX, YagoNeural)",
+        "short_name": "es-MX-YagoNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "es-MX-Tristan:DragonHDLatestNeural",
+        "short_name": "es-MX-Tristan:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "es-MX"
+      },
+      {
+        "name": "es-MX-Ximena:DragonHDLatestNeural",
+        "short_name": "es-MX-Ximena:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "es-MX"
+      }
+    ],
+    "Spanish (Nicaragua) (es-NI)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-NI, FedericoNeural)",
+        "short_name": "es-NI-FedericoNeural",
+        "gender": "Male",
+        "locale": "es-NI"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-NI, YolandaNeural)",
+        "short_name": "es-NI-YolandaNeural",
+        "gender": "Female",
+        "locale": "es-NI"
+      }
+    ],
+    "Spanish (Panama) (es-PA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PA, MargaritaNeural)",
+        "short_name": "es-PA-MargaritaNeural",
+        "gender": "Female",
+        "locale": "es-PA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PA, RobertoNeural)",
+        "short_name": "es-PA-RobertoNeural",
+        "gender": "Male",
+        "locale": "es-PA"
+      }
+    ],
+    "Spanish (Peru) (es-PE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PE, AlexNeural)",
+        "short_name": "es-PE-AlexNeural",
+        "gender": "Male",
+        "locale": "es-PE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PE, CamilaNeural)",
+        "short_name": "es-PE-CamilaNeural",
+        "gender": "Female",
+        "locale": "es-PE"
+      }
+    ],
+    "Spanish (Puerto Rico) (es-PR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PR, KarinaNeural)",
+        "short_name": "es-PR-KarinaNeural",
+        "gender": "Female",
+        "locale": "es-PR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PR, VictorNeural)",
+        "short_name": "es-PR-VictorNeural",
+        "gender": "Male",
+        "locale": "es-PR"
+      }
+    ],
+    "Spanish (Paraguay) (es-PY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PY, MarioNeural)",
+        "short_name": "es-PY-MarioNeural",
+        "gender": "Male",
+        "locale": "es-PY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-PY, TaniaNeural)",
+        "short_name": "es-PY-TaniaNeural",
+        "gender": "Female",
+        "locale": "es-PY"
+      }
+    ],
+    "Spanish (El Salvador) (es-SV)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-SV, LorenaNeural)",
+        "short_name": "es-SV-LorenaNeural",
+        "gender": "Female",
+        "locale": "es-SV"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-SV, RodrigoNeural)",
+        "short_name": "es-SV-RodrigoNeural",
+        "gender": "Male",
+        "locale": "es-SV"
+      }
+    ],
+    "Spanish (United States) (es-US)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-US, AlonsoNeural)",
+        "short_name": "es-US-AlonsoNeural",
+        "gender": "Male",
+        "locale": "es-US"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-US, PalomaNeural)",
+        "short_name": "es-US-PalomaNeural",
+        "gender": "Female",
+        "locale": "es-US"
+      }
+    ],
+    "Spanish (Uruguay) (es-UY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-UY, MateoNeural)",
+        "short_name": "es-UY-MateoNeural",
+        "gender": "Male",
+        "locale": "es-UY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-UY, ValentinaNeural)",
+        "short_name": "es-UY-ValentinaNeural",
+        "gender": "Female",
+        "locale": "es-UY"
+      }
+    ],
+    "Spanish (Venezuela) (es-VE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-VE, PaolaNeural)",
+        "short_name": "es-VE-PaolaNeural",
+        "gender": "Female",
+        "locale": "es-VE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (es-VE, SebastianNeural)",
+        "short_name": "es-VE-SebastianNeural",
+        "gender": "Male",
+        "locale": "es-VE"
+      }
+    ],
+    "Estonian (Estonia) (et-EE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (et-EE, AnuNeural)",
+        "short_name": "et-EE-AnuNeural",
+        "gender": "Female",
+        "locale": "et-EE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (et-EE, KertNeural)",
+        "short_name": "et-EE-KertNeural",
+        "gender": "Male",
+        "locale": "et-EE"
+      }
+    ],
+    "Basque (eu-ES)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (eu-ES, AinhoaNeural)",
+        "short_name": "eu-ES-AinhoaNeural",
+        "gender": "Female",
+        "locale": "eu-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (eu-ES, AnderNeural)",
+        "short_name": "eu-ES-AnderNeural",
+        "gender": "Male",
+        "locale": "eu-ES"
+      }
+    ],
+    "Persian (Iran) (fa-IR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fa-IR, DilaraNeural)",
+        "short_name": "fa-IR-DilaraNeural",
+        "gender": "Female",
+        "locale": "fa-IR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fa-IR, FaridNeural)",
+        "short_name": "fa-IR-FaridNeural",
+        "gender": "Male",
+        "locale": "fa-IR"
+      }
+    ],
+    "Suomi (Finnish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fi-FI, HarriNeural)",
+        "short_name": "fi-FI-HarriNeural",
+        "gender": "Male",
+        "locale": "fi-FI"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fi-FI, NooraNeural)",
+        "short_name": "fi-FI-NooraNeural",
+        "gender": "Female",
+        "locale": "fi-FI"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fi-FI, SelmaNeural)",
+        "short_name": "fi-FI-SelmaNeural",
+        "gender": "Female",
+        "locale": "fi-FI"
+      }
+    ],
+    "Filipino (Philippines) (fil-PH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fil-PH, AngeloNeural)",
+        "short_name": "fil-PH-AngeloNeural",
+        "gender": "Male",
+        "locale": "fil-PH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fil-PH, BlessicaNeural)",
+        "short_name": "fil-PH-BlessicaNeural",
+        "gender": "Female",
+        "locale": "fil-PH"
+      }
+    ],
+    "French (Belgium) (fr-BE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-BE, CharlineNeural)",
+        "short_name": "fr-BE-CharlineNeural",
+        "gender": "Female",
+        "locale": "fr-BE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-BE, GerardNeural)",
+        "short_name": "fr-BE-GerardNeural",
+        "gender": "Male",
+        "locale": "fr-BE"
+      }
+    ],
+    "French (Canada) (fr-CA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CA, AntoineNeural)",
+        "short_name": "fr-CA-AntoineNeural",
+        "gender": "Male",
+        "locale": "fr-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CA, JeanNeural)",
+        "short_name": "fr-CA-JeanNeural",
+        "gender": "Male",
+        "locale": "fr-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CA, SylvieNeural)",
+        "short_name": "fr-CA-SylvieNeural",
+        "gender": "Female",
+        "locale": "fr-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CA, ThierryNeural)",
+        "short_name": "fr-CA-ThierryNeural",
+        "gender": "Male",
+        "locale": "fr-CA"
+      },
+      {
+        "name": "fr-CA-Sylvie:DragonHDLatestNeural",
+        "short_name": "fr-CA-Sylvie:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "fr-CA"
+      },
+      {
+        "name": "fr-CA-Thierry:DragonHDLatestNeural",
+        "short_name": "fr-CA-Thierry:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "fr-CA"
+      }
+    ],
+    "French (Switzerland) (fr-CH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CH, ArianeNeural)",
+        "short_name": "fr-CH-ArianeNeural",
+        "gender": "Female",
+        "locale": "fr-CH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-CH, FabriceNeural)",
+        "short_name": "fr-CH-FabriceNeural",
+        "gender": "Male",
+        "locale": "fr-CH"
+      }
+    ],
+    "Français (French)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, AlainNeural)",
+        "short_name": "fr-FR-AlainNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, BrigitteNeural)",
+        "short_name": "fr-FR-BrigitteNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, CelesteNeural)",
+        "short_name": "fr-FR-CelesteNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, ClaudeNeural)",
+        "short_name": "fr-FR-ClaudeNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, CoralieNeural)",
+        "short_name": "fr-FR-CoralieNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, DeniseNeural)",
+        "short_name": "fr-FR-DeniseNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, EloiseNeural)",
+        "short_name": "fr-FR-EloiseNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, HenriNeural)",
+        "short_name": "fr-FR-HenriNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, JacquelineNeural)",
+        "short_name": "fr-FR-JacquelineNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, JeromeNeural)",
+        "short_name": "fr-FR-JeromeNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, JosephineNeural)",
+        "short_name": "fr-FR-JosephineNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, LucienMultilingualNeural)",
+        "short_name": "fr-FR-LucienMultilingualNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, MauriceNeural)",
+        "short_name": "fr-FR-MauriceNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, RemyMultilingualNeural)",
+        "short_name": "fr-FR-RemyMultilingualNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, VivienneMultilingualNeural)",
+        "short_name": "fr-FR-VivienneMultilingualNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, YvesNeural)",
+        "short_name": "fr-FR-YvesNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (fr-FR, YvetteNeural)",
+        "short_name": "fr-FR-YvetteNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "fr-FR-Remy:DragonHDLatestNeural",
+        "short_name": "fr-FR-Remy:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "fr-FR"
+      },
+      {
+        "name": "fr-FR-Vivienne:DragonHDLatestNeural",
+        "short_name": "fr-FR-Vivienne:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "fr-FR"
+      }
+    ],
+    "Irish (Ireland) (ga-IE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ga-IE, ColmNeural)",
+        "short_name": "ga-IE-ColmNeural",
+        "gender": "Male",
+        "locale": "ga-IE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ga-IE, OrlaNeural)",
+        "short_name": "ga-IE-OrlaNeural",
+        "gender": "Female",
+        "locale": "ga-IE"
+      }
+    ],
+    "Galician (gl-ES)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (gl-ES, RoiNeural)",
+        "short_name": "gl-ES-RoiNeural",
+        "gender": "Male",
+        "locale": "gl-ES"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (gl-ES, SabelaNeural)",
+        "short_name": "gl-ES-SabelaNeural",
+        "gender": "Female",
+        "locale": "gl-ES"
+      }
+    ],
+    "Gujarati (India) (gu-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (gu-IN, DhwaniNeural)",
+        "short_name": "gu-IN-DhwaniNeural",
+        "gender": "Female",
+        "locale": "gu-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (gu-IN, NiranjanNeural)",
+        "short_name": "gu-IN-NiranjanNeural",
+        "gender": "Male",
+        "locale": "gu-IN"
+      }
+    ],
+    "Hebrew (Israel) (he-IL)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (he-IL, AvriNeural)",
+        "short_name": "he-IL-AvriNeural",
+        "gender": "Male",
+        "locale": "he-IL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (he-IL, HilaNeural)",
+        "short_name": "he-IL-HilaNeural",
+        "gender": "Female",
+        "locale": "he-IL"
+      }
+    ],
+    "हिन्दी (Hindi)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, AaravNeural)",
+        "short_name": "hi-IN-AaravNeural",
+        "gender": "Male",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, AartiNeural)",
+        "short_name": "hi-IN-AartiNeural",
+        "gender": "Female",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, AnanyaNeural)",
+        "short_name": "hi-IN-AnanyaNeural",
+        "gender": "Female",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, ArjunNeural)",
+        "short_name": "hi-IN-ArjunNeural",
+        "gender": "Male",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, KavyaNeural)",
+        "short_name": "hi-IN-KavyaNeural",
+        "gender": "Female",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, KunalNeural)",
+        "short_name": "hi-IN-KunalNeural",
+        "gender": "Male",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, MadhurNeural)",
+        "short_name": "hi-IN-MadhurNeural",
+        "gender": "Male",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, RehaanNeural)",
+        "short_name": "hi-IN-RehaanNeural",
+        "gender": "Male",
+        "locale": "hi-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hi-IN, SwaraNeural)",
+        "short_name": "hi-IN-SwaraNeural",
+        "gender": "Female",
+        "locale": "hi-IN"
+      }
+    ],
+    "Croatian (Croatia) (hr-HR)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hr-HR, GabrijelaNeural)",
+        "short_name": "hr-HR-GabrijelaNeural",
+        "gender": "Female",
+        "locale": "hr-HR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hr-HR, SreckoNeural)",
+        "short_name": "hr-HR-SreckoNeural",
+        "gender": "Male",
+        "locale": "hr-HR"
+      }
+    ],
+    "Hungarian (Hungary) (hu-HU)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hu-HU, NoemiNeural)",
+        "short_name": "hu-HU-NoemiNeural",
+        "gender": "Female",
+        "locale": "hu-HU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hu-HU, TamasNeural)",
+        "short_name": "hu-HU-TamasNeural",
+        "gender": "Male",
+        "locale": "hu-HU"
+      }
+    ],
+    "Armenian (Armenia) (hy-AM)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hy-AM, AnahitNeural)",
+        "short_name": "hy-AM-AnahitNeural",
+        "gender": "Female",
+        "locale": "hy-AM"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (hy-AM, HaykNeural)",
+        "short_name": "hy-AM-HaykNeural",
+        "gender": "Male",
+        "locale": "hy-AM"
+      }
+    ],
+    "Indonesian (Indonesia) (id-ID)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (id-ID, ArdiNeural)",
+        "short_name": "id-ID-ArdiNeural",
+        "gender": "Male",
+        "locale": "id-ID"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (id-ID, GadisNeural)",
+        "short_name": "id-ID-GadisNeural",
+        "gender": "Female",
+        "locale": "id-ID"
+      }
+    ],
+    "Icelandic (Iceland) (is-IS)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (is-IS, GudrunNeural)",
+        "short_name": "is-IS-GudrunNeural",
+        "gender": "Female",
+        "locale": "is-IS"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (is-IS, GunnarNeural)",
+        "short_name": "is-IS-GunnarNeural",
+        "gender": "Male",
+        "locale": "is-IS"
+      }
+    ],
+    "Italiano (Italian)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, AlessioMultilingualNeural)",
+        "short_name": "it-IT-AlessioMultilingualNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, BenignoNeural)",
+        "short_name": "it-IT-BenignoNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, CalimeroNeural)",
+        "short_name": "it-IT-CalimeroNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, CataldoNeural)",
+        "short_name": "it-IT-CataldoNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, DiegoNeural)",
+        "short_name": "it-IT-DiegoNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, ElsaNeural)",
+        "short_name": "it-IT-ElsaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, FabiolaNeural)",
+        "short_name": "it-IT-FabiolaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, FiammaNeural)",
+        "short_name": "it-IT-FiammaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, GianniNeural)",
+        "short_name": "it-IT-GianniNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, GiuseppeMultilingualNeural)",
+        "short_name": "it-IT-GiuseppeMultilingualNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, GiuseppeNeural)",
+        "short_name": "it-IT-GiuseppeNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, ImeldaNeural)",
+        "short_name": "it-IT-ImeldaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, IrmaNeural)",
+        "short_name": "it-IT-IrmaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, IsabellaMultilingualNeural)",
+        "short_name": "it-IT-IsabellaMultilingualNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, IsabellaNeural)",
+        "short_name": "it-IT-IsabellaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, LisandroNeural)",
+        "short_name": "it-IT-LisandroNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, MarcelloMultilingualNeural)",
+        "short_name": "it-IT-MarcelloMultilingualNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, PalmiraNeural)",
+        "short_name": "it-IT-PalmiraNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, PierinaNeural)",
+        "short_name": "it-IT-PierinaNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (it-IT, RinaldoNeural)",
+        "short_name": "it-IT-RinaldoNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "it-IT-Alessio:DragonHDLatestNeural",
+        "short_name": "it-IT-Alessio:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "it-IT"
+      },
+      {
+        "name": "it-IT-Isabella:DragonHDLatestNeural",
+        "short_name": "it-IT-Isabella:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "it-IT"
+      }
+    ],
+    "Inuktitut (Syllabics, Canada) (iu-Cans-CA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (iu-Cans-CA, SiqiniqNeural)",
+        "short_name": "iu-Cans-CA-SiqiniqNeural",
+        "gender": "Female",
+        "locale": "iu-Cans-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (iu-Cans-CA, TaqqiqNeural)",
+        "short_name": "iu-Cans-CA-TaqqiqNeural",
+        "gender": "Male",
+        "locale": "iu-Cans-CA"
+      }
+    ],
+    "Inuktitut (Latin, Canada) (iu-Latn-CA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (iu-Latn-CA, SiqiniqNeural)",
+        "short_name": "iu-Latn-CA-SiqiniqNeural",
+        "gender": "Female",
+        "locale": "iu-Latn-CA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (iu-Latn-CA, TaqqiqNeural)",
+        "short_name": "iu-Latn-CA-TaqqiqNeural",
+        "gender": "Male",
+        "locale": "iu-Latn-CA"
+      }
+    ],
+    "日本語 (Japanese)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, AoiNeural)",
+        "short_name": "ja-JP-AoiNeural",
+        "gender": "Female",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, DaichiNeural)",
+        "short_name": "ja-JP-DaichiNeural",
+        "gender": "Male",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, KeitaNeural)",
+        "short_name": "ja-JP-KeitaNeural",
+        "gender": "Male",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, MayuNeural)",
+        "short_name": "ja-JP-MayuNeural",
+        "gender": "Female",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, NanamiNeural)",
+        "short_name": "ja-JP-NanamiNeural",
+        "gender": "Female",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, NaokiNeural)",
+        "short_name": "ja-JP-NaokiNeural",
+        "gender": "Male",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ja-JP, ShioriNeural)",
+        "short_name": "ja-JP-ShioriNeural",
+        "gender": "Female",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "ja-JP-Masaru:DragonHDLatestNeural",
+        "short_name": "ja-JP-Masaru:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "ja-JP"
+      },
+      {
+        "name": "ja-JP-Nanami:DragonHDLatestNeural",
+        "short_name": "ja-JP-Nanami:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "ja-JP"
+      }
+    ],
+    "Javanese (Latin, Indonesia) (jv-ID)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (jv-ID, DimasNeural)",
+        "short_name": "jv-ID-DimasNeural",
+        "gender": "Male",
+        "locale": "jv-ID"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (jv-ID, SitiNeural)",
+        "short_name": "jv-ID-SitiNeural",
+        "gender": "Female",
+        "locale": "jv-ID"
+      }
+    ],
+    "Georgian (Georgia) (ka-GE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ka-GE, EkaNeural)",
+        "short_name": "ka-GE-EkaNeural",
+        "gender": "Female",
+        "locale": "ka-GE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ka-GE, GiorgiNeural)",
+        "short_name": "ka-GE-GiorgiNeural",
+        "gender": "Male",
+        "locale": "ka-GE"
+      }
+    ],
+    "Kazakh (Kazakhstan) (kk-KZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (kk-KZ, AigulNeural)",
+        "short_name": "kk-KZ-AigulNeural",
+        "gender": "Female",
+        "locale": "kk-KZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (kk-KZ, DauletNeural)",
+        "short_name": "kk-KZ-DauletNeural",
+        "gender": "Male",
+        "locale": "kk-KZ"
+      }
+    ],
+    "Khmer (Cambodia) (km-KH)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (km-KH, PisethNeural)",
+        "short_name": "km-KH-PisethNeural",
+        "gender": "Male",
+        "locale": "km-KH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (km-KH, SreymomNeural)",
+        "short_name": "km-KH-SreymomNeural",
+        "gender": "Female",
+        "locale": "km-KH"
+      }
+    ],
+    "Kannada (India) (kn-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (kn-IN, GaganNeural)",
+        "short_name": "kn-IN-GaganNeural",
+        "gender": "Male",
+        "locale": "kn-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (kn-IN, SapnaNeural)",
+        "short_name": "kn-IN-SapnaNeural",
+        "gender": "Female",
+        "locale": "kn-IN"
+      }
+    ],
+    "한국어 (Korean)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, BongJinNeural)",
+        "short_name": "ko-KR-BongJinNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, GookMinNeural)",
+        "short_name": "ko-KR-GookMinNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, HyunsuMultilingualNeural)",
+        "short_name": "ko-KR-HyunsuMultilingualNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, HyunsuNeural)",
+        "short_name": "ko-KR-HyunsuNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, InJoonNeural)",
+        "short_name": "ko-KR-InJoonNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, JiMinNeural)",
+        "short_name": "ko-KR-JiMinNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, SeoHyeonNeural)",
+        "short_name": "ko-KR-SeoHyeonNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, SoonBokNeural)",
+        "short_name": "ko-KR-SoonBokNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)",
+        "short_name": "ko-KR-SunHiNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ko-KR, YuJinNeural)",
+        "short_name": "ko-KR-YuJinNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "ko-KR-Hyunsu:DragonHDLatestNeural",
+        "short_name": "ko-KR-Hyunsu:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "ko-KR"
+      },
+      {
+        "name": "ko-KR-SunHi:DragonHDLatestNeural",
+        "short_name": "ko-KR-SunHi:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "ko-KR"
+      }
+    ],
+    "Lao (Laos) (lo-LA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lo-LA, ChanthavongNeural)",
+        "short_name": "lo-LA-ChanthavongNeural",
+        "gender": "Male",
+        "locale": "lo-LA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lo-LA, KeomanyNeural)",
+        "short_name": "lo-LA-KeomanyNeural",
+        "gender": "Female",
+        "locale": "lo-LA"
+      }
+    ],
+    "Lithuanian (Lithuania) (lt-LT)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lt-LT, LeonasNeural)",
+        "short_name": "lt-LT-LeonasNeural",
+        "gender": "Male",
+        "locale": "lt-LT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lt-LT, OnaNeural)",
+        "short_name": "lt-LT-OnaNeural",
+        "gender": "Female",
+        "locale": "lt-LT"
+      }
+    ],
+    "Latvian (Latvia) (lv-LV)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lv-LV, EveritaNeural)",
+        "short_name": "lv-LV-EveritaNeural",
+        "gender": "Female",
+        "locale": "lv-LV"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (lv-LV, NilsNeural)",
+        "short_name": "lv-LV-NilsNeural",
+        "gender": "Male",
+        "locale": "lv-LV"
+      }
+    ],
+    "Macedonian (North Macedonia) (mk-MK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mk-MK, AleksandarNeural)",
+        "short_name": "mk-MK-AleksandarNeural",
+        "gender": "Male",
+        "locale": "mk-MK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mk-MK, MarijaNeural)",
+        "short_name": "mk-MK-MarijaNeural",
+        "gender": "Female",
+        "locale": "mk-MK"
+      }
+    ],
+    "Malayalam (India) (ml-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ml-IN, MidhunNeural)",
+        "short_name": "ml-IN-MidhunNeural",
+        "gender": "Male",
+        "locale": "ml-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ml-IN, SobhanaNeural)",
+        "short_name": "ml-IN-SobhanaNeural",
+        "gender": "Female",
+        "locale": "ml-IN"
+      }
+    ],
+    "Mongolian (Mongolia) (mn-MN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mn-MN, BataaNeural)",
+        "short_name": "mn-MN-BataaNeural",
+        "gender": "Male",
+        "locale": "mn-MN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mn-MN, YesuiNeural)",
+        "short_name": "mn-MN-YesuiNeural",
+        "gender": "Female",
+        "locale": "mn-MN"
+      }
+    ],
+    "Marathi (India) (mr-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mr-IN, AarohiNeural)",
+        "short_name": "mr-IN-AarohiNeural",
+        "gender": "Female",
+        "locale": "mr-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mr-IN, ManoharNeural)",
+        "short_name": "mr-IN-ManoharNeural",
+        "gender": "Male",
+        "locale": "mr-IN"
+      }
+    ],
+    "Malay (Malaysia) (ms-MY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ms-MY, OsmanNeural)",
+        "short_name": "ms-MY-OsmanNeural",
+        "gender": "Male",
+        "locale": "ms-MY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ms-MY, YasminNeural)",
+        "short_name": "ms-MY-YasminNeural",
+        "gender": "Female",
+        "locale": "ms-MY"
+      }
+    ],
+    "Maltese (Malta) (mt-MT)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mt-MT, GraceNeural)",
+        "short_name": "mt-MT-GraceNeural",
+        "gender": "Female",
+        "locale": "mt-MT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (mt-MT, JosephNeural)",
+        "short_name": "mt-MT-JosephNeural",
+        "gender": "Male",
+        "locale": "mt-MT"
+      }
+    ],
+    "Burmese (Myanmar) (my-MM)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (my-MM, NilarNeural)",
+        "short_name": "my-MM-NilarNeural",
+        "gender": "Female",
+        "locale": "my-MM"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (my-MM, ThihaNeural)",
+        "short_name": "my-MM-ThihaNeural",
+        "gender": "Male",
+        "locale": "my-MM"
+      }
+    ],
+    "Norwegian Bokmål (Norway) (nb-NO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nb-NO, FinnNeural)",
+        "short_name": "nb-NO-FinnNeural",
+        "gender": "Male",
+        "locale": "nb-NO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nb-NO, IselinNeural)",
+        "short_name": "nb-NO-IselinNeural",
+        "gender": "Female",
+        "locale": "nb-NO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nb-NO, PernilleNeural)",
+        "short_name": "nb-NO-PernilleNeural",
+        "gender": "Female",
+        "locale": "nb-NO"
+      }
+    ],
+    "Nepali (Nepal) (ne-NP)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ne-NP, HemkalaNeural)",
+        "short_name": "ne-NP-HemkalaNeural",
+        "gender": "Female",
+        "locale": "ne-NP"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ne-NP, SagarNeural)",
+        "short_name": "ne-NP-SagarNeural",
+        "gender": "Male",
+        "locale": "ne-NP"
+      }
+    ],
+    "Dutch (Belgium) (nl-BE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nl-BE, ArnaudNeural)",
+        "short_name": "nl-BE-ArnaudNeural",
+        "gender": "Male",
+        "locale": "nl-BE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nl-BE, DenaNeural)",
+        "short_name": "nl-BE-DenaNeural",
+        "gender": "Female",
+        "locale": "nl-BE"
+      }
+    ],
+    "Nederlands (Dutch)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nl-NL, ColetteNeural)",
+        "short_name": "nl-NL-ColetteNeural",
+        "gender": "Female",
+        "locale": "nl-NL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nl-NL, FennaNeural)",
+        "short_name": "nl-NL-FennaNeural",
+        "gender": "Female",
+        "locale": "nl-NL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (nl-NL, MaartenNeural)",
+        "short_name": "nl-NL-MaartenNeural",
+        "gender": "Male",
+        "locale": "nl-NL"
+      }
+    ],
+    "Odia (India) (or-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (or-IN, SubhasiniNeural)",
+        "short_name": "or-IN-SubhasiniNeural",
+        "gender": "Female",
+        "locale": "or-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (or-IN, SukantNeural)",
+        "short_name": "or-IN-SukantNeural",
+        "gender": "Male",
+        "locale": "or-IN"
+      }
+    ],
+    "Punjabi (India) (pa-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pa-IN, OjasNeural)",
+        "short_name": "pa-IN-OjasNeural",
+        "gender": "Male",
+        "locale": "pa-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pa-IN, VaaniNeural)",
+        "short_name": "pa-IN-VaaniNeural",
+        "gender": "Female",
+        "locale": "pa-IN"
+      }
+    ],
+    "Polski (Polish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pl-PL, AgnieszkaNeural)",
+        "short_name": "pl-PL-AgnieszkaNeural",
+        "gender": "Female",
+        "locale": "pl-PL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pl-PL, MarekNeural)",
+        "short_name": "pl-PL-MarekNeural",
+        "gender": "Male",
+        "locale": "pl-PL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pl-PL, ZofiaNeural)",
+        "short_name": "pl-PL-ZofiaNeural",
+        "gender": "Female",
+        "locale": "pl-PL"
+      }
+    ],
+    "Pashto (Afghanistan) (ps-AF)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ps-AF, GulNawazNeural)",
+        "short_name": "ps-AF-GulNawazNeural",
+        "gender": "Male",
+        "locale": "ps-AF"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ps-AF, LatifaNeural)",
+        "short_name": "ps-AF-LatifaNeural",
+        "gender": "Female",
+        "locale": "ps-AF"
+      }
+    ],
+    "Português (Brazil)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, AntonioNeural)",
+        "short_name": "pt-BR-AntonioNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, BrendaNeural)",
+        "short_name": "pt-BR-BrendaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, DonatoNeural)",
+        "short_name": "pt-BR-DonatoNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, ElzaNeural)",
+        "short_name": "pt-BR-ElzaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, FabioNeural)",
+        "short_name": "pt-BR-FabioNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, FranciscaNeural)",
+        "short_name": "pt-BR-FranciscaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, GiovannaNeural)",
+        "short_name": "pt-BR-GiovannaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, HumbertoNeural)",
+        "short_name": "pt-BR-HumbertoNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, JulioNeural)",
+        "short_name": "pt-BR-JulioNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, LeilaNeural)",
+        "short_name": "pt-BR-LeilaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, LeticiaNeural)",
+        "short_name": "pt-BR-LeticiaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, MacerioMultilingualNeural)",
+        "short_name": "pt-BR-MacerioMultilingualNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, ManuelaNeural)",
+        "short_name": "pt-BR-ManuelaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, NicolauNeural)",
+        "short_name": "pt-BR-NicolauNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, ThalitaMultilingualNeural)",
+        "short_name": "pt-BR-ThalitaMultilingualNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, ThalitaNeural)",
+        "short_name": "pt-BR-ThalitaNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, ValerioNeural)",
+        "short_name": "pt-BR-ValerioNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-BR, YaraNeural)",
+        "short_name": "pt-BR-YaraNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "pt-BR-Macerio:DragonHDLatestNeural",
+        "short_name": "pt-BR-Macerio:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "pt-BR"
+      },
+      {
+        "name": "pt-BR-Thalita:DragonHDLatestNeural",
+        "short_name": "pt-BR-Thalita:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "pt-BR"
+      }
+    ],
+    "Portuguese (Portugal) (pt-PT)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-PT, DuarteNeural)",
+        "short_name": "pt-PT-DuarteNeural",
+        "gender": "Male",
+        "locale": "pt-PT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-PT, FernandaNeural)",
+        "short_name": "pt-PT-FernandaNeural",
+        "gender": "Female",
+        "locale": "pt-PT"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (pt-PT, RaquelNeural)",
+        "short_name": "pt-PT-RaquelNeural",
+        "gender": "Female",
+        "locale": "pt-PT"
+      }
+    ],
+    "Romanian (Romania) (ro-RO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ro-RO, AlinaNeural)",
+        "short_name": "ro-RO-AlinaNeural",
+        "gender": "Female",
+        "locale": "ro-RO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ro-RO, EmilNeural)",
+        "short_name": "ro-RO-EmilNeural",
+        "gender": "Male",
+        "locale": "ro-RO"
+      }
+    ],
+    "Русский (Russian)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ru-RU, DariyaNeural)",
+        "short_name": "ru-RU-DariyaNeural",
+        "gender": "Female",
+        "locale": "ru-RU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ru-RU, DmitryNeural)",
+        "short_name": "ru-RU-DmitryNeural",
+        "gender": "Male",
+        "locale": "ru-RU"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ru-RU, SvetlanaNeural)",
+        "short_name": "ru-RU-SvetlanaNeural",
+        "gender": "Female",
+        "locale": "ru-RU"
+      }
+    ],
+    "Sinhala (Sri Lanka) (si-LK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (si-LK, SameeraNeural)",
+        "short_name": "si-LK-SameeraNeural",
+        "gender": "Male",
+        "locale": "si-LK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (si-LK, ThiliniNeural)",
+        "short_name": "si-LK-ThiliniNeural",
+        "gender": "Female",
+        "locale": "si-LK"
+      }
+    ],
+    "Slovak (Slovakia) (sk-SK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sk-SK, LukasNeural)",
+        "short_name": "sk-SK-LukasNeural",
+        "gender": "Male",
+        "locale": "sk-SK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sk-SK, ViktoriaNeural)",
+        "short_name": "sk-SK-ViktoriaNeural",
+        "gender": "Female",
+        "locale": "sk-SK"
+      }
+    ],
+    "Slovenian (Slovenia) (sl-SI)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sl-SI, PetraNeural)",
+        "short_name": "sl-SI-PetraNeural",
+        "gender": "Female",
+        "locale": "sl-SI"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sl-SI, RokNeural)",
+        "short_name": "sl-SI-RokNeural",
+        "gender": "Male",
+        "locale": "sl-SI"
+      }
+    ],
+    "Somali (Somalia) (so-SO)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (so-SO, MuuseNeural)",
+        "short_name": "so-SO-MuuseNeural",
+        "gender": "Male",
+        "locale": "so-SO"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (so-SO, UbaxNeural)",
+        "short_name": "so-SO-UbaxNeural",
+        "gender": "Female",
+        "locale": "so-SO"
+      }
+    ],
+    "Albanian (Albania) (sq-AL)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sq-AL, AnilaNeural)",
+        "short_name": "sq-AL-AnilaNeural",
+        "gender": "Female",
+        "locale": "sq-AL"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sq-AL, IlirNeural)",
+        "short_name": "sq-AL-IlirNeural",
+        "gender": "Male",
+        "locale": "sq-AL"
+      }
+    ],
+    "Serbian (Latin, Serbia) (sr-Latn-RS)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sr-Latn-RS, NicholasNeural)",
+        "short_name": "sr-Latn-RS-NicholasNeural",
+        "gender": "Male",
+        "locale": "sr-Latn-RS"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sr-Latn-RS, SophieNeural)",
+        "short_name": "sr-Latn-RS-SophieNeural",
+        "gender": "Female",
+        "locale": "sr-Latn-RS"
+      }
+    ],
+    "Serbian (Cyrillic, Serbia) (sr-RS)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sr-RS, NicholasNeural)",
+        "short_name": "sr-RS-NicholasNeural",
+        "gender": "Male",
+        "locale": "sr-RS"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sr-RS, SophieNeural)",
+        "short_name": "sr-RS-SophieNeural",
+        "gender": "Female",
+        "locale": "sr-RS"
+      }
+    ],
+    "Sundanese (Indonesia) (su-ID)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (su-ID, JajangNeural)",
+        "short_name": "su-ID-JajangNeural",
+        "gender": "Male",
+        "locale": "su-ID"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (su-ID, TutiNeural)",
+        "short_name": "su-ID-TutiNeural",
+        "gender": "Female",
+        "locale": "su-ID"
+      }
+    ],
+    "Svenska (Swedish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sv-SE, HilleviNeural)",
+        "short_name": "sv-SE-HilleviNeural",
+        "gender": "Female",
+        "locale": "sv-SE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sv-SE, MattiasNeural)",
+        "short_name": "sv-SE-MattiasNeural",
+        "gender": "Male",
+        "locale": "sv-SE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sv-SE, SofieNeural)",
+        "short_name": "sv-SE-SofieNeural",
+        "gender": "Female",
+        "locale": "sv-SE"
+      }
+    ],
+    "Swahili (Kenya) (sw-KE)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sw-KE, RafikiNeural)",
+        "short_name": "sw-KE-RafikiNeural",
+        "gender": "Male",
+        "locale": "sw-KE"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sw-KE, ZuriNeural)",
+        "short_name": "sw-KE-ZuriNeural",
+        "gender": "Female",
+        "locale": "sw-KE"
+      }
+    ],
+    "Swahili (Tanzania) (sw-TZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sw-TZ, DaudiNeural)",
+        "short_name": "sw-TZ-DaudiNeural",
+        "gender": "Male",
+        "locale": "sw-TZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (sw-TZ, RehemaNeural)",
+        "short_name": "sw-TZ-RehemaNeural",
+        "gender": "Female",
+        "locale": "sw-TZ"
+      }
+    ],
+    "Tamil (India) (ta-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-IN, PallaviNeural)",
+        "short_name": "ta-IN-PallaviNeural",
+        "gender": "Female",
+        "locale": "ta-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-IN, ValluvarNeural)",
+        "short_name": "ta-IN-ValluvarNeural",
+        "gender": "Male",
+        "locale": "ta-IN"
+      }
+    ],
+    "Tamil (Sri Lanka) (ta-LK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-LK, KumarNeural)",
+        "short_name": "ta-LK-KumarNeural",
+        "gender": "Male",
+        "locale": "ta-LK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-LK, SaranyaNeural)",
+        "short_name": "ta-LK-SaranyaNeural",
+        "gender": "Female",
+        "locale": "ta-LK"
+      }
+    ],
+    "Tamil (Malaysia) (ta-MY)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-MY, KaniNeural)",
+        "short_name": "ta-MY-KaniNeural",
+        "gender": "Female",
+        "locale": "ta-MY"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-MY, SuryaNeural)",
+        "short_name": "ta-MY-SuryaNeural",
+        "gender": "Male",
+        "locale": "ta-MY"
+      }
+    ],
+    "Tamil (Singapore) (ta-SG)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-SG, AnbuNeural)",
+        "short_name": "ta-SG-AnbuNeural",
+        "gender": "Male",
+        "locale": "ta-SG"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ta-SG, VenbaNeural)",
+        "short_name": "ta-SG-VenbaNeural",
+        "gender": "Female",
+        "locale": "ta-SG"
+      }
+    ],
+    "Telugu (India) (te-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (te-IN, MohanNeural)",
+        "short_name": "te-IN-MohanNeural",
+        "gender": "Male",
+        "locale": "te-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (te-IN, ShrutiNeural)",
+        "short_name": "te-IN-ShrutiNeural",
+        "gender": "Female",
+        "locale": "te-IN"
+      }
+    ],
+    "ไทย (Thai)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (th-TH, AcharaNeural)",
+        "short_name": "th-TH-AcharaNeural",
+        "gender": "Female",
+        "locale": "th-TH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (th-TH, NiwatNeural)",
+        "short_name": "th-TH-NiwatNeural",
+        "gender": "Male",
+        "locale": "th-TH"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (th-TH, PremwadeeNeural)",
+        "short_name": "th-TH-PremwadeeNeural",
+        "gender": "Female",
+        "locale": "th-TH"
+      }
+    ],
+    "Türkçe (Turkish)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (tr-TR, AhmetNeural)",
+        "short_name": "tr-TR-AhmetNeural",
+        "gender": "Male",
+        "locale": "tr-TR"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (tr-TR, EmelNeural)",
+        "short_name": "tr-TR-EmelNeural",
+        "gender": "Female",
+        "locale": "tr-TR"
+      }
+    ],
+    "Ukrainian (Ukraine) (uk-UA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (uk-UA, OstapNeural)",
+        "short_name": "uk-UA-OstapNeural",
+        "gender": "Male",
+        "locale": "uk-UA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (uk-UA, PolinaNeural)",
+        "short_name": "uk-UA-PolinaNeural",
+        "gender": "Female",
+        "locale": "uk-UA"
+      }
+    ],
+    "Urdu (India) (ur-IN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ur-IN, GulNeural)",
+        "short_name": "ur-IN-GulNeural",
+        "gender": "Female",
+        "locale": "ur-IN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ur-IN, SalmanNeural)",
+        "short_name": "ur-IN-SalmanNeural",
+        "gender": "Male",
+        "locale": "ur-IN"
+      }
+    ],
+    "Urdu (Pakistan) (ur-PK)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ur-PK, AsadNeural)",
+        "short_name": "ur-PK-AsadNeural",
+        "gender": "Male",
+        "locale": "ur-PK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (ur-PK, UzmaNeural)",
+        "short_name": "ur-PK-UzmaNeural",
+        "gender": "Female",
+        "locale": "ur-PK"
+      }
+    ],
+    "Uzbek (Latin, Uzbekistan) (uz-UZ)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (uz-UZ, MadinaNeural)",
+        "short_name": "uz-UZ-MadinaNeural",
+        "gender": "Female",
+        "locale": "uz-UZ"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (uz-UZ, SardorNeural)",
+        "short_name": "uz-UZ-SardorNeural",
+        "gender": "Male",
+        "locale": "uz-UZ"
+      }
+    ],
+    "Tiếng Việt (Vietnamese)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (vi-VN, HoaiMyNeural)",
+        "short_name": "vi-VN-HoaiMyNeural",
+        "gender": "Female",
+        "locale": "vi-VN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (vi-VN, NamMinhNeural)",
+        "short_name": "vi-VN-NamMinhNeural",
+        "gender": "Male",
+        "locale": "vi-VN"
+      }
+    ],
+    "Chinese (Wu, Simplified) (wuu-CN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (wuu-CN, XiaotongNeural)",
+        "short_name": "wuu-CN-XiaotongNeural",
+        "gender": "Female",
+        "locale": "wuu-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (wuu-CN, YunzheNeural)",
+        "short_name": "wuu-CN-YunzheNeural",
+        "gender": "Male",
+        "locale": "wuu-CN"
+      }
+    ],
+    "Chinese (Cantonese, Simplified) (yue-CN)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (yue-CN, XiaoMinNeural)",
+        "short_name": "yue-CN-XiaoMinNeural",
+        "gender": "Female",
+        "locale": "yue-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (yue-CN, YunSongNeural)",
+        "short_name": "yue-CN-YunSongNeural",
+        "gender": "Male",
+        "locale": "yue-CN"
+      }
+    ],
+    "中文(简体)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaochenMultilingualNeural)",
+        "short_name": "zh-CN-XiaochenMultilingualNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaochenNeural)",
+        "short_name": "zh-CN-XiaochenNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaohanNeural)",
+        "short_name": "zh-CN-XiaohanNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaomengNeural)",
+        "short_name": "zh-CN-XiaomengNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaomoNeural)",
+        "short_name": "zh-CN-XiaomoNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoqiuNeural)",
+        "short_name": "zh-CN-XiaoqiuNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaorouNeural)",
+        "short_name": "zh-CN-XiaorouNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoruiNeural)",
+        "short_name": "zh-CN-XiaoruiNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoshuangNeural)",
+        "short_name": "zh-CN-XiaoshuangNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoDialectsNeural)",
+        "short_name": "zh-CN-XiaoxiaoDialectsNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoMultilingualNeural)",
+        "short_name": "zh-CN-XiaoxiaoMultilingualNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)",
+        "short_name": "zh-CN-XiaoxiaoNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoyanNeural)",
+        "short_name": "zh-CN-XiaoyanNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoyiNeural)",
+        "short_name": "zh-CN-XiaoyiNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoyouNeural)",
+        "short_name": "zh-CN-XiaoyouNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoyuMultilingualNeural)",
+        "short_name": "zh-CN-XiaoyuMultilingualNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaozhenNeural)",
+        "short_name": "zh-CN-XiaozhenNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunfanMultilingualNeural)",
+        "short_name": "zh-CN-YunfanMultilingualNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunfengNeural)",
+        "short_name": "zh-CN-YunfengNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunhaoNeural)",
+        "short_name": "zh-CN-YunhaoNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunjianNeural)",
+        "short_name": "zh-CN-YunjianNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunjieNeural)",
+        "short_name": "zh-CN-YunjieNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunxiNeural)",
+        "short_name": "zh-CN-YunxiNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunxiaNeural)",
+        "short_name": "zh-CN-YunxiaNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunxiaoMultilingualNeural)",
+        "short_name": "zh-CN-YunxiaoMultilingualNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunyangNeural)",
+        "short_name": "zh-CN-YunyangNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunyeNeural)",
+        "short_name": "zh-CN-YunyeNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunyiMultilingualNeural)",
+        "short_name": "zh-CN-YunyiMultilingualNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunzeNeural)",
+        "short_name": "zh-CN-YunzeNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "zh-CN-Xiaochen:DragonHDLatestNeural",
+        "short_name": "zh-CN-Xiaochen:DragonHDLatestNeural",
+        "gender": "Female",
+        "locale": "zh-CN"
+      },
+      {
+        "name": "zh-CN-Yunfan:DragonHDLatestNeural",
+        "short_name": "zh-CN-Yunfan:DragonHDLatestNeural",
+        "gender": "Male",
+        "locale": "zh-CN"
+      }
+    ],
+    "Chinese (Zhongyuan Mandarin Henan, Simplified) (zh-CN-henan)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN-henan, YundengNeural)",
+        "short_name": "zh-CN-henan-YundengNeural",
+        "gender": "Male",
+        "locale": "zh-CN-henan"
+      }
+    ],
+    "Chinese (Northeastern Mandarin, Simplified) (zh-CN-liaoning)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN-liaoning, XiaobeiNeural)",
+        "short_name": "zh-CN-liaoning-XiaobeiNeural",
+        "gender": "Female",
+        "locale": "zh-CN-liaoning"
+      }
+    ],
+    "Chinese (Zhongyuan Mandarin Shaanxi, Simplified) (zh-CN-shaanxi)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN-shaanxi, XiaoniNeural)",
+        "short_name": "zh-CN-shaanxi-XiaoniNeural",
+        "gender": "Female",
+        "locale": "zh-CN-shaanxi"
+      }
+    ],
+    "Chinese (Jilu Mandarin, Simplified) (zh-CN-shandong)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN-shandong, YunxiangNeural)",
+        "short_name": "zh-CN-shandong-YunxiangNeural",
+        "gender": "Male",
+        "locale": "zh-CN-shandong"
+      }
+    ],
+    "Chinese (Southwestern Mandarin, Simplified) (zh-CN-sichuan)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-CN-sichuan, YunxiNeural)",
+        "short_name": "zh-CN-sichuan-YunxiNeural",
+        "gender": "Male",
+        "locale": "zh-CN-sichuan"
+      }
+    ],
+    "中文(繁体-香港)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-HK, HiuGaaiNeural)",
+        "short_name": "zh-HK-HiuGaaiNeural",
+        "gender": "Female",
+        "locale": "zh-HK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-HK, HiuMaanNeural)",
+        "short_name": "zh-HK-HiuMaanNeural",
+        "gender": "Female",
+        "locale": "zh-HK"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-HK, WanLungNeural)",
+        "short_name": "zh-HK-WanLungNeural",
+        "gender": "Male",
+        "locale": "zh-HK"
+      }
+    ],
+    "中文(繁体-台湾)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-TW, HsiaoChenNeural)",
+        "short_name": "zh-TW-HsiaoChenNeural",
+        "gender": "Female",
+        "locale": "zh-TW"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-TW, HsiaoYuNeural)",
+        "short_name": "zh-TW-HsiaoYuNeural",
+        "gender": "Female",
+        "locale": "zh-TW"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zh-TW, YunJheNeural)",
+        "short_name": "zh-TW-YunJheNeural",
+        "gender": "Male",
+        "locale": "zh-TW"
+      }
+    ],
+    "Zulu (South Africa) (zu-ZA)": [
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zu-ZA, ThandoNeural)",
+        "short_name": "zu-ZA-ThandoNeural",
+        "gender": "Female",
+        "locale": "zu-ZA"
+      },
+      {
+        "name": "Microsoft Server Speech Text to Speech Voice (zu-ZA, ThembaNeural)",
+        "short_name": "zu-ZA-ThembaNeural",
+        "gender": "Male",
+        "locale": "zu-ZA"
+      }
+    ]
+  }
+}
