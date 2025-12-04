@@ -1,5 +1,5 @@
 """
-VoiceForge 主应用入口 - 面向对象版本
+VoiceForge 主应用入口
 """
 
 import os

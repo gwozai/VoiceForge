@@ -1,5 +1,5 @@
 /**
- * VoiceForge 主JavaScript模块 - 面向对象版本
+ * VoiceForge 主JavaScript模块
  */
 
 import { AudioManager } from './modules/audio-manager.js';
@@ -19,7 +19,7 @@ class VoiceForgeApp {
     }
     
     init() {
-        console.log('VoiceForge 2.0 - 面向对象版本初始化中...');
+        console.log('VoiceForge 2.0 初始化中...');
         
         // 初始化各个模块
         this.audioManager.init();

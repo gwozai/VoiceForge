@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}VoiceForge 2.0 - 面向对象版本{% endblock %}
+{% block title %}VoiceForge 2.0{% endblock %}
 
 {% block head %}
 <style>
@@ -129,18 +129,17 @@
 {% block content %}
 <div class="main-container">
     <div class="version-badge">
-        VoiceForge 2.0 - 面向对象版本
+        VoiceForge 2.0
     </div>
     
     <div class="header">
         <h1><i class="bi bi-mic-fill"></i> VoiceForge</h1>
-        <p>🎙️ 专业的语音合成工坊 - 高质量的文本转语音平台 (面向对象重构版)</p>
+        <p>🎙️ 专业的语音合成工坊 - 高质量的文本转语音平台 </p>
         <div class="d-flex justify-content-center gap-4 mt-3">
             <div class="badge bg-light text-dark"><i class="bi bi-check-circle"></i> OpenAI 兼容</div>
             <div class="badge bg-light text-dark"><i class="bi bi-lightning"></i> SSE 流式</div>
             <div class="badge bg-light text-dark"><i class="bi bi-globe"></i> 多语言支持</div>
-            <div class="badge bg-warning text-dark"><i class="bi bi-code-slash"></i> 面向对象</div>
-        </div>
+                    </div>
     </div>
 
     <div class="row">
@@ -315,7 +314,7 @@
                         <!-- 直接输入 -->
                         <div class="tab-pane fade show active" id="text-pane" role="tabpanel">
                             <div class="mb-3">
-                                <textarea class="form-control" id="input_text" rows="6" placeholder="在此输入要转换的文本...">你好！欢迎使用 VoiceForge 2.0 面向对象版本。这是一个重构后的专业语音合成工坊。</textarea>
+                                <textarea class="form-control" id="input_text" rows="6" placeholder="在此输入要转换的文本...">你好！欢迎使用 VoiceForge 2.0，这是一个专业的语音合成工坊。</textarea>
                             </div>
                         </div>
                         
@@ -361,7 +360,7 @@
                     
                     <div class="d-grid">
                         <button type="button" class="btn btn-primary btn-lg" id="generateBtn">
-                            <i class="bi bi-play-fill"></i> 生成语音 (面向对象版)
+                            <i class="bi bi-play-fill"></i> 生成语音
                         </button>
                     </div>
                     <div id="generateStatus" class="mt-2"></div>
@@ -377,7 +376,7 @@
                     <div id="audioOutput" class="text-center p-4">
                         <i class="bi bi-music-note-beamed text-muted" style="font-size: 2rem;"></i>
                         <p class="text-muted mt-2 mb-0">生成的音频将在此处播放</p>
-                        <small class="text-muted">使用面向对象架构的音频管理器</small>
+                        <small class="text-muted"></small>
                     </div>
                     
                     <div class="d-flex gap-2 mt-3" id="audioActions" style="display: none !important;">
@@ -395,8 +394,8 @@
     
     <!-- Footer -->
     <div class="text-center text-white mt-4">
-        <p>VoiceForge 2.0 - 面向对象重构版本 | 基于 Edge-TTS 的 OpenAI 兼容 TTS API</p>
-        <small>适用于个人使用 | GPL-3.0 许可证 | 架构：分层设计 + 模块化 + 面向对象</small>
+        <p>VoiceForge 2.0 | 基于 Edge-TTS 的 OpenAI 兼容 TTS API</p>
+        <small>适用于个人使用 | GPL-3.0 许可证 | 模块化架构</small>
     </div>
 </div>
 {% endblock %}
@@ -510,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
         speedSlider.addEventListener('input', updateSpeedValue);
     }
     
-    console.log('VoiceForge 2.0 面向对象版本页面加载完成');
+    console.log('VoiceForge 2.0 页面加载完成');
     console.log('完整的模块化功能已实现，包括流式传输支持');
 });
 </script>

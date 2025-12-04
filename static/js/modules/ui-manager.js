@@ -53,7 +53,7 @@ export class UIManager {
                 <div class="mt-2 text-center">
                     <small class="text-muted">
                         <i class="bi bi-check-circle text-success"></i> 
-                        语音生成成功 | 使用面向对象架构
+                        语音生成成功
                     </small>
                 </div>
             `;
