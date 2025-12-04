@@ -40,7 +40,7 @@ git push origin main
 
 # 测试功能
 make test                    # 运行测试
-python app.py               # 本地测试
+python main.py               # 本地测试
 make dev                    # Docker测试
 
 # 版本管理
@@ -158,7 +158,7 @@ git push origin main
 
 ```bash
 # 1. 本地开发测试
-python app.py
+python main.py
 
 # 2. Docker本地测试
 make build

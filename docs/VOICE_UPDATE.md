@@ -16,11 +16,11 @@ make update-voices
 python scripts/update_voices.py
 ```
 
-### 2. 运行面向对象版本
+### 2. 运行应用
 
 ```bash
 # 使用Makefile
-make run-oop
+make run
 
 # 或直接运行
 python main.py

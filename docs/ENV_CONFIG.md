@@ -90,7 +90,7 @@ cp .env.example .env
 nano .env
 
 # 启动应用
-python app.py
+python main.py
 ```
 
 ### 2. Docker部署

@@ -163,7 +163,7 @@ TEST_IMAGE=true         # 是否测试镜像
 ```bash
 # Docker配置
 DOCKER_USERNAME="gwozai"
-IMAGE_NAME="tts-website"
+IMAGE_NAME="voiceforge"
 
 # 代理配置
 USE_PROXY=true

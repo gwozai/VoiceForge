@@ -22,7 +22,7 @@
 
 ```bash
 # 1. 本地功能测试
-python app.py
+python main.py
 # 访问 http://localhost:8080 测试所有功能
 
 # 2. Docker本地测试
@@ -160,24 +160,24 @@ make release-patch  # 或 release-minor, release-major
 🔨 构建镜像...
 [+] Building 45.2s (14/14) FINISHED
 📤 推送镜像...
-The push refers to repository [docker.io/gwozai/tts-website]
+The push refers to repository [docker.io/gwozai/voiceforge]
 ✅ 部署完成!
-🌐 Docker Hub: https://hub.docker.com/r/gwozai/tts-website
+🌐 Docker Hub: https://hub.docker.com/r/gwozai/voiceforge
 ```
 
 ### 验证发布结果
 
 ```bash
 # 1. 检查本地镜像
-docker images gwozai/tts-website
+docker images gwozai/voiceforge
 
 # 2. 测试拉取发布的镜像
-docker pull gwozai/tts-website:latest
+docker pull gwozai/voiceforge:latest
 
 # 3. 运行发布的镜像测试
 docker run -d --name test-published \
   -p 8081:8080 \
-  gwozai/tts-website:latest
+  gwozai/voiceforge:latest
 
 # 4. 测试功能
 curl -I http://localhost:8081
@@ -192,8 +192,8 @@ docker rm test-published
 ### 访问Docker Hub
 
 发布成功后，可以在以下地址查看：
-- **仓库地址**: https://hub.docker.com/r/gwozai/tts-website
-- **标签管理**: https://hub.docker.com/r/gwozai/tts-website/tags
+- **仓库地址**: https://hub.docker.com/r/gwozai/voiceforge
+- **标签管理**: https://hub.docker.com/r/gwozai/voiceforge/tags
 
 ### 镜像标签说明
 
@@ -203,7 +203,7 @@ docker rm test-published
 
 ### 镜像信息
 
-- **仓库名**: `gwozai/tts-website`
+- **仓库名**: `gwozai/voiceforge`
 - **大小**: 约480MB
 - **架构**: linux/amd64
 - **基础镜像**: python:3.9-slim
@@ -217,11 +217,11 @@ docker rm test-published
 ```bash
 # 拉取并运行最新版本
 docker run -d \
-  --name tts-website \
+  --name voiceforge \
   -p 8080:8080 \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/logs:/app/logs \
-  gwozai/tts-website:latest
+  gwozai/voiceforge:latest
 ```
 
 ### 使用docker-compose
@@ -232,8 +232,8 @@ docker run -d \
 version: '3.8'
 services:
   tts-app:
-    image: gwozai/tts-website:latest
-    container_name: tts-website
+    image: gwozai/voiceforge:latest
+    container_name: voiceforge
     ports:
       - "8080:8080"
     volumes:
@@ -250,9 +250,9 @@ services:
 ```bash
 # 使用特定版本
 docker run -d \
-  --name tts-website \
+  --name voiceforge \
   -p 8080:8080 \
-  gwozai/tts-website:v1.0.2
+  gwozai/voiceforge:v1.0.2
 ```
 
 ## 🔄 持续部署流程
@@ -262,7 +262,7 @@ docker run -d \
 ```bash
 # 1. 完成代码修改
 # 2. 本地测试
-python app.py
+python main.py
 
 # 3. Docker测试
 make dev
@@ -272,7 +272,7 @@ make dev-stop
 make release-patch
 
 # 5. 验证发布
-docker pull gwozai/tts-website:latest
+docker pull gwozai/voiceforge:latest
 ```
 
 ### 重大版本发布
@@ -316,7 +316,7 @@ make quick-deploy
 
 ```bash
 # 查看详细错误信息
-docker push gwozai/tts-website:latest
+docker push gwozai/voiceforge:latest
 
 # 常见解决方案：
 # - 检查网络连接
@@ -329,10 +329,10 @@ docker push gwozai/tts-website:latest
 
 ```bash
 # 检查现有版本
-docker images gwozai/tts-website
+docker images gwozai/voiceforge
 
 # 删除本地冲突版本
-docker rmi gwozai/tts-website:v1.0.2
+docker rmi gwozai/voiceforge:v1.0.2
 
 # 重新构建
 make build
@@ -351,10 +351,10 @@ make build
 
 ```bash
 # 查看镜像大小趋势
-docker images gwozai/tts-website --format "table {{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
+docker images gwozai/voiceforge --format "table {{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
 
 # 清理旧版本（可选）
-docker rmi gwozai/tts-website:old-version
+docker rmi gwozai/voiceforge:old-version
 ```
 
 ## 🔒 安全考虑
@@ -366,14 +366,14 @@ docker rmi gwozai/tts-website:old-version
 grep -r "password\|secret\|key" . --exclude-dir=.git
 
 # 检查环境变量文件不在镜像中
-docker run --rm gwozai/tts-website:latest ls -la /app/config/
+docker run --rm gwozai/voiceforge:latest ls -la /app/config/
 ```
 
 ### 2. 镜像安全扫描
 
 ```bash
 # 使用Docker Scout扫描（如果可用）
-docker scout cves gwozai/tts-website:latest
+docker scout cves gwozai/voiceforge:latest
 
 # 或使用其他安全扫描工具
 ```

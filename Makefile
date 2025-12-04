@@ -1,19 +1,29 @@
-# TTS Website 根目录 Makefile
-# 简化命令，委托给scripts目录中的Makefile
+# VoiceForge Makefile
+# 专业语音合成工坊
 
-.PHONY: help build deploy quick-deploy test clean version dev run-oop update-voices
+.PHONY: help run install clean test docker-build docker-run docker-stop docker-push update-voices
 
 # 默认目标 - 显示帮助
 help:
-	@echo "VoiceForge - 语音合成工坊"
-	@echo "可用命令:"
+	@echo "VoiceForge 2.0 - 专业语音合成工坊"
+	@echo ""
+	@echo "开发命令:"
+	@echo "  run           - 运行应用 (开发模式)"
 	@echo "  install       - 安装依赖"
-	@echo "  run           - 运行原版应用"
-	@echo "  run-oop       - 运行面向对象版本"
 	@echo "  update-voices - 更新Edge-TTS语音列表"
 	@echo "  clean         - 清理缓存"
 	@echo "  test          - 运行测试"
-	@cd scripts && make help
+	@echo ""
+	@echo "Docker命令:"
+	@echo "  docker-build  - 构建Docker镜像"
+	@echo "  docker-run    - 运行Docker容器"
+	@echo "  docker-stop   - 停止Docker容器"
+	@echo "  docker-push   - 推送镜像到Docker Hub"
+	@echo "  docker-dev    - 开发模式运行Docker"
+	@echo ""
+	@echo "部署命令:"
+	@echo "  deploy        - 完整部署流程"
+	@echo "  quick-deploy  - 快速部署"
 
 # 构建和部署
 build:
@@ -73,12 +83,36 @@ install:
 	@cd scripts && make install
 
 run:
-	@cd scripts && make run
-
-run-oop:
 	python main.py
 
 update-voices:
 	@echo "🎤 正在更新Edge-TTS语音列表..."
 	python scripts/update_voices.py
 	@echo "✅ 语音列表更新完成！"
+
+# Docker命令
+docker-build:
+	@echo "🐳 构建Docker镜像..."
+	docker build -t voiceforge:latest .
+	@echo "✅ 镜像构建完成！"
+
+docker-run:
+	@echo "🚀 启动Docker容器..."
+	docker-compose up -d
+	@echo "✅ 容器已启动: http://localhost:8080"
+
+docker-stop:
+	@echo "🛑 停止Docker容器..."
+	docker-compose down
+	@echo "✅ 容器已停止"
+
+docker-dev:
+	@echo "🔧 开发模式启动Docker..."
+	docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+docker-logs:
+	docker-compose logs -f
+
+docker-push:
+	@echo "📤 推送镜像到Docker Hub..."
+	./scripts/deploy.sh

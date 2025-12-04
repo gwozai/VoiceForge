@@ -31,7 +31,7 @@
 ```bash
 # 1. 本地开发测试
 conda activate tts-env
-python app.py
+python main.py
 
 # 2. Docker本地测试  
 make build && make dev

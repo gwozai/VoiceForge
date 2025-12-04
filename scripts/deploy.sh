@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TTS Website Docker 自动部署脚本
+# VoiceForge Docker 自动部署脚本
 # 作者: gwozai
 # 用途: 自动构建、标记和推送Docker镜像到Docker Hub
 
@@ -103,7 +103,7 @@ build_image() {
     
     # 构建镜像，同时标记latest和版本号
     docker build \
-        -f docker/Dockerfile \
+        -f Dockerfile \
         -t "${DOCKER_REPO}:latest" \
         -t "${DOCKER_REPO}:${VERSION}" \
         .
@@ -159,12 +159,12 @@ test_image() {
         print_info "测试镜像..."
         
         # 停止现有容器（如果存在）
-        docker stop tts-website-test 2>/dev/null || true
-        docker rm tts-website-test 2>/dev/null || true
+        docker stop voiceforge-test 2>/dev/null || true
+        docker rm voiceforge-test 2>/dev/null || true
         
         # 运行测试容器
         docker run -d \
-            --name tts-website-test \
+            --name voiceforge-test \
             -p 8081:8080 \
             "${DOCKER_REPO}:latest"
         
@@ -179,14 +179,14 @@ test_image() {
         fi
         
         # 清理测试容器
-        docker stop tts-website-test
-        docker rm tts-website-test
+        docker stop voiceforge-test
+        docker rm voiceforge-test
     fi
 }
 
 # 函数：显示帮助信息
 show_help() {
-    echo "TTS Website Docker 部署脚本"
+    echo "VoiceForge Docker 部署脚本"
     echo ""
     echo "用法: $0 [选项] [版本号]"
     echo ""
@@ -212,7 +212,7 @@ show_help() {
 
 # 主函数
 main() {
-    print_info "=== TTS Website Docker 部署脚本 ==="
+    print_info "=== VoiceForge Docker 部署脚本 ==="
     print_info "开始时间: $(date)"
     
     # 解析命令行参数

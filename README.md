@@ -1,65 +1,44 @@
-# VoiceForge
+# VoiceForge 2.0
 
-🎙️ 专业的语音合成工坊 - 基于Flask的文字转语音(TTS)平台，支持多种语音选择和自定义配置，提供流式音频生成功能。
+🎙️ 专业的语音合成工坊 - 基于Edge-TTS的OpenAI兼容TTS API，支持10万字长文本、流式生成和多语言语音。
 
 ## 🎯 主要特性
 
-- 🎤 **多语音支持** - 支持中文、英文、日文等多种语言语音
-- 🚀 **流式生成** - 支持长文本的流式音频生成
-- 📊 **统计功能** - 详细的生成统计和历史记录
+- 🎤 **多语音支持** - 594种语音，支持中英日韩法德等多语言
+- 🚀 **长文本支持** - 支持10万字长文本的流式音频生成
+- 📡 **OpenAI兼容** - 兼容OpenAI TTS API接口
+- 🔄 **流式传输** - 边生成边播放，无需等待
 - 🐳 **Docker部署** - 完整的容器化部署方案
-- ⚙️ **环境变量配置** - 灵活的配置管理
-- 🔒 **生产就绪** - 适合生产环境的安全配置
+- 📁 **文件上传** - 支持txt/md/srt文件和URL获取
 
 ## 🚀 快速开始
 
-### 使用Docker Hub镜像（推荐）
+### 使用Docker（推荐）
 
 ```bash
 # 拉取镜像
-docker pull gwozai/tts-website:latest
+docker pull gwozai/voiceforge:latest
 
 # 运行容器
 docker run -d \
-  --name tts-website \
+  --name voiceforge \
   -p 8080:8080 \
-  -v $(pwd)/data:/app/data \
-  -v $(pwd)/logs:/app/logs \
-  gwozai/tts-website:latest
+  gwozai/voiceforge:latest
+
+# 或使用docker-compose
+docker-compose up -d
 ```
 
 ### 本地开发
 
-#### 方式1：使用Conda环境（推荐）
-
-```bash
-# 创建conda环境
-conda create -n tts-env python=3.9 -y
-conda activate tts-env
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 配置环境变量
-cp .env.example config/.env
-# 编辑config/.env文件设置你的配置
-
-# 启动应用
-python app.py
-```
-
-#### 方式2：使用系统Python
-
 ```bash
 # 安装依赖
 pip install -r requirements.txt
 
-# 配置环境变量
-cp .env.example config/.env
-# 编辑config/.env文件设置你的配置
-
 # 启动应用
-python app.py
+make run
+# 或
+python main.py
 ```
 
 访问地址：http://localhost:8080
@@ -99,11 +78,11 @@ make deploy VERSION=v2.1.0
 
 ## 🛠️ 技术栈
 
-- **后端**: Flask (Python)
-- **数据库**: SQLite
-- **前端**: HTML5 + Bootstrap + JavaScript
+- **后端**: Flask + Python 3.11
+- **TTS引擎**: Edge-TTS
+- **前端**: HTML5 + Bootstrap 5 + ES6 Modules
 - **容器化**: Docker + Docker Compose
-- **配置管理**: python-dotenv
+- **生产服务器**: Gunicorn
 
 ## 🎵 支持的语音
 
@@ -146,20 +125,34 @@ make deploy VERSION=v2.1.0
 
 ## 🐳 Docker Hub
 
-**镜像仓库**: `gwozai/tts-website`
+**镜像仓库**: `gwozai/voiceforge`
 
-- `latest` - 最新版本（v2.0）
-- `v2.0` - 环境变量配置版本（推荐）
-- `v1.0` - 初始版本
+```bash
+# 拉取最新版本
+docker pull gwozai/voiceforge:latest
+
+# 使用docker-compose
+docker-compose up -d
+
+# 查看日志
+docker-compose logs -f
+```
+
+## 📦 Make命令
+
+```bash
+make help          # 查看所有命令
+make run           # 本地运行
+make docker-build  # 构建Docker镜像
+make docker-run    # 启动Docker容器
+make docker-stop   # 停止Docker容器
+make update-voices # 更新语音列表
+```
 
 ## 📝 许可证
 
-本项目采用 MIT 许可证。
+本项目采用 GPL-3.0 许可证。
 
 ## 🤝 贡献
 
 欢迎提交Issue和Pull Request来改进这个项目！
-
-## 📞 支持
-
-如果你在使用过程中遇到问题，请查看文档或提交Issue。

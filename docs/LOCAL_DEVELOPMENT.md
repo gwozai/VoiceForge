@@ -82,7 +82,7 @@ LOG_FILE=tts_generation.log
 
 ```bash
 # 方式1：直接运行
-python app.py
+python main.py
 
 # 方式2：使用Make命令
 make run
@@ -141,7 +141,7 @@ SELECT * FROM generation_logs LIMIT 5;
 ```bash
 # 停止应用：Ctrl+C
 # 重新启动：
-python app.py
+python main.py
 ```
 
 ## 🐛 常见问题排除
@@ -217,7 +217,7 @@ conda activate tts-env
 git pull origin main
 
 # 3. 启动应用
-python app.py
+python main.py
 
 # 4. 进行开发...
 # 5. 测试功能
@@ -251,7 +251,7 @@ git commit -m "描述你的更改"
 ```bash
 # 修改 app.py 后需要重启应用
 # Ctrl+C 停止应用
-python app.py  # 重新启动
+python main.py  # 重新启动
 ```
 
 ### 3. 配置修改测试
@@ -259,7 +259,7 @@ python app.py  # 重新启动
 ```bash
 # 修改 config/.env 后需要重启应用
 # Ctrl+C 停止应用
-python app.py  # 重新启动
+python main.py  # 重新启动
 ```
 
 ### 4. 依赖修改测试
@@ -267,7 +267,7 @@ python app.py  # 重新启动
 ```bash
 # 修改 requirements.txt 后
 pip install -r requirements.txt
-python app.py  # 重新启动
+python main.py  # 重新启动
 ```
 
 ## 📊 性能监控
@@ -282,7 +282,7 @@ ps aux | grep python
 netstat -an | grep 8080
 
 # 查看内存使用
-top -p $(pgrep -f "python app.py")
+top -p $(pgrep -f "python main.py")
 ```
 
 ### 日志分析

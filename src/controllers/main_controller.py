@@ -12,7 +12,7 @@ def index():
     config = current_app.config.get('VOICEFORGE_CONFIG')
     
     return render_template(
-        "index_oop.html",
+        "index.html",
         voices_by_language=VOICES_BY_LANGUAGE,
         voices=VOICES,
         formats=SUPPORTED_FORMATS,

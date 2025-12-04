@@ -69,7 +69,7 @@
 
 ### 🚀 Docker Hub镜像
 - **镜像ID**: `68aabee9696f`
-- **标签**: `gwozai/tts-website:v2.0`, `gwozai/tts-website:latest`
+- **标签**: `gwozai/voiceforge:v2.0`, `gwozai/voiceforge:latest`
 - **大小**: 约67MB
 
 ## v1.0 (2025-12-03)
@@ -84,4 +84,4 @@
 
 ### 📦 Docker Hub镜像
 - **镜像ID**: `6249de6c27b3`
-- **标签**: `gwozai/tts-website:v1.0`
+- **标签**: `gwozai/voiceforge:v1.0`

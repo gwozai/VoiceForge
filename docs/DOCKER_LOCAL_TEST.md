@@ -88,10 +88,10 @@ make test
 
 ```bash
 # 构建镜像
-docker build -f docker/Dockerfile -t tts-website-test .
+docker build -f docker/Dockerfile -t voiceforge-test .
 
 # 查看构建的镜像
-docker images tts-website-test
+docker images voiceforge-test
 ```
 
 ### 步骤4：启动Docker容器
@@ -115,12 +115,12 @@ mkdir -p data logs
 
 # 运行容器
 docker run -d \
-  --name tts-website-test \
+  --name voiceforge-test \
   -p 8080:8080 \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/logs:/app/logs \
   --env-file config/.env \
-  tts-website-test
+  voiceforge-test
 ```
 
 ### 步骤5：验证容器运行
@@ -130,10 +130,10 @@ docker run -d \
 docker ps
 
 # 2. 查看容器日志
-docker logs tts-website-test
+docker logs voiceforge-test
 
 # 3. 检查健康状态
-docker inspect tts-website-test | grep -A 5 "Health"
+docker inspect voiceforge-test | grep -A 5 "Health"
 ```
 
 ## 🧪 功能测试
@@ -196,20 +196,20 @@ ls -la test_audio.mp3
 
 ```bash
 # 实时查看日志
-docker logs -f tts-website-test
+docker logs -f voiceforge-test
 
 # 查看最近的日志
-docker logs --tail 50 tts-website-test
+docker logs --tail 50 voiceforge-test
 
 # 查看特定时间的日志
-docker logs --since "2024-01-01T00:00:00" tts-website-test
+docker logs --since "2024-01-01T00:00:00" voiceforge-test
 ```
 
 ### 进入容器调试
 
 ```bash
 # 进入容器
-docker exec -it tts-website-test bash
+docker exec -it voiceforge-test bash
 
 # 在容器内检查
 ls -la /app
@@ -222,10 +222,10 @@ exit
 
 ```bash
 # 查看容器资源使用
-docker stats tts-website-test
+docker stats voiceforge-test
 
 # 查看容器详细信息
-docker inspect tts-website-test
+docker inspect voiceforge-test
 ```
 
 ## 🔧 高级测试
@@ -254,7 +254,7 @@ curl -X POST "http://localhost:8080/api/speech" \
   -d '{"input":"持久化测试","voice":"zh-CN-XiaoxiaoNeural"}'
 
 # 2. 重启容器
-docker restart tts-website-test
+docker restart voiceforge-test
 
 # 3. 检查数据是否保持
 curl -X GET "http://localhost:8080/api/stats"
@@ -264,10 +264,10 @@ curl -X GET "http://localhost:8080/api/stats"
 
 ```bash
 # 测试容器网络连接
-docker exec tts-website-test ping -c 3 google.com
+docker exec voiceforge-test ping -c 3 google.com
 
 # 测试API连接
-docker exec tts-website-test curl -I http://117.72.56.34:5050
+docker exec voiceforge-test curl -I http://117.72.56.34:5050
 ```
 
 ## 🐛 常见问题排除
@@ -276,7 +276,7 @@ docker exec tts-website-test curl -I http://117.72.56.34:5050
 
 ```bash
 # 查看详细错误信息
-docker logs tts-website-test
+docker logs voiceforge-test
 
 # 常见原因和解决方案：
 # - 端口被占用：更改端口映射 -p 8081:8080
@@ -288,7 +288,7 @@ docker logs tts-website-test
 
 ```bash
 # 查看构建日志
-docker build -f docker/Dockerfile -t tts-website-test . --no-cache
+docker build -f docker/Dockerfile -t voiceforge-test . --no-cache
 
 # 常见原因：
 # - 网络问题：使用代理或更换网络
@@ -300,21 +300,21 @@ docker build -f docker/Dockerfile -t tts-website-test . --no-cache
 
 ```bash
 # 检查端口映射
-docker port tts-website-test
+docker port voiceforge-test
 
 # 检查防火墙设置
 # Mac: 系统偏好设置 -> 安全性与隐私 -> 防火墙
 # Windows: Windows Defender 防火墙
 
 # 检查容器内应用状态
-docker exec tts-website-test ps aux | grep python
+docker exec voiceforge-test ps aux | grep python
 ```
 
 ### 4. 数据不持久化
 
 ```bash
 # 检查卷挂载
-docker inspect tts-website-test | grep -A 10 "Mounts"
+docker inspect voiceforge-test | grep -A 10 "Mounts"
 
 # 确保目录存在且有正确权限
 ls -la data/ logs/
@@ -356,14 +356,14 @@ chmod 755 data logs
 
 ```bash
 # 停止并删除容器
-docker stop tts-website-test
-docker rm tts-website-test
+docker stop voiceforge-test
+docker rm voiceforge-test
 
 # 或使用docker-compose
 make dev-stop
 
 # 清理测试镜像（可选）
-docker rmi tts-website-test
+docker rmi voiceforge-test
 
 # 清理测试文件
 rm -f test_audio.mp3

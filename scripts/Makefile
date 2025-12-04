@@ -96,4 +96,4 @@ install:
 # 运行本地应用
 run:
 	@echo "🏃 启动本地应用..."
-	@cd .. && python app.py
+	@cd .. && python main.py
