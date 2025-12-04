@@ -16,17 +16,27 @@
 ### 使用Docker（推荐）
 
 ```bash
-# 拉取镜像
+# 拉取镜像（支持 amd64/arm64 多架构）
 docker pull gwozai/voiceforge:latest
 
 # 运行容器
-docker run -d \
-  --name voiceforge \
-  -p 8080:8080 \
-  gwozai/voiceforge:latest
+docker run -d --name voiceforge -p 8080:8080 gwozai/voiceforge:latest
 
-# 或使用docker-compose
+# 访问
+open http://localhost:8080
+```
+
+### Docker Compose
+
+```bash
+# 启动
 docker-compose up -d
+
+# 停止
+docker-compose down
+
+# 查看日志
+docker-compose logs -f
 ```
 
 ### 本地开发
@@ -41,7 +51,7 @@ make run
 python main.py
 ```
 
-访问地址：http://localhost:8080
+**访问地址：** http://localhost:8080
 
 ## ⚡ 快速部署到Docker Hub
 
@@ -58,23 +68,15 @@ make quick-deploy
 make deploy VERSION=v2.1.0
 ```
 
-详细使用说明请参考 [部署脚本指南](docs/DEPLOY_SCRIPTS.md)。
+详细使用说明请参考 [Docker部署指南](docs/DOCKER.md)。
 
 ## 📚 文档
 
-### 🚀 核心文档（按流程顺序）
-1. [**本地开发测试**](docs/LOCAL_DEVELOPMENT.md) - 项目修改完成后的本地启动测试
-2. [**Docker本地测试**](docs/DOCKER_LOCAL_TEST.md) - 项目完成后的Docker可运行测试
-3. [**Docker Hub发布**](docs/DOCKERHUB_DEPLOY.md) - 全部测试好后上传Docker Hub
-
-### 🔧 配置文档
-- [部署脚本指南](docs/DEPLOY_SCRIPTS.md) - 自动化部署脚本使用说明
-- [环境变量配置](docs/ENV_CONFIG.md) - 详细的配置说明
-- [Git操作指南](docs/GIT_OPERATIONS.md) - Git推送和版本管理指南
-- [更新日志](docs/CHANGELOG.md) - 版本更新记录
-
-### 📋 完整导航
-- [**文档目录**](docs/README.md) - 查看所有文档和使用指南
+| 文档 | 说明 |
+|------|------|
+| [开发指南](docs/DEVELOPMENT.md) | 本地开发和环境配置 |
+| [Docker部署](docs/DOCKER.md) | Docker构建和部署 |
+| [更新日志](docs/CHANGELOG.md) | 版本更新记录 |
 
 ## 🛠️ 技术栈
 
@@ -121,22 +123,43 @@ make deploy VERSION=v2.1.0
 - `FLASK_PORT` - 服务端口
 - `DB_PATH` - 数据库路径
 
-详细配置说明请参考 [环境变量配置文档](doc/ENV_CONFIG.md)。
+详细配置说明请参考 [开发指南](docs/DEVELOPMENT.md)。
 
 ## 🐳 Docker Hub
 
 **镜像仓库**: `gwozai/voiceforge`
 
+### 简单启动
 ```bash
-# 拉取最新版本
-docker pull gwozai/voiceforge:latest
-
-# 使用docker-compose
-docker-compose up -d
-
-# 查看日志
-docker-compose logs -f
+docker run -d --name voiceforge -p 8080:8080 gwozai/voiceforge:latest
 ```
+
+### 完整启动（推荐生产环境）
+```bash
+docker run -d \
+  --name voiceforge \
+  --restart unless-stopped \
+  -p 8080:8080 \
+  -e TZ=Asia/Shanghai \
+  -e DEFAULT_VOICE=zh-CN-XiaoxiaoNeural \
+  -e DEFAULT_MODEL=tts-1 \
+  -e DEFAULT_FORMAT=mp3 \
+  -e DEFAULT_SPEED=1.0 \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/logs:/app/logs \
+  gwozai/voiceforge:latest
+```
+
+### 环境变量说明
+
+| 变量 | 默认值 | 说明 |
+|------|--------|------|
+| `TZ` | Asia/Shanghai | 时区 |
+| `DEFAULT_VOICE` | zh-CN-XiaoxiaoNeural | 默认语音 |
+| `DEFAULT_MODEL` | tts-1 | 默认模型 |
+| `DEFAULT_FORMAT` | mp3 | 默认音频格式 |
+| `DEFAULT_SPEED` | 1.0 | 默认语速 |
+| `FLASK_PORT` | 8080 | 服务端口 |
 
 ## 📦 Make命令
 
